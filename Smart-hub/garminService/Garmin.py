@@ -4,8 +4,8 @@ import os
 from pathlib import Path
 from garminconnect import Garmin
 
-email = input("Input your email address for Garmin: ")
-password = input("Input your Garmin password: ")
+email = ""
+password = ""
 token_store = "~/.garminconnect"  # Directory to cache tokens
 
 def initialize_garmin():
@@ -22,6 +22,8 @@ def initialize_garmin():
     except Exception as e:
         print(f"Token login failed ({e}). Logging in with credentials...")
         try:
+            email = input("Input your email address for Garmin: ")
+            password = input("Input your Garmin password: ")
             # Login with credentials and pass tokenstore_path so it saves automatically
             garmin = Garmin(email=email, password=password)
             garmin.login(tokenstore_path)
