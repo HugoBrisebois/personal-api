@@ -1,0 +1,7 @@
+{
+	"InstallScripts" : 
+	[
+		"/home/hugo/Documents/projects/personal-api/build/_deps/httplib-subbuild/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

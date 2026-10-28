@@ -1,0 +1,46 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/home/hugo/Documents/projects/personal-api/build/_deps/slint-subbuild/CMakeFiles/slint-populate"
+		},
+		{
+			"file" : "/home/hugo/Documents/projects/personal-api/build/_deps/slint-subbuild/CMakeFiles/slint-populate.rule"
+		},
+		{
+			"file" : "/home/hugo/Documents/projects/personal-api/build/_deps/slint-subbuild/CMakeFiles/slint-populate-complete.rule"
+		},
+		{
+			"file" : "/home/hugo/Documents/projects/personal-api/build/_deps/slint-subbuild/slint-populate-prefix/src/slint-populate-stamp/slint-populate-build.rule"
+		},
+		{
+			"file" : "/home/hugo/Documents/projects/personal-api/build/_deps/slint-subbuild/slint-populate-prefix/src/slint-populate-stamp/slint-populate-configure.rule"
+		},
+		{
+			"file" : "/home/hugo/Documents/projects/personal-api/build/_deps/slint-subbuild/slint-populate-prefix/src/slint-populate-stamp/slint-populate-download.rule"
+		},
+		{
+			"file" : "/home/hugo/Documents/projects/personal-api/build/_deps/slint-subbuild/slint-populate-prefix/src/slint-populate-stamp/slint-populate-install.rule"
+		},
+		{
+			"file" : "/home/hugo/Documents/projects/personal-api/build/_deps/slint-subbuild/slint-populate-prefix/src/slint-populate-stamp/slint-populate-mkdir.rule"
+		},
+		{
+			"file" : "/home/hugo/Documents/projects/personal-api/build/_deps/slint-subbuild/slint-populate-prefix/src/slint-populate-stamp/slint-populate-patch.rule"
+		},
+		{
+			"file" : "/home/hugo/Documents/projects/personal-api/build/_deps/slint-subbuild/slint-populate-prefix/src/slint-populate-stamp/slint-populate-test.rule"
+		},
+		{
+			"file" : "/home/hugo/Documents/projects/personal-api/build/_deps/slint-subbuild/slint-populate-prefix/src/slint-populate-stamp/slint-populate-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"slint-populate"
+		],
+		"name" : "slint-populate"
+	}
+}

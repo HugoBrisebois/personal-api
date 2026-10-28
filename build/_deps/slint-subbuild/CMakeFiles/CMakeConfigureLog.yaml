@@ -1,0 +1,65 @@
+
+---
+events:
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineSystem.cmake:12 (find_program)"
+      - "CMakeLists.txt:16 (project)"
+    mode: "program"
+    variable: "CMAKE_UNAME"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "uname"
+    candidate_directories:
+      - "/home/hugo/Documents/projects/personal-api/.venv/bin/"
+      - "/home/hugo/.wakatime/"
+      - "/home/hugo/.cargo/bin/"
+      - "/home/hugo/.local/bin/"
+      - "/home/hugo/bin/"
+      - "/usr/local/bin/"
+      - "/usr/bin/"
+      - "/var/lib/snapd/snap/bin/"
+      - "/home/hugo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts/"
+      - "/home/hugo/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/"
+      - "/usr/share/code/bin/copilot-shim/"
+      - "/bin/"
+    searched_directories:
+      - "/home/hugo/Documents/projects/personal-api/.venv/bin/uname"
+      - "/home/hugo/.wakatime/uname"
+      - "/home/hugo/.cargo/bin/uname"
+      - "/home/hugo/.local/bin/uname"
+      - "/home/hugo/bin/uname"
+      - "/usr/local/bin/uname"
+    found: "/usr/bin/uname"
+    search_context:
+      ENV{PATH}:
+        - "/home/hugo/Documents/projects/personal-api/.venv/bin"
+        - "/home/hugo/.wakatime"
+        - "/home/hugo/.wakatime"
+        - "/home/hugo/.cargo/bin"
+        - "/home/hugo/.wakatime"
+        - "/home/hugo/.local/bin"
+        - "/home/hugo/bin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/var/lib/snapd/snap/bin"
+        - "/home/hugo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts"
+        - "/home/hugo/.config/Code/User/globalStorage/github.copilot-chat/debugCommand"
+        - "/usr/share/code/bin/copilot-shim"
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineSystem.cmake:212 (message)"
+      - "CMakeLists.txt:16 (project)"
+    message: |
+      The system is: Linux - 7.2.12-200.fc44.x86_64 - x86_64
+...
