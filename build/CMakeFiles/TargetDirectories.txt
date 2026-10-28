@@ -1,2 +1,0 @@
-/home/hugo/Documents/projects/personal-api/build/CMakeFiles/edit_cache.dir
-/home/hugo/Documents/projects/personal-api/build/CMakeFiles/rebuild_cache.dir
