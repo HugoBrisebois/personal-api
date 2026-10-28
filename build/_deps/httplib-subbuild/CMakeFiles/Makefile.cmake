@@ -10,10 +10,8 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/4.3.0/CMakeSystem.cmake"
   "CMakeLists.txt"
   "httplib-populate-prefix/tmp/httplib-populate-mkdirs.cmake"
-  "/usr/share/cmake/Modules/CMakeDetermineSystem.cmake"
   "/usr/share/cmake/Modules/CMakeGenericSystem.cmake"
   "/usr/share/cmake/Modules/CMakeInitializeConfigs.cmake"
-  "/usr/share/cmake/Modules/CMakeSystem.cmake.in"
   "/usr/share/cmake/Modules/CMakeSystemSpecificInformation.cmake"
   "/usr/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake"
   "/usr/share/cmake/Modules/ExternalProject.cmake"
@@ -38,7 +36,6 @@ set(CMAKE_MAKEFILE_OUTPUTS
 
 # Byproducts of CMake generate step:
 set(CMAKE_MAKEFILE_PRODUCTS
-  "CMakeFiles/4.3.0/CMakeSystem.cmake"
   "httplib-populate-prefix/tmp/httplib-populate-mkdirs.cmake"
   "httplib-populate-prefix/tmp/httplib-populate-gitclone.cmake"
   "httplib-populate-prefix/src/httplib-populate-stamp/httplib-populate-gitinfo.txt"
