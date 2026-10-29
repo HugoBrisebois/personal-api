@@ -24,7 +24,7 @@ namespace personalAPI {
 
           // Allow moving resources cleanly
           Database(Database&& other) noexcept;
-          Database& operator=(Database&& other) noexecpt;
+          Database& operator=(Database&& other) noexcept;
 
           bool open();
           void close();
@@ -37,7 +37,7 @@ namespace personalAPI {
           std::vector<std::string> listTable() const;
         
           const std::string& getLastError() const { return last_error_;}
-          bool isOpen() const { return db_ != nullptr; }
+          bool isOpen() const { return db != nullptr; }
   };
 
 }
