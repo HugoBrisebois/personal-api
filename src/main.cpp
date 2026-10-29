@@ -6,11 +6,10 @@
 #include "api_server.hpp"
 
 int main() {
-    std::cout << "Starting Smart Hub..." << std:endl;
+    std::cout << "Starting Smart Hub..." << std::endl;
 
     // init the sqlite database
     Database db("personal.db");
-    db.init_tables();
-
+    db.init_db("personal.db");
     
 }

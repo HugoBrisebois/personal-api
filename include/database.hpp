@@ -11,7 +11,19 @@ class Database {
         // constructor and destructor declarations
         Database(const std::string& db_path);
         ~Database();
-        
-        // member function declaration
+
+        // initialization function declaration
+        void createDB(const std::string& db_path);
+
+        // execution function declaration
         void execute_query(const std::string& query);
+
+        // table creatation function declaration
+        void createTable(const std::string& query);
+
+        // list a tables function declaration
+        void listTable(const string& query);
+        
+        // list content of a table function
+        void listContent(const string& query);
 }
