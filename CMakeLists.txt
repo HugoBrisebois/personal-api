@@ -43,6 +43,18 @@ FetchContent_MakeAvailable(slint)
 # find the system sqlite3
 find_package(SQLite3 REQUIRED)
 
+add_library(personal_db
+  src/Database.cpp
+)
+
+target_include_directories(personal_db PUBLIC
+  include
+)
+
+target_link_libraries(personal_db PRIVATE
+  SQLite3::SQLite3
+)
+
 # Find standard threading package
 find_package(Threads REQUIRED)
 
