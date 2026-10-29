@@ -3677,3 +3677,177 @@ events:
       CMAKE_SYSTEM_LIBRARY_PATH:
         - "/usr/lib/X11"
 ...
+
+---
+events:
+  -
+    kind: "find-v1"
+    backtrace:
+      - "build/_deps/corrosion-src/cmake/FindRust.cmake:499 (find_program)"
+      - "build/_deps/corrosion-src/cmake/Corrosion.cmake:47 (find_package)"
+      - "build/_deps/corrosion-src/CMakeLists.txt:30 (include)"
+    mode: "program"
+    variable: "Rust_COMPILER_CACHED"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "rustc"
+    candidate_directories:
+      - "/home/hugo/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/"
+    found: "/home/hugo/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rustc"
+    search_context:
+      ENV{PATH}:
+        - "/home/hugo/.wakatime"
+        - "/home/hugo/.wakatime"
+        - "/home/hugo/.cargo/bin"
+        - "/home/hugo/.wakatime"
+        - "/home/hugo/.local/bin"
+        - "/home/hugo/bin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/var/lib/snapd/snap/bin"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/usr"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "build/_deps/corrosion-src/cmake/FindRust.cmake:534 (find_program)"
+      - "build/_deps/corrosion-src/cmake/Corrosion.cmake:47 (find_package)"
+      - "build/_deps/corrosion-src/CMakeLists.txt:30 (include)"
+    mode: "program"
+    variable: "Rust_CARGO_CACHED"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "cargo"
+    candidate_directories:
+      - "/home/hugo/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/"
+    found: "/home/hugo/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/cargo"
+    search_context:
+      ENV{PATH}:
+        - "/home/hugo/.wakatime"
+        - "/home/hugo/.wakatime"
+        - "/home/hugo/.cargo/bin"
+        - "/home/hugo/.wakatime"
+        - "/home/hugo/.local/bin"
+        - "/home/hugo/bin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/var/lib/snapd/snap/bin"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/usr"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "build/_deps/corrosion-src/cmake/FindRust.cmake:499 (find_program)"
+      - "build/_deps/slint-src/api/cpp/CMakeLists.txt:29 (find_package)"
+    mode: "program"
+    variable: "Rust_COMPILER_CACHED"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "rustc"
+    candidate_directories:
+      - "/home/hugo/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/"
+    found: "/home/hugo/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rustc"
+    search_context:
+      ENV{PATH}:
+        - "/home/hugo/.wakatime"
+        - "/home/hugo/.wakatime"
+        - "/home/hugo/.cargo/bin"
+        - "/home/hugo/.wakatime"
+        - "/home/hugo/.local/bin"
+        - "/home/hugo/bin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/var/lib/snapd/snap/bin"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/usr"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "build/_deps/corrosion-src/cmake/FindRust.cmake:534 (find_program)"
+      - "build/_deps/slint-src/api/cpp/CMakeLists.txt:29 (find_package)"
+    mode: "program"
+    variable: "Rust_CARGO_CACHED"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "cargo"
+    candidate_directories:
+      - "/home/hugo/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/"
+    found: "/home/hugo/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/cargo"
+    search_context:
+      ENV{PATH}:
+        - "/home/hugo/.wakatime"
+        - "/home/hugo/.wakatime"
+        - "/home/hugo/.cargo/bin"
+        - "/home/hugo/.wakatime"
+        - "/home/hugo/.local/bin"
+        - "/home/hugo/bin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/var/lib/snapd/snap/bin"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/usr"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+...
