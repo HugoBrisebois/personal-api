@@ -65,6 +65,26 @@ CMAKE_BINARY_DIR = /home/hugo/Documents/projects/personal-api/build
 #=============================================================================
 # Targets provided globally by CMake.
 
+# Special rule for the target package
+package: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Run CPack packaging tool..."
+	/usr/bin/cpack --config ./CPackConfig.cmake
+.PHONY : package
+
+# Special rule for the target package
+package/fast: package
+.PHONY : package/fast
+
+# Special rule for the target package_source
+package_source:
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Run CPack packaging tool for source..."
+	/usr/bin/cpack --config ./CPackSourceConfig.cmake
+.PHONY : package_source
+
+# Special rule for the target package_source
+package_source/fast: package_source
+.PHONY : package_source/fast
+
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running CMake cache editor..."
@@ -84,6 +104,51 @@ rebuild_cache:
 # Special rule for the target rebuild_cache
 rebuild_cache/fast: rebuild_cache
 .PHONY : rebuild_cache/fast
+
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+.PHONY : list_install_components/fast
+
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
+
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local/fast
+
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -116,6 +181,245 @@ depend:
 	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
+#=============================================================================
+# Target rules for targets named smart_hub
+
+# Build rule for target.
+smart_hub: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 smart_hub
+.PHONY : smart_hub
+
+# fast build rule for target.
+smart_hub/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/smart_hub.dir/build.make CMakeFiles/smart_hub.dir/build
+.PHONY : smart_hub/fast
+
+#=============================================================================
+# Target rules for targets named _cargo-build_slint_cpp
+
+# Build rule for target.
+_cargo-build_slint_cpp: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _cargo-build_slint_cpp
+.PHONY : _cargo-build_slint_cpp
+
+# fast build rule for target.
+_cargo-build_slint_cpp/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/slint-build/CMakeFiles/_cargo-build_slint_cpp.dir/build.make _deps/slint-build/CMakeFiles/_cargo-build_slint_cpp.dir/build
+.PHONY : _cargo-build_slint_cpp/fast
+
+#=============================================================================
+# Target rules for targets named cargo-build_slint_cpp
+
+# Build rule for target.
+cargo-build_slint_cpp: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 cargo-build_slint_cpp
+.PHONY : cargo-build_slint_cpp
+
+# fast build rule for target.
+cargo-build_slint_cpp/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/slint-build/CMakeFiles/cargo-build_slint_cpp.dir/build.make _deps/slint-build/CMakeFiles/cargo-build_slint_cpp.dir/build
+.PHONY : cargo-build_slint_cpp/fast
+
+#=============================================================================
+# Target rules for targets named cargo-prebuild_slint_cpp
+
+# Build rule for target.
+cargo-prebuild_slint_cpp: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 cargo-prebuild_slint_cpp
+.PHONY : cargo-prebuild_slint_cpp
+
+# fast build rule for target.
+cargo-prebuild_slint_cpp/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/slint-build/CMakeFiles/cargo-prebuild_slint_cpp.dir/build.make _deps/slint-build/CMakeFiles/cargo-prebuild_slint_cpp.dir/build
+.PHONY : cargo-prebuild_slint_cpp/fast
+
+#=============================================================================
+# Target rules for targets named cargo-prebuild
+
+# Build rule for target.
+cargo-prebuild: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 cargo-prebuild
+.PHONY : cargo-prebuild
+
+# fast build rule for target.
+cargo-prebuild/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/slint-build/CMakeFiles/cargo-prebuild.dir/build.make _deps/slint-build/CMakeFiles/cargo-prebuild.dir/build
+.PHONY : cargo-prebuild/fast
+
+#=============================================================================
+# Target rules for targets named cargo-clean_slint_cpp
+
+# Build rule for target.
+cargo-clean_slint_cpp: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 cargo-clean_slint_cpp
+.PHONY : cargo-clean_slint_cpp
+
+# fast build rule for target.
+cargo-clean_slint_cpp/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/slint-build/CMakeFiles/cargo-clean_slint_cpp.dir/build.make _deps/slint-build/CMakeFiles/cargo-clean_slint_cpp.dir/build
+.PHONY : cargo-clean_slint_cpp/fast
+
+#=============================================================================
+# Target rules for targets named cargo-clean
+
+# Build rule for target.
+cargo-clean: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 cargo-clean
+.PHONY : cargo-clean
+
+# fast build rule for target.
+cargo-clean/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/slint-build/CMakeFiles/cargo-clean.dir/build.make _deps/slint-build/CMakeFiles/cargo-clean.dir/build
+.PHONY : cargo-clean/fast
+
+#=============================================================================
+# Target rules for targets named _cargo-build_slint-compiler
+
+# Build rule for target.
+_cargo-build_slint-compiler: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _cargo-build_slint-compiler
+.PHONY : _cargo-build_slint-compiler
+
+# fast build rule for target.
+_cargo-build_slint-compiler/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/slint-build/CMakeFiles/_cargo-build_slint-compiler.dir/build.make _deps/slint-build/CMakeFiles/_cargo-build_slint-compiler.dir/build
+.PHONY : _cargo-build_slint-compiler/fast
+
+#=============================================================================
+# Target rules for targets named cargo-build_slint-compiler
+
+# Build rule for target.
+cargo-build_slint-compiler: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 cargo-build_slint-compiler
+.PHONY : cargo-build_slint-compiler
+
+# fast build rule for target.
+cargo-build_slint-compiler/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/slint-build/CMakeFiles/cargo-build_slint-compiler.dir/build.make _deps/slint-build/CMakeFiles/cargo-build_slint-compiler.dir/build
+.PHONY : cargo-build_slint-compiler/fast
+
+#=============================================================================
+# Target rules for targets named cargo-prebuild_slint-compiler
+
+# Build rule for target.
+cargo-prebuild_slint-compiler: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 cargo-prebuild_slint-compiler
+.PHONY : cargo-prebuild_slint-compiler
+
+# fast build rule for target.
+cargo-prebuild_slint-compiler/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/slint-build/CMakeFiles/cargo-prebuild_slint-compiler.dir/build.make _deps/slint-build/CMakeFiles/cargo-prebuild_slint-compiler.dir/build
+.PHONY : cargo-prebuild_slint-compiler/fast
+
+#=============================================================================
+# Target rules for targets named cargo-clean_slint-compiler
+
+# Build rule for target.
+cargo-clean_slint-compiler: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 cargo-clean_slint-compiler
+.PHONY : cargo-clean_slint-compiler
+
+# fast build rule for target.
+cargo-clean_slint-compiler/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/slint-build/CMakeFiles/cargo-clean_slint-compiler.dir/build.make _deps/slint-build/CMakeFiles/cargo-clean_slint-compiler.dir/build
+.PHONY : cargo-clean_slint-compiler/fast
+
+slint_generated_appwindow_1.o: slint_generated_appwindow_1.cpp.o
+.PHONY : slint_generated_appwindow_1.o
+
+# target to build an object file
+slint_generated_appwindow_1.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/smart_hub.dir/build.make CMakeFiles/smart_hub.dir/slint_generated_appwindow_1.cpp.o
+.PHONY : slint_generated_appwindow_1.cpp.o
+
+slint_generated_appwindow_1.i: slint_generated_appwindow_1.cpp.i
+.PHONY : slint_generated_appwindow_1.i
+
+# target to preprocess a source file
+slint_generated_appwindow_1.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/smart_hub.dir/build.make CMakeFiles/smart_hub.dir/slint_generated_appwindow_1.cpp.i
+.PHONY : slint_generated_appwindow_1.cpp.i
+
+slint_generated_appwindow_1.s: slint_generated_appwindow_1.cpp.s
+.PHONY : slint_generated_appwindow_1.s
+
+# target to generate assembly for a file
+slint_generated_appwindow_1.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/smart_hub.dir/build.make CMakeFiles/smart_hub.dir/slint_generated_appwindow_1.cpp.s
+.PHONY : slint_generated_appwindow_1.cpp.s
+
+src/api_server.o: src/api_server.cpp.o
+.PHONY : src/api_server.o
+
+# target to build an object file
+src/api_server.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/smart_hub.dir/build.make CMakeFiles/smart_hub.dir/src/api_server.cpp.o
+.PHONY : src/api_server.cpp.o
+
+src/api_server.i: src/api_server.cpp.i
+.PHONY : src/api_server.i
+
+# target to preprocess a source file
+src/api_server.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/smart_hub.dir/build.make CMakeFiles/smart_hub.dir/src/api_server.cpp.i
+.PHONY : src/api_server.cpp.i
+
+src/api_server.s: src/api_server.cpp.s
+.PHONY : src/api_server.s
+
+# target to generate assembly for a file
+src/api_server.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/smart_hub.dir/build.make CMakeFiles/smart_hub.dir/src/api_server.cpp.s
+.PHONY : src/api_server.cpp.s
+
+src/database.o: src/database.cpp.o
+.PHONY : src/database.o
+
+# target to build an object file
+src/database.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/smart_hub.dir/build.make CMakeFiles/smart_hub.dir/src/database.cpp.o
+.PHONY : src/database.cpp.o
+
+src/database.i: src/database.cpp.i
+.PHONY : src/database.i
+
+# target to preprocess a source file
+src/database.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/smart_hub.dir/build.make CMakeFiles/smart_hub.dir/src/database.cpp.i
+.PHONY : src/database.cpp.i
+
+src/database.s: src/database.cpp.s
+.PHONY : src/database.s
+
+# target to generate assembly for a file
+src/database.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/smart_hub.dir/build.make CMakeFiles/smart_hub.dir/src/database.cpp.s
+.PHONY : src/database.cpp.s
+
+src/main.o: src/main.cpp.o
+.PHONY : src/main.o
+
+# target to build an object file
+src/main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/smart_hub.dir/build.make CMakeFiles/smart_hub.dir/src/main.cpp.o
+.PHONY : src/main.cpp.o
+
+src/main.i: src/main.cpp.i
+.PHONY : src/main.i
+
+# target to preprocess a source file
+src/main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/smart_hub.dir/build.make CMakeFiles/smart_hub.dir/src/main.cpp.i
+.PHONY : src/main.cpp.i
+
+src/main.s: src/main.cpp.s
+.PHONY : src/main.s
+
+# target to generate assembly for a file
+src/main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/smart_hub.dir/build.make CMakeFiles/smart_hub.dir/src/main.cpp.s
+.PHONY : src/main.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -123,7 +427,36 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... edit_cache"
+	@echo "... install"
+	@echo "... install/local"
+	@echo "... install/strip"
+	@echo "... list_install_components"
+	@echo "... package"
+	@echo "... package_source"
 	@echo "... rebuild_cache"
+	@echo "... _cargo-build_slint-compiler"
+	@echo "... _cargo-build_slint_cpp"
+	@echo "... cargo-build_slint-compiler"
+	@echo "... cargo-build_slint_cpp"
+	@echo "... cargo-clean"
+	@echo "... cargo-clean_slint-compiler"
+	@echo "... cargo-clean_slint_cpp"
+	@echo "... cargo-prebuild"
+	@echo "... cargo-prebuild_slint-compiler"
+	@echo "... cargo-prebuild_slint_cpp"
+	@echo "... smart_hub"
+	@echo "... slint_generated_appwindow_1.o"
+	@echo "... slint_generated_appwindow_1.i"
+	@echo "... slint_generated_appwindow_1.s"
+	@echo "... src/api_server.o"
+	@echo "... src/api_server.i"
+	@echo "... src/api_server.s"
+	@echo "... src/database.o"
+	@echo "... src/database.i"
+	@echo "... src/database.s"
+	@echo "... src/main.o"
+	@echo "... src/main.i"
+	@echo "... src/main.s"
 .PHONY : help
 
 

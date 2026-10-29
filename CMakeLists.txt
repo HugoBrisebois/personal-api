@@ -67,7 +67,7 @@ target_link_libraries(smart_hub PRIVATE
     Slint::Slint
     nlohmann_json::nlohmann_json
     httplib::httplib
-    SQLite::SQLite3
+    SQLite3::SQLite3
     Threads::Threads
     dl
 )
