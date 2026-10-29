@@ -2,28 +2,42 @@
 
 #include <string>
 #include <sqlite3.h>
+#include <vector>
+#include <memory>
 
-class Database {
-    private:
-        sqlite3* db;
 
-    public:
-        // constructor and destructor declarations
-        Database(const std::string& db_path);
-        ~Database();
 
-        // initialization function declaration
-        void createDB(const std::string& db_path);
+namespace personalAPI {
+  class Database {
+      private:
+          sqlite3* db;
+          std::string db_path_;
+          std::string last_error_;
 
-        // execution function declaration
-        void execute_query(const std::string& query);
+      public:
+          explicit Database(const std::string& db_path);
+          ~Database();
 
-        // table creatation function declaration
-        void createTable(const std::string& query);
+          // Prevent copying to manage the SQLite resource safely
+          Database(const Database&) = delete;
+          Database& operator=(const Database&) = delete;
 
-        // list a tables function declaration
-        void listTable(const string& query);
+          // Allow moving resources cleanly
+          Database(Database&& other) noexcept;
+          Database& operator=(Database&& other) noexecpt;
+
+          bool open();
+          void close();
+
+          bool execute(const std::string& sql);
+          bool query(const std::string& sql,
+              std::vector<std::string>& outHeaders,
+              std::vector<std::vector<std::string>>& outRows);
+
+          std::vector<std::string> listTable() const;
         
-        // list content of a table function
-        void listContent(const string& query);
+          const std::string& getLastError() const { return last_error_;}
+          bool isOpen() const { return db_ != nullptr; }
+  };
+
 }
