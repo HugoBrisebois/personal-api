@@ -43,8 +43,8 @@ FetchContent_MakeAvailable(slint)
 # find the system sqlite3
 find_package(SQLite3 REQUIRED)
 
-add_library(personal_db
-  src/Database.cpp
+add_library( personal_db
+  include/database.hpp
 )
 
 target_include_directories(personal_db PUBLIC

@@ -182,6 +182,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named personal_db
+
+# Build rule for target.
+personal_db: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 personal_db
+.PHONY : personal_db
+
+# fast build rule for target.
+personal_db/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/personal_db.dir/build.make CMakeFiles/personal_db.dir/build
+.PHONY : personal_db/fast
+
+#=============================================================================
 # Target rules for targets named smart_hub
 
 # Build rule for target.
@@ -444,6 +457,7 @@ help:
 	@echo "... cargo-prebuild"
 	@echo "... cargo-prebuild_slint-compiler"
 	@echo "... cargo-prebuild_slint_cpp"
+	@echo "... personal_db"
 	@echo "... smart_hub"
 	@echo "... slint_generated_appwindow_1.o"
 	@echo "... slint_generated_appwindow_1.i"

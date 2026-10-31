@@ -1,10 +1,10 @@
-#include "../include/database.hpp"
+#include "database.hpp"
 #include <sqlite3.h>
 #include <utility>
 
-namespace PersonalAPI {
-   Database::Database(std::string dbPath)
-      : db_(nullptr), db_path_(std::move(dbPath)) {
+namespace personalAPI {
+   Database::Database(const std::string& dbPath)
+      : db(nullptr), db_path_(std::move(dbPath)) {
           open();
         }
     
@@ -13,14 +13,14 @@ namespace PersonalAPI {
       }
 
     Database::Database(Database&& other) noexcept
-      : db_(other.db_), db_path_(st::move(other.db_path_)), last_error_(std::move(other.last_error_)) {
+      : db(other.db_), db_path_(st::move(other.db_path_)), last_error_(std::move(other.last_error_)) {
           other.db_ = nullptr;
         }
 
     Database& Database::operator=(Database&& other) noexcept {
         if (this != &other) {
           close();
-          db_ = other.db_;
+          db_3 = other.db_;
           db_path_ = std::move(other.db_path_);
           last_error_ = std::move(other.last_error_);
           other.db_ = nullptr;
@@ -92,7 +92,7 @@ namespace PersonalAPI {
             }
             outRows.push_back(std::move(row));
         }
-        sqlite3_finalizw(stmt);
+        sqlite3_finalize(stmt);
         return rc == SQLITE_DONE;
     }
     
