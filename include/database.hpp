@@ -35,7 +35,7 @@ namespace personalAPI {
               std::vector<std::string>& outHeaders,
               std::vector<std::vector<std::string>>& outRows);
 
-          std::vector<std::string> listTable() const;
+          std::vector<std::string> listTables() const;
         
           const std::string& getLastError() const { return last_error;}
           bool isOpen() const { return db != nullptr; }

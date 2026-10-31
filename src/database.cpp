@@ -99,7 +99,7 @@ namespace personalAPI {
     return true;
     }
     
-    std::vector<std::string> Database::listTable() const {
+    std::vector<std::string> Database::listTables() const {
         std::vector<std::string> tables;
         if (!db) return tables;
 

@@ -26,7 +26,7 @@ int main() {
         );
 
     // list all tables managed by your api backend
-    auto tables = db.listTable();
+    auto tables = db.listTables();
     std::cout << "active tables in local database: \n";
     for (const auto& table : tables) {
       std::cout << " - " << table << "\n";
