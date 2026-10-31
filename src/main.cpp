@@ -2,7 +2,7 @@
 #include <thread>
 
 // include your custom project headers
-#include "database.hpp"
+#include "../include/database.hpp"
 #include "api_server.hpp"
 
 int main() {
@@ -12,7 +12,7 @@ int main() {
     PersonalAPI::Database db("storage/Personal.db");
 
     if (!db.isOpen()) {
-      std:cerr << "Failed to initilize database connection. \n";
+      std::cerr << "Failed to initilize database connection. \n";
       return 1;
     }
 
