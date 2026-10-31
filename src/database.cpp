@@ -1,4 +1,4 @@
-#include "database.hpp"
+#include "../include/database.hpp"
 #include <sqlite3.h>
 #include <utility>
 
@@ -104,16 +104,15 @@ namespace PersonalAPI {
         sqlite3_stmt* stmt = nullptr;
 
         if (sqlite3_prepare_v2(db_, sql.c_str(), -1, &stmt, nullptr) == SQLITE_OK) {
-            while (sqlie3_step(stmt) == SQLITE_ROW) {
+            while (sqlite3_step(stmt) == SQLITE_ROW) {
                 const char* name = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 0));
                 if (name) {
-                    tables.emplave_back(name);
-                  }
+                    tables.emplace_back(name);
+                }
               }
               sqlite3_finalize(stmt);
           }
           return tables;
-      }
-  
-}
+    }
+  }
 
