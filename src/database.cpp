@@ -17,7 +17,7 @@ namespace personalAPI {
         last_error(std::move(other.last_error)) {
           other.db = nullptr;
         }
-      }
+ 
 
     Database& Database::operator=(Database&& other) noexcept {
         if (this != &other) {
@@ -32,13 +32,13 @@ namespace personalAPI {
     }
 
     bool Database::open() {
-      if (db_) return true;
+      if (db) return true;
 
       int rc = sqlite3_open(db_path.c_str(), &db);
       if (rc != SQLITE_OK) {
-          last_error_ = sqlite3_errmsg(db);
+          last_error = sqlite3_errmsg(db);
          sqlite3_close(db);
-          db_ = nullptr;
+          db = nullptr;
          return false;
         }
         return true;
@@ -47,7 +47,7 @@ namespace personalAPI {
     void Database::close() {
       if (db) {
           sqlite3_close(db);
-          db_ = nullptr;
+          db = nullptr;
         }
     }
 
@@ -57,7 +57,7 @@ namespace personalAPI {
       char* errMsg = nullptr;
       int rc = sqlite3_exec(db, sql.c_str(), nullptr, nullptr, &errMsg);
       if(rc != SQLITE_OK) {
-          last_error_ = errMsg ? errMsg : "Unknown execution error";
+          last_error = errMsg ? errMsg : "Unknown execution error";
           sqlite3_free(errMsg);
           return false;
       }
@@ -93,12 +93,13 @@ namespace personalAPI {
         }
         outRows.push_back(std::move(row));
     }
+    }
 
     sqlite3_finalize(stmt);
     return true;
-}
+
     
-    std::vector<std::string> Database::listTables() const {
+    std::vector<std::string> Database::listTable() const {
         std::vector<std::string> tables;
         if (!db) return tables;
 
@@ -116,5 +117,5 @@ namespace personalAPI {
           }
           return tables;
     }
-
+}
 
