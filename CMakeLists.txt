@@ -51,9 +51,7 @@ target_include_directories(personal_db PUBLIC
   include
 )
 
-target_link_libraries(personal_db PRIVATE
-  SQLite3::SQLite3
-)
+target_link_libraries(personal_api PRIVATE SQLite3::SQLite3)
 
 # Find standard threading package
 find_package(Threads REQUIRED)
@@ -61,7 +59,7 @@ find_package(Threads REQUIRED)
 # Executable target Configuration
 
 add_executable(smart_hub
-    src/main.cpp
+    main.cpp
     src/database.cpp
     src/api_server.cpp
 )

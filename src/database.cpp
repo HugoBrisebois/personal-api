@@ -93,11 +93,11 @@ namespace personalAPI {
         }
         outRows.push_back(std::move(row));
     }
-    }
+    
 
     sqlite3_finalize(stmt);
     return true;
-
+    }
     
     std::vector<std::string> Database::listTable() const {
         std::vector<std::string> tables;
