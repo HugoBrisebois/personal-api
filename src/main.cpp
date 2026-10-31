@@ -9,7 +9,8 @@ int main() {
     std::cout << "Starting Smart Hub..." << std::endl;
 
     // init the sqlite database
-    personalAPI::Database db("storage/Personal.db");
+    // automatically create the data folder in the project root if its not made yet
+    personalAPI::Database db("data/personal.db");
 
     if (!db.isOpen()) {
       std::cerr << "Failed to initilize database connection. \n";
