@@ -13,7 +13,7 @@ namespace personalAPI {
       }
 
     Database::Database(Database&& other) noexcept
-      : db(other.db_), db_path_(st::move(other.db_path_)), last_error_(std::move(other.last_error_)) {
+      : db(other.db_), db_path_(std::move(other.db_path_)), last_error_(std::move(other.last_error_)) {
           other.db_ = nullptr;
         }
 
