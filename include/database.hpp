@@ -13,8 +13,8 @@ namespace personalAPI {
           sqlite3* db;
 
       public:
-          std::string db_path_;
-          std::string last_error_;
+          std::string db_path;
+          std::string last_error;
           
           explicit Database(const std::string& db_path);
           ~Database();
@@ -37,7 +37,7 @@ namespace personalAPI {
 
           std::vector<std::string> listTable() const;
         
-          const std::string& getLastError() const { return last_error_;}
+          const std::string& getLastError() const { return last_error;}
           bool isOpen() const { return db != nullptr; }
   };
 }

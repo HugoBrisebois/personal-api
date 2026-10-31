@@ -4,7 +4,7 @@
 
 namespace personalAPI {
    Database::Database(const std::string& dbPath)
-      : db(nullptr), db_path_(std::move(dbPath)) {
+      : db(nullptr), db_path(std::move(dbPath)) {
           open();
         }
     
@@ -13,26 +13,28 @@ namespace personalAPI {
       }
 
     Database::Database(Database&& other) noexcept
-      : db(other.db_), db_path_(std::move(other.db_path_)), last_error_(std::move(other.last_error_)) {
-          other.db_ = nullptr;
+      : db(other.db),
+        db_path(std::move(other.db_path)),
+        last_error(std::move(other.last_error)) {
+          other.db = nullptr;
         }
 
     Database& Database::operator=(Database&& other) noexcept {
         if (this != &other) {
           close();
-          db_3 = other.db_;
-          db_path_ = std::move(other.db_path_);
-          last_error_ = std::move(other.last_error_);
-          other.db_ = nullptr;
+          db = other.db;
+          db_path = std::move(other.db_path);
+          last_error = std::move(other.last_error);
+          other.db = nullptr;
       }
       return *this;
   
     bool Database::open() {
       if (db_) return true;
 
-      int rc = sqlite3_open(db_path.c_str(), &db_);
+      int rc = sqlite3_open(db_path.c_str(), &db);
       if (rc != SQLITE_OK) {
-          last_error_ = sqlite3_errmsg(db_);
+          last_error_ = sqlite3_errmsg(db);
          sqlite3_close(db_);
           db_ = nullptr;
          return falsel
@@ -42,13 +44,13 @@ namespace personalAPI {
 
     void Database::close() {
       if (db_) {
-          sqlite3_close(db_);
+          sqlite3_close(db);
           db_ = nullptr;
         }
     }
 
     bool Database::execute(const std::string& sql) {
-      if (!db_ && !open()) return false;
+      if (!db && !open()) return false;
 
       char* errMsg = nullptr;
       int rc = sqlite3_exec(db_, sql.c_str(), nullptr, nullptr, &errMsg);
@@ -63,10 +65,10 @@ namespace personalAPI {
     bool Database::query(const std::string& sql,
       std::vector<std::string>& outHeaders,
       std::vector<std::vector<std::string>>& outRows) {
-          if (!db_ && !open()) return false;
+          if (!db && !open()) return false;
 
           sqlite3_stmt* stmt = nullptr;
-          int rc = sqlite3_prepare_v2(db_, sql.c_str(), -1, &stmt, nullptr);
+          int rc = sqlite3_prepare_v2(db, sql.c_str(), -1, &stmt, nullptr);
           if (rc != SQLITE_OK) {
               last_error_ = sqlite3_errmsg(db_);
               return false;
@@ -103,7 +105,7 @@ namespace personalAPI {
         std::string sql = "SELECT name FROM sqlite_master WHERE type='table' AND name NOT LIKE 'sqlite_%';";
         sqlite3_stmt* stmt = nullptr;
 
-        if (sqlite3_prepare_v2(db_, sql.c_str(), -1, &stmt, nullptr) == SQLITE_OK) {
+        if (sqlite3_prepare_v2(db, sql.c_str(), -1, &stmt, nullptr) == SQLITE_OK) {
             while (sqlite3_step(stmt) == SQLITE_ROW) {
                 const char* name = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 0));
                 if (name) {
