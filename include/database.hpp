@@ -11,10 +11,11 @@ namespace personalAPI {
   class Database {
       private:
           sqlite3* db;
-          std::string db_path_;
-          std::string last_error_;
 
       public:
+          std::string db_path_;
+          std::string last_error_;
+          
           explicit Database(const std::string& db_path);
           ~Database();
 
@@ -39,5 +40,4 @@ namespace personalAPI {
           const std::string& getLastError() const { return last_error_;}
           bool isOpen() const { return db != nullptr; }
   };
-
 }
