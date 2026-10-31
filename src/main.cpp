@@ -2,8 +2,8 @@
 #include <thread>
 
 // include your custom project headers
-#include "database.hpp"
-#include "api_server.hpp"
+#include "../include/database.hpp"
+#include "../include/api_server.hpp"
 
 int main() {
     std::cout << "Starting Smart Hub..." << std::endl;
