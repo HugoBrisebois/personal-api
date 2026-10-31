@@ -18,6 +18,7 @@ namespace personalAPI {
         last_error(std::move(other.last_error)) {
           other.db = nullptr;
         }
+      }
 
     Database& Database::operator=(Database&& other) noexcept {
         if (this != &other) {
@@ -28,7 +29,8 @@ namespace personalAPI {
           other.db = nullptr;
       }
       return *this;
-  
+    }
+
     bool Database::open() {
       if (db_) return true;
 
