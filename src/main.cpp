@@ -1,29 +1,40 @@
 #include <iostream>
-#include <thread>
+#include <filesystem>
 
-// include your custom project headers
 #include "../include/database.hpp"
 #include "../include/api_server.hpp"
 
 int main() {
     std::cout << "Starting Smart Hub..." << std::endl;
 
-    // init the sqlite database
-    personalAPI::Database db("storage/Personal.db");
-
-    if (!db.isOpen()) {
-      std::cerr << "Failed to initilize database connection. \n";
+    const std::filesystem::path databasePath{"storage/Personal.db"};
+    std::error_code filesystemError;
+    std::filesystem::create_directories(databasePath.parent_path(), filesystemError);
+    if (filesystemError) {
+      std::cerr << "Failed to create database directory: "
+                << filesystemError.message() << '\n';
       return 1;
     }
 
-    // set up a metrics table for your data aggregator
-    db.execute(
+    personalAPI::Database db(databasePath.string());
+
+    if (!db.open()) {
+      std::cerr << "Failed to initialize database connection: "
+                << db.getLastError() << '\n';
+      return 1;
+    }
+
+    if (!db.execute(
         "CREATE TABLE IF NOT EXISTS metrics ("
         "id INTEGER PRIMARY KEY AUTOINCREMENT, "
         "source TEXT NOT NULL, " // garmin rowing kobo
         "payload TEXT, "
         "timestamp DATETIME DEFAULT CURRENT_TIMESTAMP);"
-        );
+        )) {
+      std::cerr << "Failed to create metrics table: "
+                << db.getLastError() << '\n';
+      return 1;
+    }
 
     // list all tables managed by your api backend
     auto tables = db.listTables();

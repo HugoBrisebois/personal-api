@@ -43,29 +43,20 @@ FetchContent_MakeAvailable(slint)
 # find the system sqlite3
 find_package(SQLite3 REQUIRED)
 
-add_library( personal_db
-  include/database.hpp
-)
-
-target_include_directories(personal_db PUBLIC
-  include
-)
-
-target_link_libraries(personal_api PRIVATE SQLite3::SQLite3)
-
-# Find standard threading package
-find_package(Threads REQUIRED)
-
 # Executable target Configuration
 
 add_executable(smart_hub
-    main.cpp
+    src/main.cpp
     src/database.cpp
     src/api_server.cpp
 )
 
+# Find standard threading package
+find_package(Threads REQUIRED)
+
+
 # process the declarative Slint UI markup file
-slint_target_sources(smart_hub ui/appwindow.slint)
+slint_target_sources(smart_hub ui/appWindow.slint)
 
 # local include directories
 target_include_directories(smart_hub PRIVATE

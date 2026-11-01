@@ -20,7 +20,6 @@ events:
     names:
       - "uname"
     candidate_directories:
-      - "/home/hugo/Documents/projects/personal-api/.venv/bin/"
       - "/home/hugo/.wakatime/"
       - "/home/hugo/.cargo/bin/"
       - "/home/hugo/.local/bin/"
@@ -28,12 +27,8 @@ events:
       - "/usr/local/bin/"
       - "/usr/bin/"
       - "/var/lib/snapd/snap/bin/"
-      - "/home/hugo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts/"
-      - "/home/hugo/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/"
-      - "/usr/share/code/bin/copilot-shim/"
       - "/bin/"
     searched_directories:
-      - "/home/hugo/Documents/projects/personal-api/.venv/bin/uname"
       - "/home/hugo/.wakatime/uname"
       - "/home/hugo/.cargo/bin/uname"
       - "/home/hugo/.local/bin/uname"
@@ -42,8 +37,6 @@ events:
     found: "/usr/bin/uname"
     search_context:
       ENV{PATH}:
-        - "/home/hugo/Documents/projects/personal-api/.venv/bin"
-        - "/home/hugo/.wakatime"
         - "/home/hugo/.wakatime"
         - "/home/hugo/.cargo/bin"
         - "/home/hugo/.wakatime"
@@ -52,9 +45,6 @@ events:
         - "/usr/local/bin"
         - "/usr/bin"
         - "/var/lib/snapd/snap/bin"
-        - "/home/hugo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts"
-        - "/home/hugo/.config/Code/User/globalStorage/github.copilot-chat/debugCommand"
-        - "/usr/share/code/bin/copilot-shim"
   -
     kind: "message-v1"
     backtrace:
@@ -65,11 +55,11 @@ events:
   -
     kind: "find-v1"
     backtrace:
-      - "/usr/share/cmake/Modules/CMakeUnixFindMake.cmake:5 (find_program)"
+      - "/usr/share/cmake/Modules/CMakeNinjaFindMake.cmake:5 (find_program)"
       - "CMakeLists.txt:2 (project)"
     mode: "program"
     variable: "CMAKE_MAKE_PROGRAM"
-    description: "Path to a program."
+    description: "Program used to build from build.ninja files."
     settings:
       SearchFramework: "NEVER"
       SearchAppBundle: "NEVER"
@@ -79,11 +69,10 @@ events:
       CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
       CMAKE_FIND_USE_INSTALL_PREFIX: true
     names:
-      - "gmake"
-      - "make"
-      - "smake"
+      - "ninja-build"
+      - "ninja"
+      - "samu"
     candidate_directories:
-      - "/home/hugo/Documents/projects/personal-api/.venv/bin/"
       - "/home/hugo/.wakatime/"
       - "/home/hugo/.cargo/bin/"
       - "/home/hugo/.local/bin/"
@@ -91,21 +80,25 @@ events:
       - "/usr/local/bin/"
       - "/usr/bin/"
       - "/var/lib/snapd/snap/bin/"
-      - "/home/hugo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts/"
-      - "/home/hugo/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/"
-      - "/usr/share/code/bin/copilot-shim/"
     searched_directories:
-      - "/home/hugo/Documents/projects/personal-api/.venv/bin/gmake"
-      - "/home/hugo/.wakatime/gmake"
-      - "/home/hugo/.cargo/bin/gmake"
-      - "/home/hugo/.local/bin/gmake"
-      - "/home/hugo/bin/gmake"
-      - "/usr/local/bin/gmake"
-    found: "/usr/bin/gmake"
+      - "/home/hugo/.wakatime/ninja-build"
+      - "/home/hugo/.wakatime/ninja"
+      - "/home/hugo/.wakatime/samu"
+      - "/home/hugo/.cargo/bin/ninja-build"
+      - "/home/hugo/.cargo/bin/ninja"
+      - "/home/hugo/.cargo/bin/samu"
+      - "/home/hugo/.local/bin/ninja-build"
+      - "/home/hugo/.local/bin/ninja"
+      - "/home/hugo/.local/bin/samu"
+      - "/home/hugo/bin/ninja-build"
+      - "/home/hugo/bin/ninja"
+      - "/home/hugo/bin/samu"
+      - "/usr/local/bin/ninja-build"
+      - "/usr/local/bin/ninja"
+      - "/usr/local/bin/samu"
+    found: "/usr/bin/ninja-build"
     search_context:
       ENV{PATH}:
-        - "/home/hugo/Documents/projects/personal-api/.venv/bin"
-        - "/home/hugo/.wakatime"
         - "/home/hugo/.wakatime"
         - "/home/hugo/.cargo/bin"
         - "/home/hugo/.wakatime"
@@ -114,72 +107,6 @@ events:
         - "/usr/local/bin"
         - "/usr/bin"
         - "/var/lib/snapd/snap/bin"
-        - "/home/hugo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts"
-        - "/home/hugo/.config/Code/User/globalStorage/github.copilot-chat/debugCommand"
-        - "/usr/share/code/bin/copilot-shim"
-  -
-    kind: "find-v1"
-    backtrace:
-      - "/usr/share/cmake/Modules/CMakeDetermineCompiler.cmake:73 (find_program)"
-      - "/usr/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake:69 (_cmake_find_compiler)"
-      - "CMakeLists.txt:2 (project)"
-    mode: "program"
-    variable: "CMAKE_CXX_COMPILER"
-    description: "CXX compiler"
-    settings:
-      SearchFramework: "NEVER"
-      SearchAppBundle: "NEVER"
-      CMAKE_FIND_USE_CMAKE_PATH: true
-      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
-      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
-      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
-      CMAKE_FIND_USE_INSTALL_PREFIX: true
-    names:
-      - "c++"
-      - "CC"
-      - "g++"
-      - "aCC"
-      - "cl"
-      - "bcc"
-      - "xlC"
-      - "icpx"
-      - "icx"
-      - "clang++"
-    candidate_directories:
-      - "/home/hugo/Documents/projects/personal-api/.venv/bin/"
-      - "/home/hugo/.wakatime/"
-      - "/home/hugo/.cargo/bin/"
-      - "/home/hugo/.local/bin/"
-      - "/home/hugo/bin/"
-      - "/usr/local/bin/"
-      - "/usr/bin/"
-      - "/var/lib/snapd/snap/bin/"
-      - "/home/hugo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts/"
-      - "/home/hugo/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/"
-      - "/usr/share/code/bin/copilot-shim/"
-    searched_directories:
-      - "/home/hugo/Documents/projects/personal-api/.venv/bin/c++"
-      - "/home/hugo/.wakatime/c++"
-      - "/home/hugo/.cargo/bin/c++"
-      - "/home/hugo/.local/bin/c++"
-      - "/home/hugo/bin/c++"
-      - "/usr/local/bin/c++"
-    found: "/usr/bin/c++"
-    search_context:
-      ENV{PATH}:
-        - "/home/hugo/Documents/projects/personal-api/.venv/bin"
-        - "/home/hugo/.wakatime"
-        - "/home/hugo/.wakatime"
-        - "/home/hugo/.cargo/bin"
-        - "/home/hugo/.wakatime"
-        - "/home/hugo/.local/bin"
-        - "/home/hugo/bin"
-        - "/usr/local/bin"
-        - "/usr/bin"
-        - "/var/lib/snapd/snap/bin"
-        - "/home/hugo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts"
-        - "/home/hugo/.config/Code/User/globalStorage/github.copilot-chat/debugCommand"
-        - "/usr/share/code/bin/copilot-shim"
   -
     kind: "find-v1"
     backtrace:
@@ -207,8 +134,6 @@ events:
     found: "/usr/share/cmake/Modules/CMakeCXXCompilerId.cpp.in"
     search_context:
       ENV{PATH}:
-        - "/home/hugo/Documents/projects/personal-api/.venv/bin"
-        - "/home/hugo/.wakatime"
         - "/home/hugo/.wakatime"
         - "/home/hugo/.cargo/bin"
         - "/home/hugo/.wakatime"
@@ -217,9 +142,6 @@ events:
         - "/usr/local/bin"
         - "/usr/bin"
         - "/var/lib/snapd/snap/bin"
-        - "/home/hugo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts"
-        - "/home/hugo/.config/Code/User/globalStorage/github.copilot-chat/debugCommand"
-        - "/usr/share/code/bin/copilot-shim"
   -
     kind: "message-v1"
     backtrace:
@@ -229,7 +151,7 @@ events:
       - "CMakeLists.txt:2 (project)"
     message: |
       Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
-      Compiler: /usr/bin/c++ 
+      Compiler: /usr/bin/g++ 
       Build flags: 
       Id flags:  
       
@@ -263,21 +185,15 @@ events:
       - "ar"
     candidate_directories:
       - "/usr/bin/"
-      - "/home/hugo/Documents/projects/personal-api/.venv/bin/"
       - "/home/hugo/.wakatime/"
       - "/home/hugo/.cargo/bin/"
       - "/home/hugo/.local/bin/"
       - "/home/hugo/bin/"
       - "/usr/local/bin/"
       - "/var/lib/snapd/snap/bin/"
-      - "/home/hugo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts/"
-      - "/home/hugo/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/"
-      - "/usr/share/code/bin/copilot-shim/"
     found: "/usr/bin/ar"
     search_context:
       ENV{PATH}:
-        - "/home/hugo/Documents/projects/personal-api/.venv/bin"
-        - "/home/hugo/.wakatime"
         - "/home/hugo/.wakatime"
         - "/home/hugo/.cargo/bin"
         - "/home/hugo/.wakatime"
@@ -286,9 +202,6 @@ events:
         - "/usr/local/bin"
         - "/usr/bin"
         - "/var/lib/snapd/snap/bin"
-        - "/home/hugo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts"
-        - "/home/hugo/.config/Code/User/globalStorage/github.copilot-chat/debugCommand"
-        - "/usr/share/code/bin/copilot-shim"
   -
     kind: "find-v1"
     backtrace:
@@ -310,21 +223,15 @@ events:
       - "ranlib"
     candidate_directories:
       - "/usr/bin/"
-      - "/home/hugo/Documents/projects/personal-api/.venv/bin/"
       - "/home/hugo/.wakatime/"
       - "/home/hugo/.cargo/bin/"
       - "/home/hugo/.local/bin/"
       - "/home/hugo/bin/"
       - "/usr/local/bin/"
       - "/var/lib/snapd/snap/bin/"
-      - "/home/hugo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts/"
-      - "/home/hugo/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/"
-      - "/usr/share/code/bin/copilot-shim/"
     found: "/usr/bin/ranlib"
     search_context:
       ENV{PATH}:
-        - "/home/hugo/Documents/projects/personal-api/.venv/bin"
-        - "/home/hugo/.wakatime"
         - "/home/hugo/.wakatime"
         - "/home/hugo/.cargo/bin"
         - "/home/hugo/.wakatime"
@@ -333,9 +240,6 @@ events:
         - "/usr/local/bin"
         - "/usr/bin"
         - "/var/lib/snapd/snap/bin"
-        - "/home/hugo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts"
-        - "/home/hugo/.config/Code/User/globalStorage/github.copilot-chat/debugCommand"
-        - "/usr/share/code/bin/copilot-shim"
   -
     kind: "find-v1"
     backtrace:
@@ -357,21 +261,15 @@ events:
       - "strip"
     candidate_directories:
       - "/usr/bin/"
-      - "/home/hugo/Documents/projects/personal-api/.venv/bin/"
       - "/home/hugo/.wakatime/"
       - "/home/hugo/.cargo/bin/"
       - "/home/hugo/.local/bin/"
       - "/home/hugo/bin/"
       - "/usr/local/bin/"
       - "/var/lib/snapd/snap/bin/"
-      - "/home/hugo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts/"
-      - "/home/hugo/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/"
-      - "/usr/share/code/bin/copilot-shim/"
     found: "/usr/bin/strip"
     search_context:
       ENV{PATH}:
-        - "/home/hugo/Documents/projects/personal-api/.venv/bin"
-        - "/home/hugo/.wakatime"
         - "/home/hugo/.wakatime"
         - "/home/hugo/.cargo/bin"
         - "/home/hugo/.wakatime"
@@ -380,9 +278,6 @@ events:
         - "/usr/local/bin"
         - "/usr/bin"
         - "/var/lib/snapd/snap/bin"
-        - "/home/hugo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts"
-        - "/home/hugo/.config/Code/User/globalStorage/github.copilot-chat/debugCommand"
-        - "/usr/share/code/bin/copilot-shim"
   -
     kind: "find-v1"
     backtrace:
@@ -404,21 +299,15 @@ events:
       - "ld"
     candidate_directories:
       - "/usr/bin/"
-      - "/home/hugo/Documents/projects/personal-api/.venv/bin/"
       - "/home/hugo/.wakatime/"
       - "/home/hugo/.cargo/bin/"
       - "/home/hugo/.local/bin/"
       - "/home/hugo/bin/"
       - "/usr/local/bin/"
       - "/var/lib/snapd/snap/bin/"
-      - "/home/hugo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts/"
-      - "/home/hugo/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/"
-      - "/usr/share/code/bin/copilot-shim/"
     found: "/usr/bin/ld"
     search_context:
       ENV{PATH}:
-        - "/home/hugo/Documents/projects/personal-api/.venv/bin"
-        - "/home/hugo/.wakatime"
         - "/home/hugo/.wakatime"
         - "/home/hugo/.cargo/bin"
         - "/home/hugo/.wakatime"
@@ -427,9 +316,6 @@ events:
         - "/usr/local/bin"
         - "/usr/bin"
         - "/var/lib/snapd/snap/bin"
-        - "/home/hugo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts"
-        - "/home/hugo/.config/Code/User/globalStorage/github.copilot-chat/debugCommand"
-        - "/usr/share/code/bin/copilot-shim"
   -
     kind: "find-v1"
     backtrace:
@@ -451,21 +337,15 @@ events:
       - "nm"
     candidate_directories:
       - "/usr/bin/"
-      - "/home/hugo/Documents/projects/personal-api/.venv/bin/"
       - "/home/hugo/.wakatime/"
       - "/home/hugo/.cargo/bin/"
       - "/home/hugo/.local/bin/"
       - "/home/hugo/bin/"
       - "/usr/local/bin/"
       - "/var/lib/snapd/snap/bin/"
-      - "/home/hugo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts/"
-      - "/home/hugo/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/"
-      - "/usr/share/code/bin/copilot-shim/"
     found: "/usr/bin/nm"
     search_context:
       ENV{PATH}:
-        - "/home/hugo/Documents/projects/personal-api/.venv/bin"
-        - "/home/hugo/.wakatime"
         - "/home/hugo/.wakatime"
         - "/home/hugo/.cargo/bin"
         - "/home/hugo/.wakatime"
@@ -474,9 +354,6 @@ events:
         - "/usr/local/bin"
         - "/usr/bin"
         - "/var/lib/snapd/snap/bin"
-        - "/home/hugo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts"
-        - "/home/hugo/.config/Code/User/globalStorage/github.copilot-chat/debugCommand"
-        - "/usr/share/code/bin/copilot-shim"
   -
     kind: "find-v1"
     backtrace:
@@ -498,21 +375,15 @@ events:
       - "objdump"
     candidate_directories:
       - "/usr/bin/"
-      - "/home/hugo/Documents/projects/personal-api/.venv/bin/"
       - "/home/hugo/.wakatime/"
       - "/home/hugo/.cargo/bin/"
       - "/home/hugo/.local/bin/"
       - "/home/hugo/bin/"
       - "/usr/local/bin/"
       - "/var/lib/snapd/snap/bin/"
-      - "/home/hugo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts/"
-      - "/home/hugo/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/"
-      - "/usr/share/code/bin/copilot-shim/"
     found: "/usr/bin/objdump"
     search_context:
       ENV{PATH}:
-        - "/home/hugo/Documents/projects/personal-api/.venv/bin"
-        - "/home/hugo/.wakatime"
         - "/home/hugo/.wakatime"
         - "/home/hugo/.cargo/bin"
         - "/home/hugo/.wakatime"
@@ -521,9 +392,6 @@ events:
         - "/usr/local/bin"
         - "/usr/bin"
         - "/var/lib/snapd/snap/bin"
-        - "/home/hugo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts"
-        - "/home/hugo/.config/Code/User/globalStorage/github.copilot-chat/debugCommand"
-        - "/usr/share/code/bin/copilot-shim"
   -
     kind: "find-v1"
     backtrace:
@@ -545,21 +413,15 @@ events:
       - "objcopy"
     candidate_directories:
       - "/usr/bin/"
-      - "/home/hugo/Documents/projects/personal-api/.venv/bin/"
       - "/home/hugo/.wakatime/"
       - "/home/hugo/.cargo/bin/"
       - "/home/hugo/.local/bin/"
       - "/home/hugo/bin/"
       - "/usr/local/bin/"
       - "/var/lib/snapd/snap/bin/"
-      - "/home/hugo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts/"
-      - "/home/hugo/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/"
-      - "/usr/share/code/bin/copilot-shim/"
     found: "/usr/bin/objcopy"
     search_context:
       ENV{PATH}:
-        - "/home/hugo/Documents/projects/personal-api/.venv/bin"
-        - "/home/hugo/.wakatime"
         - "/home/hugo/.wakatime"
         - "/home/hugo/.cargo/bin"
         - "/home/hugo/.wakatime"
@@ -568,9 +430,6 @@ events:
         - "/usr/local/bin"
         - "/usr/bin"
         - "/var/lib/snapd/snap/bin"
-        - "/home/hugo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts"
-        - "/home/hugo/.config/Code/User/globalStorage/github.copilot-chat/debugCommand"
-        - "/usr/share/code/bin/copilot-shim"
   -
     kind: "find-v1"
     backtrace:
@@ -592,21 +451,15 @@ events:
       - "readelf"
     candidate_directories:
       - "/usr/bin/"
-      - "/home/hugo/Documents/projects/personal-api/.venv/bin/"
       - "/home/hugo/.wakatime/"
       - "/home/hugo/.cargo/bin/"
       - "/home/hugo/.local/bin/"
       - "/home/hugo/bin/"
       - "/usr/local/bin/"
       - "/var/lib/snapd/snap/bin/"
-      - "/home/hugo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts/"
-      - "/home/hugo/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/"
-      - "/usr/share/code/bin/copilot-shim/"
     found: "/usr/bin/readelf"
     search_context:
       ENV{PATH}:
-        - "/home/hugo/Documents/projects/personal-api/.venv/bin"
-        - "/home/hugo/.wakatime"
         - "/home/hugo/.wakatime"
         - "/home/hugo/.cargo/bin"
         - "/home/hugo/.wakatime"
@@ -615,9 +468,6 @@ events:
         - "/usr/local/bin"
         - "/usr/bin"
         - "/var/lib/snapd/snap/bin"
-        - "/home/hugo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts"
-        - "/home/hugo/.config/Code/User/globalStorage/github.copilot-chat/debugCommand"
-        - "/usr/share/code/bin/copilot-shim"
   -
     kind: "find-v1"
     backtrace:
@@ -639,33 +489,23 @@ events:
       - "dlltool"
     candidate_directories:
       - "/usr/bin/"
-      - "/home/hugo/Documents/projects/personal-api/.venv/bin/"
       - "/home/hugo/.wakatime/"
       - "/home/hugo/.cargo/bin/"
       - "/home/hugo/.local/bin/"
       - "/home/hugo/bin/"
       - "/usr/local/bin/"
       - "/var/lib/snapd/snap/bin/"
-      - "/home/hugo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts/"
-      - "/home/hugo/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/"
-      - "/usr/share/code/bin/copilot-shim/"
     searched_directories:
       - "/usr/bin/dlltool"
-      - "/home/hugo/Documents/projects/personal-api/.venv/bin/dlltool"
       - "/home/hugo/.wakatime/dlltool"
       - "/home/hugo/.cargo/bin/dlltool"
       - "/home/hugo/.local/bin/dlltool"
       - "/home/hugo/bin/dlltool"
       - "/usr/local/bin/dlltool"
       - "/var/lib/snapd/snap/bin/dlltool"
-      - "/home/hugo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts/dlltool"
-      - "/home/hugo/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/dlltool"
-      - "/usr/share/code/bin/copilot-shim/dlltool"
     found: false
     search_context:
       ENV{PATH}:
-        - "/home/hugo/Documents/projects/personal-api/.venv/bin"
-        - "/home/hugo/.wakatime"
         - "/home/hugo/.wakatime"
         - "/home/hugo/.cargo/bin"
         - "/home/hugo/.wakatime"
@@ -674,9 +514,6 @@ events:
         - "/usr/local/bin"
         - "/usr/bin"
         - "/var/lib/snapd/snap/bin"
-        - "/home/hugo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts"
-        - "/home/hugo/.config/Code/User/globalStorage/github.copilot-chat/debugCommand"
-        - "/usr/share/code/bin/copilot-shim"
   -
     kind: "find-v1"
     backtrace:
@@ -698,21 +535,15 @@ events:
       - "addr2line"
     candidate_directories:
       - "/usr/bin/"
-      - "/home/hugo/Documents/projects/personal-api/.venv/bin/"
       - "/home/hugo/.wakatime/"
       - "/home/hugo/.cargo/bin/"
       - "/home/hugo/.local/bin/"
       - "/home/hugo/bin/"
       - "/usr/local/bin/"
       - "/var/lib/snapd/snap/bin/"
-      - "/home/hugo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts/"
-      - "/home/hugo/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/"
-      - "/usr/share/code/bin/copilot-shim/"
     found: "/usr/bin/addr2line"
     search_context:
       ENV{PATH}:
-        - "/home/hugo/Documents/projects/personal-api/.venv/bin"
-        - "/home/hugo/.wakatime"
         - "/home/hugo/.wakatime"
         - "/home/hugo/.cargo/bin"
         - "/home/hugo/.wakatime"
@@ -721,9 +552,6 @@ events:
         - "/usr/local/bin"
         - "/usr/bin"
         - "/var/lib/snapd/snap/bin"
-        - "/home/hugo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts"
-        - "/home/hugo/.config/Code/User/globalStorage/github.copilot-chat/debugCommand"
-        - "/usr/share/code/bin/copilot-shim"
   -
     kind: "find-v1"
     backtrace:
@@ -745,33 +573,23 @@ events:
       - "tapi"
     candidate_directories:
       - "/usr/bin/"
-      - "/home/hugo/Documents/projects/personal-api/.venv/bin/"
       - "/home/hugo/.wakatime/"
       - "/home/hugo/.cargo/bin/"
       - "/home/hugo/.local/bin/"
       - "/home/hugo/bin/"
       - "/usr/local/bin/"
       - "/var/lib/snapd/snap/bin/"
-      - "/home/hugo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts/"
-      - "/home/hugo/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/"
-      - "/usr/share/code/bin/copilot-shim/"
     searched_directories:
       - "/usr/bin/tapi"
-      - "/home/hugo/Documents/projects/personal-api/.venv/bin/tapi"
       - "/home/hugo/.wakatime/tapi"
       - "/home/hugo/.cargo/bin/tapi"
       - "/home/hugo/.local/bin/tapi"
       - "/home/hugo/bin/tapi"
       - "/usr/local/bin/tapi"
       - "/var/lib/snapd/snap/bin/tapi"
-      - "/home/hugo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts/tapi"
-      - "/home/hugo/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/tapi"
-      - "/usr/share/code/bin/copilot-shim/tapi"
     found: false
     search_context:
       ENV{PATH}:
-        - "/home/hugo/Documents/projects/personal-api/.venv/bin"
-        - "/home/hugo/.wakatime"
         - "/home/hugo/.wakatime"
         - "/home/hugo/.cargo/bin"
         - "/home/hugo/.wakatime"
@@ -780,9 +598,6 @@ events:
         - "/usr/local/bin"
         - "/usr/bin"
         - "/var/lib/snapd/snap/bin"
-        - "/home/hugo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts"
-        - "/home/hugo/.config/Code/User/globalStorage/github.copilot-chat/debugCommand"
-        - "/usr/share/code/bin/copilot-shim"
   -
     kind: "find-v1"
     backtrace:
@@ -807,55 +622,37 @@ events:
       - "gcc-ar"
     candidate_directories:
       - "/usr/bin/"
-      - "/home/hugo/Documents/projects/personal-api/.venv/bin/"
       - "/home/hugo/.wakatime/"
       - "/home/hugo/.cargo/bin/"
       - "/home/hugo/.local/bin/"
       - "/home/hugo/bin/"
       - "/usr/local/bin/"
       - "/var/lib/snapd/snap/bin/"
-      - "/home/hugo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts/"
-      - "/home/hugo/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/"
-      - "/usr/share/code/bin/copilot-shim/"
     searched_directories:
       - "/usr/bin/gcc-ar-16.2"
-      - "/home/hugo/Documents/projects/personal-api/.venv/bin/gcc-ar-16.2"
       - "/home/hugo/.wakatime/gcc-ar-16.2"
       - "/home/hugo/.cargo/bin/gcc-ar-16.2"
       - "/home/hugo/.local/bin/gcc-ar-16.2"
       - "/home/hugo/bin/gcc-ar-16.2"
       - "/usr/local/bin/gcc-ar-16.2"
       - "/var/lib/snapd/snap/bin/gcc-ar-16.2"
-      - "/home/hugo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts/gcc-ar-16.2"
-      - "/home/hugo/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/gcc-ar-16.2"
-      - "/usr/share/code/bin/copilot-shim/gcc-ar-16.2"
       - "/usr/bin/gcc-ar-16"
-      - "/home/hugo/Documents/projects/personal-api/.venv/bin/gcc-ar-16"
       - "/home/hugo/.wakatime/gcc-ar-16"
       - "/home/hugo/.cargo/bin/gcc-ar-16"
       - "/home/hugo/.local/bin/gcc-ar-16"
       - "/home/hugo/bin/gcc-ar-16"
       - "/usr/local/bin/gcc-ar-16"
       - "/var/lib/snapd/snap/bin/gcc-ar-16"
-      - "/home/hugo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts/gcc-ar-16"
-      - "/home/hugo/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/gcc-ar-16"
-      - "/usr/share/code/bin/copilot-shim/gcc-ar-16"
       - "/usr/bin/gcc-ar16"
-      - "/home/hugo/Documents/projects/personal-api/.venv/bin/gcc-ar16"
       - "/home/hugo/.wakatime/gcc-ar16"
       - "/home/hugo/.cargo/bin/gcc-ar16"
       - "/home/hugo/.local/bin/gcc-ar16"
       - "/home/hugo/bin/gcc-ar16"
       - "/usr/local/bin/gcc-ar16"
       - "/var/lib/snapd/snap/bin/gcc-ar16"
-      - "/home/hugo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts/gcc-ar16"
-      - "/home/hugo/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/gcc-ar16"
-      - "/usr/share/code/bin/copilot-shim/gcc-ar16"
     found: "/usr/bin/gcc-ar"
     search_context:
       ENV{PATH}:
-        - "/home/hugo/Documents/projects/personal-api/.venv/bin"
-        - "/home/hugo/.wakatime"
         - "/home/hugo/.wakatime"
         - "/home/hugo/.cargo/bin"
         - "/home/hugo/.wakatime"
@@ -864,9 +661,6 @@ events:
         - "/usr/local/bin"
         - "/usr/bin"
         - "/var/lib/snapd/snap/bin"
-        - "/home/hugo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts"
-        - "/home/hugo/.config/Code/User/globalStorage/github.copilot-chat/debugCommand"
-        - "/usr/share/code/bin/copilot-shim"
   -
     kind: "find-v1"
     backtrace:
@@ -891,55 +685,37 @@ events:
       - "gcc-ranlib"
     candidate_directories:
       - "/usr/bin/"
-      - "/home/hugo/Documents/projects/personal-api/.venv/bin/"
       - "/home/hugo/.wakatime/"
       - "/home/hugo/.cargo/bin/"
       - "/home/hugo/.local/bin/"
       - "/home/hugo/bin/"
       - "/usr/local/bin/"
       - "/var/lib/snapd/snap/bin/"
-      - "/home/hugo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts/"
-      - "/home/hugo/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/"
-      - "/usr/share/code/bin/copilot-shim/"
     searched_directories:
       - "/usr/bin/gcc-ranlib-16.2"
-      - "/home/hugo/Documents/projects/personal-api/.venv/bin/gcc-ranlib-16.2"
       - "/home/hugo/.wakatime/gcc-ranlib-16.2"
       - "/home/hugo/.cargo/bin/gcc-ranlib-16.2"
       - "/home/hugo/.local/bin/gcc-ranlib-16.2"
       - "/home/hugo/bin/gcc-ranlib-16.2"
       - "/usr/local/bin/gcc-ranlib-16.2"
       - "/var/lib/snapd/snap/bin/gcc-ranlib-16.2"
-      - "/home/hugo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts/gcc-ranlib-16.2"
-      - "/home/hugo/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/gcc-ranlib-16.2"
-      - "/usr/share/code/bin/copilot-shim/gcc-ranlib-16.2"
       - "/usr/bin/gcc-ranlib-16"
-      - "/home/hugo/Documents/projects/personal-api/.venv/bin/gcc-ranlib-16"
       - "/home/hugo/.wakatime/gcc-ranlib-16"
       - "/home/hugo/.cargo/bin/gcc-ranlib-16"
       - "/home/hugo/.local/bin/gcc-ranlib-16"
       - "/home/hugo/bin/gcc-ranlib-16"
       - "/usr/local/bin/gcc-ranlib-16"
       - "/var/lib/snapd/snap/bin/gcc-ranlib-16"
-      - "/home/hugo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts/gcc-ranlib-16"
-      - "/home/hugo/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/gcc-ranlib-16"
-      - "/usr/share/code/bin/copilot-shim/gcc-ranlib-16"
       - "/usr/bin/gcc-ranlib16"
-      - "/home/hugo/Documents/projects/personal-api/.venv/bin/gcc-ranlib16"
       - "/home/hugo/.wakatime/gcc-ranlib16"
       - "/home/hugo/.cargo/bin/gcc-ranlib16"
       - "/home/hugo/.local/bin/gcc-ranlib16"
       - "/home/hugo/bin/gcc-ranlib16"
       - "/usr/local/bin/gcc-ranlib16"
       - "/var/lib/snapd/snap/bin/gcc-ranlib16"
-      - "/home/hugo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts/gcc-ranlib16"
-      - "/home/hugo/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/gcc-ranlib16"
-      - "/usr/share/code/bin/copilot-shim/gcc-ranlib16"
     found: "/usr/bin/gcc-ranlib"
     search_context:
       ENV{PATH}:
-        - "/home/hugo/Documents/projects/personal-api/.venv/bin"
-        - "/home/hugo/.wakatime"
         - "/home/hugo/.wakatime"
         - "/home/hugo/.cargo/bin"
         - "/home/hugo/.wakatime"
@@ -948,9 +724,6 @@ events:
         - "/usr/local/bin"
         - "/usr/bin"
         - "/var/lib/snapd/snap/bin"
-        - "/home/hugo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts"
-        - "/home/hugo/.config/Code/User/globalStorage/github.copilot-chat/debugCommand"
-        - "/usr/share/code/bin/copilot-shim"
   -
     kind: "try_compile-v1"
     backtrace:
@@ -960,8 +733,8 @@ events:
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "/home/hugo/Documents/projects/personal-api/build/CMakeFiles/CMakeScratch/TryCompile-fu68Et"
-      binary: "/home/hugo/Documents/projects/personal-api/build/CMakeFiles/CMakeScratch/TryCompile-fu68Et"
+      source: "/home/hugo/Documents/projects/personal-api/build/CMakeFiles/CMakeScratch/TryCompile-4TtSD6"
+      binary: "/home/hugo/Documents/projects/personal-api/build/CMakeFiles/CMakeScratch/TryCompile-4TtSD6"
     cmakeVariables:
       CMAKE_CXX_FLAGS: ""
       CMAKE_CXX_FLAGS_DEBUG: "-g"
@@ -972,15 +745,12 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: '/home/hugo/Documents/projects/personal-api/build/CMakeFiles/CMakeScratch/TryCompile-fu68Et'
+        Change Dir: '/home/hugo/Documents/projects/personal-api/build/CMakeFiles/CMakeScratch/TryCompile-4TtSD6'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_92fd9/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_92fd9.dir/build.make CMakeFiles/cmTC_92fd9.dir/build
-        gmake[1]: Entering directory '/home/hugo/Documents/projects/personal-api/build/CMakeFiles/CMakeScratch/TryCompile-fu68Et'
-        Building CXX object CMakeFiles/cmTC_92fd9.dir/CMakeCXXCompilerABI.cpp.o
-        /usr/bin/c++   -v -o CMakeFiles/cmTC_92fd9.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp
+        Run Build Command(s): /usr/bin/ninja-build -v cmTC_f3db0
+        [1/2] /usr/bin/g++   -v -o CMakeFiles/cmTC_f3db0.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp
         Using built-in specs.
-        COLLECT_GCC=/usr/bin/c++
+        COLLECT_GCC=/usr/bin/g++
         OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa
         OFFLOAD_TARGET_DEFAULT=1
         Target: x86_64-redhat-linux
@@ -988,8 +758,8 @@ events:
         Thread model: posix
         Supported LTO compression algorithms: zlib zstd
         gcc version 16.2.1 20260819 (Red Hat 16.2.1-2) (GCC) 
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_92fd9.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-mtls-dialect=gnu2' '-dumpdir' 'CMakeFiles/cmTC_92fd9.dir/'
-         /usr/libexec/gcc/x86_64-redhat-linux/16/cc1plus -quiet -v -D_GNU_SOURCE /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_92fd9.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -mtls-dialect=gnu2 -version -o /tmp/cc8uZsX7.s
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_f3db0.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-mtls-dialect=gnu2' '-dumpdir' 'CMakeFiles/cmTC_f3db0.dir/'
+         /usr/libexec/gcc/x86_64-redhat-linux/16/cc1plus -quiet -v -D_GNU_SOURCE /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_f3db0.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -mtls-dialect=gnu2 -version -o /tmp/ccUnwZqq.s
         GNU C++20 (GCC) version 16.2.1 20260819 (Red Hat 16.2.1-2) (x86_64-redhat-linux)
         	compiled by GNU C version 16.2.1 20260819 (Red Hat 16.2.1-2), GMP version 6.3.0, MPFR version 4.2.2, MPC version 1.4.1, isl version isl-0.24-GMP
         
@@ -1006,16 +776,15 @@ events:
          /usr/include
         End of search list.
         Compiler executable checksum: 65ab9aa42e0ee60985a3e473fe6610c4
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_92fd9.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-mtls-dialect=gnu2' '-dumpdir' 'CMakeFiles/cmTC_92fd9.dir/'
-         as -v --64 -o CMakeFiles/cmTC_92fd9.dir/CMakeCXXCompilerABI.cpp.o /tmp/cc8uZsX7.s
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_f3db0.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-mtls-dialect=gnu2' '-dumpdir' 'CMakeFiles/cmTC_f3db0.dir/'
+         as -v --64 -o CMakeFiles/cmTC_f3db0.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccUnwZqq.s
         GNU assembler version 2.46.1 (x86_64-redhat-linux) using BFD version version 2.46.1-1.fc44
         COMPILER_PATH=/usr/libexec/gcc/x86_64-redhat-linux/16/:/usr/libexec/gcc/x86_64-redhat-linux/16/:/usr/libexec/gcc/x86_64-redhat-linux/:/usr/lib/gcc/x86_64-redhat-linux/16/:/usr/lib/gcc/x86_64-redhat-linux/
         LIBRARY_PATH=/usr/lib/gcc/x86_64-redhat-linux/16/:/usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib/gcc/x86_64-redhat-linux/16/../../../:/lib/:/usr/lib/
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_92fd9.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-mtls-dialect=gnu2' '-dumpdir' 'CMakeFiles/cmTC_92fd9.dir/CMakeCXXCompilerABI.cpp.'
-        Linking CXX executable cmTC_92fd9
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_92fd9.dir/link.txt --verbose=1
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_f3db0.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-mtls-dialect=gnu2' '-dumpdir' 'CMakeFiles/cmTC_f3db0.dir/CMakeCXXCompilerABI.cpp.'
+        [2/2] : && /usr/bin/g++  -v -Wl,-v CMakeFiles/cmTC_f3db0.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_f3db0   && :
         Using built-in specs.
-        COLLECT_GCC=/usr/bin/c++
+        COLLECT_GCC=/usr/bin/g++
         COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-redhat-linux/16/lto-wrapper
         OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa
         OFFLOAD_TARGET_DEFAULT=1
@@ -1026,14 +795,12 @@ events:
         gcc version 16.2.1 20260819 (Red Hat 16.2.1-2) (GCC) 
         COMPILER_PATH=/usr/libexec/gcc/x86_64-redhat-linux/16/:/usr/libexec/gcc/x86_64-redhat-linux/16/:/usr/libexec/gcc/x86_64-redhat-linux/:/usr/lib/gcc/x86_64-redhat-linux/16/:/usr/lib/gcc/x86_64-redhat-linux/
         LIBRARY_PATH=/usr/lib/gcc/x86_64-redhat-linux/16/:/usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib/gcc/x86_64-redhat-linux/16/../../../:/lib/:/usr/lib/
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_92fd9' '-foffload-options=-l_GCC_stdc++' '-foffload-options=-l_GCC_m' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-mtls-dialect=gnu2' '-dumpdir' 'cmTC_92fd9.'
-         /usr/libexec/gcc/x86_64-redhat-linux/16/collect2 -plugin /usr/libexec/gcc/x86_64-redhat-linux/16/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/16/lto-wrapper -plugin-opt=-fresolution=/tmp/ccz5PCWJ.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-latomic_asneeded -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_92fd9 /usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/16/crtbegin.o -L/usr/lib/gcc/x86_64-redhat-linux/16 -L/usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/16/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_92fd9.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -latomic_asneeded -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-redhat-linux/16/crtend.o /usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crtn.o
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_f3db0' '-foffload-options=-l_GCC_stdc++' '-foffload-options=-l_GCC_m' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-mtls-dialect=gnu2' '-dumpdir' 'cmTC_f3db0.'
+         /usr/libexec/gcc/x86_64-redhat-linux/16/collect2 -plugin /usr/libexec/gcc/x86_64-redhat-linux/16/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/16/lto-wrapper -plugin-opt=-fresolution=/tmp/ccuAoxqP.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-latomic_asneeded -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_f3db0 /usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/16/crtbegin.o -L/usr/lib/gcc/x86_64-redhat-linux/16 -L/usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/16/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_f3db0.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -latomic_asneeded -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-redhat-linux/16/crtend.o /usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crtn.o
         collect2 version 16.2.1 20260819 (Red Hat 16.2.1-2)
-        /usr/bin/ld -plugin /usr/libexec/gcc/x86_64-redhat-linux/16/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/16/lto-wrapper -plugin-opt=-fresolution=/tmp/ccz5PCWJ.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-latomic_asneeded -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_92fd9 /usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/16/crtbegin.o -L/usr/lib/gcc/x86_64-redhat-linux/16 -L/usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/16/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_92fd9.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -latomic_asneeded -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-redhat-linux/16/crtend.o /usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crtn.o
+        /usr/bin/ld -plugin /usr/libexec/gcc/x86_64-redhat-linux/16/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/16/lto-wrapper -plugin-opt=-fresolution=/tmp/ccuAoxqP.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-latomic_asneeded -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_f3db0 /usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/16/crtbegin.o -L/usr/lib/gcc/x86_64-redhat-linux/16 -L/usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/16/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_f3db0.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -latomic_asneeded -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-redhat-linux/16/crtend.o /usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crtn.o
         GNU ld version 2.46.1-1.fc44
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_92fd9' '-foffload-options=-l_GCC_stdc++' '-foffload-options=-l_GCC_m' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-mtls-dialect=gnu2' '-dumpdir' 'cmTC_92fd9.'
-        /usr/bin/c++  -v -Wl,-v CMakeFiles/cmTC_92fd9.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_92fd9
-        gmake[1]: Leaving directory '/home/hugo/Documents/projects/personal-api/build/CMakeFiles/CMakeScratch/TryCompile-fu68Et'
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_f3db0' '-foffload-options=-l_GCC_stdc++' '-foffload-options=-l_GCC_m' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-mtls-dialect=gnu2' '-dumpdir' 'cmTC_f3db0.'
         
       exitCode: 0
   -
@@ -1072,15 +839,12 @@ events:
       Parsed CXX implicit link information:
         link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
         linker tool regex: [^[ 	]*(->|"|[0-9]+>[ 	-]*Build:[ 	0-9]+ ms[ 	]*)?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)))("|,| |$)]
-        ignore line: [Change Dir: '/home/hugo/Documents/projects/personal-api/build/CMakeFiles/CMakeScratch/TryCompile-fu68Et']
+        ignore line: [Change Dir: '/home/hugo/Documents/projects/personal-api/build/CMakeFiles/CMakeScratch/TryCompile-4TtSD6']
         ignore line: []
-        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_92fd9/fast]
-        ignore line: [/usr/bin/gmake  -f CMakeFiles/cmTC_92fd9.dir/build.make CMakeFiles/cmTC_92fd9.dir/build]
-        ignore line: [gmake[1]: Entering directory '/home/hugo/Documents/projects/personal-api/build/CMakeFiles/CMakeScratch/TryCompile-fu68Et']
-        ignore line: [Building CXX object CMakeFiles/cmTC_92fd9.dir/CMakeCXXCompilerABI.cpp.o]
-        ignore line: [/usr/bin/c++   -v -o CMakeFiles/cmTC_92fd9.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [Run Build Command(s): /usr/bin/ninja-build -v cmTC_f3db0]
+        ignore line: [[1/2] /usr/bin/g++   -v -o CMakeFiles/cmTC_f3db0.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
         ignore line: [Using built-in specs.]
-        ignore line: [COLLECT_GCC=/usr/bin/c++]
+        ignore line: [COLLECT_GCC=/usr/bin/g++]
         ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa]
         ignore line: [OFFLOAD_TARGET_DEFAULT=1]
         ignore line: [Target: x86_64-redhat-linux]
@@ -1088,8 +852,8 @@ events:
         ignore line: [Thread model: posix]
         ignore line: [Supported LTO compression algorithms: zlib zstd]
         ignore line: [gcc version 16.2.1 20260819 (Red Hat 16.2.1-2) (GCC) ]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_92fd9.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-mtls-dialect=gnu2' '-dumpdir' 'CMakeFiles/cmTC_92fd9.dir/']
-        ignore line: [ /usr/libexec/gcc/x86_64-redhat-linux/16/cc1plus -quiet -v -D_GNU_SOURCE /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_92fd9.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -mtls-dialect=gnu2 -version -o /tmp/cc8uZsX7.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_f3db0.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-mtls-dialect=gnu2' '-dumpdir' 'CMakeFiles/cmTC_f3db0.dir/']
+        ignore line: [ /usr/libexec/gcc/x86_64-redhat-linux/16/cc1plus -quiet -v -D_GNU_SOURCE /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_f3db0.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -mtls-dialect=gnu2 -version -o /tmp/ccUnwZqq.s]
         ignore line: [GNU C++20 (GCC) version 16.2.1 20260819 (Red Hat 16.2.1-2) (x86_64-redhat-linux)]
         ignore line: [	compiled by GNU C version 16.2.1 20260819 (Red Hat 16.2.1-2)  GMP version 6.3.0  MPFR version 4.2.2  MPC version 1.4.1  isl version isl-0.24-GMP]
         ignore line: []
@@ -1106,16 +870,15 @@ events:
         ignore line: [ /usr/include]
         ignore line: [End of search list.]
         ignore line: [Compiler executable checksum: 65ab9aa42e0ee60985a3e473fe6610c4]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_92fd9.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-mtls-dialect=gnu2' '-dumpdir' 'CMakeFiles/cmTC_92fd9.dir/']
-        ignore line: [ as -v --64 -o CMakeFiles/cmTC_92fd9.dir/CMakeCXXCompilerABI.cpp.o /tmp/cc8uZsX7.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_f3db0.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-mtls-dialect=gnu2' '-dumpdir' 'CMakeFiles/cmTC_f3db0.dir/']
+        ignore line: [ as -v --64 -o CMakeFiles/cmTC_f3db0.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccUnwZqq.s]
         ignore line: [GNU assembler version 2.46.1 (x86_64-redhat-linux) using BFD version version 2.46.1-1.fc44]
         ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-redhat-linux/16/:/usr/libexec/gcc/x86_64-redhat-linux/16/:/usr/libexec/gcc/x86_64-redhat-linux/:/usr/lib/gcc/x86_64-redhat-linux/16/:/usr/lib/gcc/x86_64-redhat-linux/]
         ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-redhat-linux/16/:/usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib/gcc/x86_64-redhat-linux/16/../../../:/lib/:/usr/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_92fd9.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-mtls-dialect=gnu2' '-dumpdir' 'CMakeFiles/cmTC_92fd9.dir/CMakeCXXCompilerABI.cpp.']
-        ignore line: [Linking CXX executable cmTC_92fd9]
-        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_92fd9.dir/link.txt --verbose=1]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_f3db0.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-mtls-dialect=gnu2' '-dumpdir' 'CMakeFiles/cmTC_f3db0.dir/CMakeCXXCompilerABI.cpp.']
+        ignore line: [[2/2] : && /usr/bin/g++  -v -Wl -v CMakeFiles/cmTC_f3db0.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_f3db0   && :]
         ignore line: [Using built-in specs.]
-        ignore line: [COLLECT_GCC=/usr/bin/c++]
+        ignore line: [COLLECT_GCC=/usr/bin/g++]
         ignore line: [COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-redhat-linux/16/lto-wrapper]
         ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa]
         ignore line: [OFFLOAD_TARGET_DEFAULT=1]
@@ -1126,13 +889,13 @@ events:
         ignore line: [gcc version 16.2.1 20260819 (Red Hat 16.2.1-2) (GCC) ]
         ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-redhat-linux/16/:/usr/libexec/gcc/x86_64-redhat-linux/16/:/usr/libexec/gcc/x86_64-redhat-linux/:/usr/lib/gcc/x86_64-redhat-linux/16/:/usr/lib/gcc/x86_64-redhat-linux/]
         ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-redhat-linux/16/:/usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib/gcc/x86_64-redhat-linux/16/../../../:/lib/:/usr/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_92fd9' '-foffload-options=-l_GCC_stdc++' '-foffload-options=-l_GCC_m' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-mtls-dialect=gnu2' '-dumpdir' 'cmTC_92fd9.']
-        link line: [ /usr/libexec/gcc/x86_64-redhat-linux/16/collect2 -plugin /usr/libexec/gcc/x86_64-redhat-linux/16/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/16/lto-wrapper -plugin-opt=-fresolution=/tmp/ccz5PCWJ.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-latomic_asneeded -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_92fd9 /usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/16/crtbegin.o -L/usr/lib/gcc/x86_64-redhat-linux/16 -L/usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/16/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_92fd9.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -latomic_asneeded -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-redhat-linux/16/crtend.o /usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crtn.o]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_f3db0' '-foffload-options=-l_GCC_stdc++' '-foffload-options=-l_GCC_m' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-mtls-dialect=gnu2' '-dumpdir' 'cmTC_f3db0.']
+        link line: [ /usr/libexec/gcc/x86_64-redhat-linux/16/collect2 -plugin /usr/libexec/gcc/x86_64-redhat-linux/16/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/16/lto-wrapper -plugin-opt=-fresolution=/tmp/ccuAoxqP.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-latomic_asneeded -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_f3db0 /usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/16/crtbegin.o -L/usr/lib/gcc/x86_64-redhat-linux/16 -L/usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/16/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_f3db0.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -latomic_asneeded -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-redhat-linux/16/crtend.o /usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crtn.o]
           arg [/usr/libexec/gcc/x86_64-redhat-linux/16/collect2] ==> ignore
           arg [-plugin] ==> ignore
           arg [/usr/libexec/gcc/x86_64-redhat-linux/16/liblto_plugin.so] ==> ignore
           arg [-plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/16/lto-wrapper] ==> ignore
-          arg [-plugin-opt=-fresolution=/tmp/ccz5PCWJ.res] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/ccuAoxqP.res] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
           arg [-plugin-opt=-pass-through=-latomic_asneeded] ==> ignore
@@ -1148,7 +911,7 @@ events:
           arg [-dynamic-linker] ==> ignore
           arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
           arg [-o] ==> ignore
-          arg [cmTC_92fd9] ==> ignore
+          arg [cmTC_f3db0] ==> ignore
           arg [/usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crt1.o] ==> obj [/usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crt1.o]
           arg [/usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crti.o] ==> obj [/usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crti.o]
           arg [/usr/lib/gcc/x86_64-redhat-linux/16/crtbegin.o] ==> obj [/usr/lib/gcc/x86_64-redhat-linux/16/crtbegin.o]
@@ -1160,7 +923,7 @@ events:
           arg [-L/lib] ==> dir [/lib]
           arg [-L/usr/lib] ==> dir [/usr/lib]
           arg [-v] ==> ignore
-          arg [CMakeFiles/cmTC_92fd9.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+          arg [CMakeFiles/cmTC_f3db0.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
           arg [-lstdc++] ==> lib [stdc++]
           arg [-lm] ==> lib [m]
           arg [-lgcc_s] ==> lib [gcc_s]
@@ -1172,7 +935,7 @@ events:
           arg [/usr/lib/gcc/x86_64-redhat-linux/16/crtend.o] ==> obj [/usr/lib/gcc/x86_64-redhat-linux/16/crtend.o]
           arg [/usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crtn.o] ==> obj [/usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crtn.o]
         ignore line: [collect2 version 16.2.1 20260819 (Red Hat 16.2.1-2)]
-        ignore line: [/usr/bin/ld -plugin /usr/libexec/gcc/x86_64-redhat-linux/16/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/16/lto-wrapper -plugin-opt=-fresolution=/tmp/ccz5PCWJ.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-latomic_asneeded -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_92fd9 /usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/16/crtbegin.o -L/usr/lib/gcc/x86_64-redhat-linux/16 -L/usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/16/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_92fd9.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -latomic_asneeded -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-redhat-linux/16/crtend.o /usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crtn.o]
+        ignore line: [/usr/bin/ld -plugin /usr/libexec/gcc/x86_64-redhat-linux/16/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/16/lto-wrapper -plugin-opt=-fresolution=/tmp/ccuAoxqP.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-latomic_asneeded -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_f3db0 /usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/16/crtbegin.o -L/usr/lib/gcc/x86_64-redhat-linux/16 -L/usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/16/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_f3db0.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -latomic_asneeded -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-redhat-linux/16/crtend.o /usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crtn.o]
         linker tool for 'CXX': /usr/bin/ld
         collapse obj [/usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crt1.o] ==> [/usr/lib64/crt1.o]
         collapse obj [/usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crti.o] ==> [/usr/lib64/crti.o]
@@ -1224,7 +987,6 @@ events:
     names:
       - "git"
     candidate_directories:
-      - "/home/hugo/Documents/projects/personal-api/.venv/bin/"
       - "/home/hugo/.wakatime/"
       - "/home/hugo/.cargo/bin/"
       - "/home/hugo/.local/bin/"
@@ -1232,9 +994,6 @@ events:
       - "/usr/local/bin/"
       - "/usr/bin/"
       - "/var/lib/snapd/snap/bin/"
-      - "/home/hugo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts/"
-      - "/home/hugo/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/"
-      - "/usr/share/code/bin/copilot-shim/"
       - "/usr/local/bin/"
       - "/usr/local/sbin/"
       - "/usr/local/"
@@ -1253,7 +1012,6 @@ events:
       - "/opt/sbin/"
       - "/opt/"
     searched_directories:
-      - "/home/hugo/Documents/projects/personal-api/.venv/bin/git"
       - "/home/hugo/.wakatime/git"
       - "/home/hugo/.cargo/bin/git"
       - "/home/hugo/.local/bin/git"
@@ -1262,8 +1020,6 @@ events:
     found: "/usr/bin/git"
     search_context:
       ENV{PATH}:
-        - "/home/hugo/Documents/projects/personal-api/.venv/bin"
-        - "/home/hugo/.wakatime"
         - "/home/hugo/.wakatime"
         - "/home/hugo/.cargo/bin"
         - "/home/hugo/.wakatime"
@@ -1272,9 +1028,6 @@ events:
         - "/usr/local/bin"
         - "/usr/bin"
         - "/var/lib/snapd/snap/bin"
-        - "/home/hugo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts"
-        - "/home/hugo/.config/Code/User/globalStorage/github.copilot-chat/debugCommand"
-        - "/usr/share/code/bin/copilot-shim"
       CMAKE_INSTALL_PREFIX: "/usr/local"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "/usr/local"
@@ -1285,6 +1038,10 @@ events:
         - "/usr/X11R6"
         - "/usr/pkg"
         - "/opt"
+...
+
+---
+events:
   -
     kind: "try_compile-v1"
     backtrace:
@@ -1296,8 +1053,8 @@ events:
     checks:
       - "Performing Test CMAKE_HAVE_LIBC_PTHREAD"
     directories:
-      source: "/home/hugo/Documents/projects/personal-api/build/CMakeFiles/CMakeScratch/TryCompile-S7KTSt"
-      binary: "/home/hugo/Documents/projects/personal-api/build/CMakeFiles/CMakeScratch/TryCompile-S7KTSt"
+      source: "/home/hugo/Documents/projects/personal-api/build/CMakeFiles/CMakeScratch/TryCompile-mLpd4d"
+      binary: "/home/hugo/Documents/projects/personal-api/build/CMakeFiles/CMakeScratch/TryCompile-mLpd4d"
     cmakeVariables:
       CMAKE_CXX_FLAGS: ""
       CMAKE_CXX_FLAGS_DEBUG: "-g"
@@ -1307,17 +1064,11 @@ events:
       variable: "CMAKE_HAVE_LIBC_PTHREAD"
       cached: true
       stdout: |
-        Change Dir: '/home/hugo/Documents/projects/personal-api/build/CMakeFiles/CMakeScratch/TryCompile-S7KTSt'
+        Change Dir: '/home/hugo/Documents/projects/personal-api/build/CMakeFiles/CMakeScratch/TryCompile-mLpd4d'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_0f940/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_0f940.dir/build.make CMakeFiles/cmTC_0f940.dir/build
-        gmake[1]: Entering directory '/home/hugo/Documents/projects/personal-api/build/CMakeFiles/CMakeScratch/TryCompile-S7KTSt'
-        Building CXX object CMakeFiles/cmTC_0f940.dir/src.cxx.o
-        /usr/bin/c++ -DCMAKE_HAVE_LIBC_PTHREAD  -std=gnu++20 -o CMakeFiles/cmTC_0f940.dir/src.cxx.o -c /home/hugo/Documents/projects/personal-api/build/CMakeFiles/CMakeScratch/TryCompile-S7KTSt/src.cxx
-        Linking CXX executable cmTC_0f940
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0f940.dir/link.txt --verbose=1
-        /usr/bin/c++ CMakeFiles/cmTC_0f940.dir/src.cxx.o -o cmTC_0f940
-        gmake[1]: Leaving directory '/home/hugo/Documents/projects/personal-api/build/CMakeFiles/CMakeScratch/TryCompile-S7KTSt'
+        Run Build Command(s): /usr/bin/ninja-build -v cmTC_a3812
+        [1/2] /usr/bin/g++ -DCMAKE_HAVE_LIBC_PTHREAD  -std=gnu++20 -o CMakeFiles/cmTC_a3812.dir/src.cxx.o -c /home/hugo/Documents/projects/personal-api/build/CMakeFiles/CMakeScratch/TryCompile-mLpd4d/src.cxx
+        [2/2] : && /usr/bin/g++   CMakeFiles/cmTC_a3812.dir/src.cxx.o -o cmTC_a3812   && :
         
       exitCode: 0
   -
@@ -1341,7 +1092,6 @@ events:
       - "pkg-config"
       - "pkgconf"
     candidate_directories:
-      - "/home/hugo/Documents/projects/personal-api/.venv/bin/"
       - "/home/hugo/.wakatime/"
       - "/home/hugo/.cargo/bin/"
       - "/home/hugo/.local/bin/"
@@ -1349,9 +1099,12 @@ events:
       - "/usr/local/bin/"
       - "/usr/bin/"
       - "/var/lib/snapd/snap/bin/"
-      - "/home/hugo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts/"
-      - "/home/hugo/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/"
-      - "/usr/share/code/bin/copilot-shim/"
+      - "/usr/share/code/resources/app/node_modules.asar.unpacked/@vscode/ripgrep-universal/bin/linux-x64/"
+      - "/usr/local/sbin/"
+      - "/usr/sbin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/share/code/resources/app/node_modules.asar.unpacked/@github/copilot-sdk-linux-x64/ripgrep/bin/linux-x64/"
       - "/usr/local/bin/"
       - "/usr/local/sbin/"
       - "/usr/local/"
@@ -1370,8 +1123,6 @@ events:
       - "/opt/sbin/"
       - "/opt/"
     searched_directories:
-      - "/home/hugo/Documents/projects/personal-api/.venv/bin/pkg-config"
-      - "/home/hugo/Documents/projects/personal-api/.venv/bin/pkgconf"
       - "/home/hugo/.wakatime/pkg-config"
       - "/home/hugo/.wakatime/pkgconf"
       - "/home/hugo/.cargo/bin/pkg-config"
@@ -1385,19 +1136,19 @@ events:
     found: "/usr/bin/pkg-config"
     search_context:
       ENV{PATH}:
-        - "/home/hugo/Documents/projects/personal-api/.venv/bin"
-        - "/home/hugo/.wakatime"
         - "/home/hugo/.wakatime"
         - "/home/hugo/.cargo/bin"
-        - "/home/hugo/.wakatime"
         - "/home/hugo/.local/bin"
         - "/home/hugo/bin"
         - "/usr/local/bin"
         - "/usr/bin"
         - "/var/lib/snapd/snap/bin"
-        - "/home/hugo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts"
-        - "/home/hugo/.config/Code/User/globalStorage/github.copilot-chat/debugCommand"
-        - "/usr/share/code/bin/copilot-shim"
+        - "/usr/share/code/resources/app/node_modules.asar.unpacked/@vscode/ripgrep-universal/bin/linux-x64"
+        - "/usr/local/sbin"
+        - "/usr/sbin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/share/code/resources/app/node_modules.asar.unpacked/@github/copilot-sdk-linux-x64/ripgrep/bin/linux-x64"
       CMAKE_INSTALL_PREFIX: "/usr/local"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "/usr/local"
@@ -1435,19 +1186,19 @@ events:
     found: "/usr/lib64/libssl.so"
     search_context:
       ENV{PATH}:
-        - "/home/hugo/Documents/projects/personal-api/.venv/bin"
-        - "/home/hugo/.wakatime"
         - "/home/hugo/.wakatime"
         - "/home/hugo/.cargo/bin"
-        - "/home/hugo/.wakatime"
         - "/home/hugo/.local/bin"
         - "/home/hugo/bin"
         - "/usr/local/bin"
         - "/usr/bin"
         - "/var/lib/snapd/snap/bin"
-        - "/home/hugo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts"
-        - "/home/hugo/.config/Code/User/globalStorage/github.copilot-chat/debugCommand"
-        - "/usr/share/code/bin/copilot-shim"
+        - "/usr/share/code/resources/app/node_modules.asar.unpacked/@vscode/ripgrep-universal/bin/linux-x64"
+        - "/usr/local/sbin"
+        - "/usr/sbin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/share/code/resources/app/node_modules.asar.unpacked/@github/copilot-sdk-linux-x64/ripgrep/bin/linux-x64"
       CMAKE_INSTALL_PREFIX: "/usr/local"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "/usr/local"
@@ -1487,19 +1238,19 @@ events:
     found: "/usr/lib64/libcrypto.so"
     search_context:
       ENV{PATH}:
-        - "/home/hugo/Documents/projects/personal-api/.venv/bin"
-        - "/home/hugo/.wakatime"
         - "/home/hugo/.wakatime"
         - "/home/hugo/.cargo/bin"
-        - "/home/hugo/.wakatime"
         - "/home/hugo/.local/bin"
         - "/home/hugo/bin"
         - "/usr/local/bin"
         - "/usr/bin"
         - "/var/lib/snapd/snap/bin"
-        - "/home/hugo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts"
-        - "/home/hugo/.config/Code/User/globalStorage/github.copilot-chat/debugCommand"
-        - "/usr/share/code/bin/copilot-shim"
+        - "/usr/share/code/resources/app/node_modules.asar.unpacked/@vscode/ripgrep-universal/bin/linux-x64"
+        - "/usr/local/sbin"
+        - "/usr/sbin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/share/code/resources/app/node_modules.asar.unpacked/@github/copilot-sdk-linux-x64/ripgrep/bin/linux-x64"
       CMAKE_INSTALL_PREFIX: "/usr/local"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "/usr/local"
@@ -1533,8 +1284,6 @@ events:
     candidate_directories:
       - "/usr/include/include/"
       - "/usr/include/"
-      - "/home/hugo/Documents/projects/personal-api/.venv/bin/include/"
-      - "/home/hugo/Documents/projects/personal-api/.venv/bin/"
       - "/home/hugo/.wakatime/include/"
       - "/home/hugo/.wakatime/"
       - "/home/hugo/.cargo/bin/include/"
@@ -1549,12 +1298,18 @@ events:
       - "/usr/bin/"
       - "/var/lib/snapd/snap/bin/include/"
       - "/var/lib/snapd/snap/bin/"
-      - "/home/hugo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts/include/"
-      - "/home/hugo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts/"
-      - "/home/hugo/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/include/"
-      - "/home/hugo/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/"
-      - "/usr/share/code/bin/copilot-shim/include/"
-      - "/usr/share/code/bin/copilot-shim/"
+      - "/usr/share/code/resources/app/node_modules.asar.unpacked/@vscode/ripgrep-universal/bin/linux-x64/include/"
+      - "/usr/share/code/resources/app/node_modules.asar.unpacked/@vscode/ripgrep-universal/bin/linux-x64/"
+      - "/usr/local/sbin/include/"
+      - "/usr/local/sbin/"
+      - "/usr/sbin/include/"
+      - "/usr/sbin/"
+      - "/sbin/include/"
+      - "/sbin/"
+      - "/bin/include/"
+      - "/bin/"
+      - "/usr/share/code/resources/app/node_modules.asar.unpacked/@github/copilot-sdk-linux-x64/ripgrep/bin/linux-x64/include/"
+      - "/usr/share/code/resources/app/node_modules.asar.unpacked/@github/copilot-sdk-linux-x64/ripgrep/bin/linux-x64/"
       - "/usr/local/include/include/"
       - "/usr/local/include/"
       - "/usr/local/include/"
@@ -1584,19 +1339,19 @@ events:
     found: "/usr/include/"
     search_context:
       ENV{PATH}:
-        - "/home/hugo/Documents/projects/personal-api/.venv/bin"
-        - "/home/hugo/.wakatime"
         - "/home/hugo/.wakatime"
         - "/home/hugo/.cargo/bin"
-        - "/home/hugo/.wakatime"
         - "/home/hugo/.local/bin"
         - "/home/hugo/bin"
         - "/usr/local/bin"
         - "/usr/bin"
         - "/var/lib/snapd/snap/bin"
-        - "/home/hugo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts"
-        - "/home/hugo/.config/Code/User/globalStorage/github.copilot-chat/debugCommand"
-        - "/usr/share/code/bin/copilot-shim"
+        - "/usr/share/code/resources/app/node_modules.asar.unpacked/@vscode/ripgrep-universal/bin/linux-x64"
+        - "/usr/local/sbin"
+        - "/usr/sbin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/share/code/resources/app/node_modules.asar.unpacked/@github/copilot-sdk-linux-x64/ripgrep/bin/linux-x64"
       CMAKE_INSTALL_PREFIX: "/usr/local"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "/usr/local"
@@ -1631,7 +1386,6 @@ events:
       - "ssleay32MD"
     candidate_directories:
       - "/usr/lib64/"
-      - "/home/hugo/Documents/projects/personal-api/.venv/bin/"
       - "/home/hugo/.wakatime/"
       - "/home/hugo/.cargo/bin/"
       - "/home/hugo/.local/bin/lib/"
@@ -1639,9 +1393,12 @@ events:
       - "/usr/local/bin/"
       - "/usr/bin/"
       - "/var/lib/snapd/snap/bin/"
-      - "/home/hugo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts/"
-      - "/home/hugo/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/"
-      - "/usr/share/code/bin/copilot-shim/"
+      - "/usr/share/code/resources/app/node_modules.asar.unpacked/@vscode/ripgrep-universal/bin/linux-x64/"
+      - "/usr/local/sbin/"
+      - "/usr/sbin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/share/code/resources/app/node_modules.asar.unpacked/@github/copilot-sdk-linux-x64/ripgrep/bin/linux-x64/"
       - "/usr/local/lib64/"
       - "/usr/local/lib/"
       - "/usr/local/lib64/"
@@ -1661,19 +1418,19 @@ events:
     found: "/usr/lib64/libssl.so"
     search_context:
       ENV{PATH}:
-        - "/home/hugo/Documents/projects/personal-api/.venv/bin"
-        - "/home/hugo/.wakatime"
         - "/home/hugo/.wakatime"
         - "/home/hugo/.cargo/bin"
-        - "/home/hugo/.wakatime"
         - "/home/hugo/.local/bin"
         - "/home/hugo/bin"
         - "/usr/local/bin"
         - "/usr/bin"
         - "/var/lib/snapd/snap/bin"
-        - "/home/hugo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts"
-        - "/home/hugo/.config/Code/User/globalStorage/github.copilot-chat/debugCommand"
-        - "/usr/share/code/bin/copilot-shim"
+        - "/usr/share/code/resources/app/node_modules.asar.unpacked/@vscode/ripgrep-universal/bin/linux-x64"
+        - "/usr/local/sbin"
+        - "/usr/sbin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/share/code/resources/app/node_modules.asar.unpacked/@github/copilot-sdk-linux-x64/ripgrep/bin/linux-x64"
       CMAKE_INSTALL_PREFIX: "/usr/local"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "/usr/local"
@@ -1706,7 +1463,6 @@ events:
       - "crypto"
     candidate_directories:
       - "/usr/lib64/"
-      - "/home/hugo/Documents/projects/personal-api/.venv/bin/"
       - "/home/hugo/.wakatime/"
       - "/home/hugo/.cargo/bin/"
       - "/home/hugo/.local/bin/lib/"
@@ -1714,9 +1470,12 @@ events:
       - "/usr/local/bin/"
       - "/usr/bin/"
       - "/var/lib/snapd/snap/bin/"
-      - "/home/hugo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts/"
-      - "/home/hugo/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/"
-      - "/usr/share/code/bin/copilot-shim/"
+      - "/usr/share/code/resources/app/node_modules.asar.unpacked/@vscode/ripgrep-universal/bin/linux-x64/"
+      - "/usr/local/sbin/"
+      - "/usr/sbin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/share/code/resources/app/node_modules.asar.unpacked/@github/copilot-sdk-linux-x64/ripgrep/bin/linux-x64/"
       - "/usr/local/lib64/"
       - "/usr/local/lib/"
       - "/usr/local/lib64/"
@@ -1736,19 +1495,19 @@ events:
     found: "/usr/lib64/libcrypto.so"
     search_context:
       ENV{PATH}:
-        - "/home/hugo/Documents/projects/personal-api/.venv/bin"
-        - "/home/hugo/.wakatime"
         - "/home/hugo/.wakatime"
         - "/home/hugo/.cargo/bin"
-        - "/home/hugo/.wakatime"
         - "/home/hugo/.local/bin"
         - "/home/hugo/bin"
         - "/usr/local/bin"
         - "/usr/bin"
         - "/var/lib/snapd/snap/bin"
-        - "/home/hugo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts"
-        - "/home/hugo/.config/Code/User/globalStorage/github.copilot-chat/debugCommand"
-        - "/usr/share/code/bin/copilot-shim"
+        - "/usr/share/code/resources/app/node_modules.asar.unpacked/@vscode/ripgrep-universal/bin/linux-x64"
+        - "/usr/local/sbin"
+        - "/usr/sbin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/share/code/resources/app/node_modules.asar.unpacked/@github/copilot-sdk-linux-x64/ripgrep/bin/linux-x64"
       CMAKE_INSTALL_PREFIX: "/usr/local"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "/usr/local"
@@ -1780,8 +1539,6 @@ events:
     names:
       - "zlib.h"
     candidate_directories:
-      - "/home/hugo/Documents/projects/personal-api/.venv/bin/include/"
-      - "/home/hugo/Documents/projects/personal-api/.venv/bin/"
       - "/home/hugo/.wakatime/include/"
       - "/home/hugo/.wakatime/"
       - "/home/hugo/.cargo/bin/include/"
@@ -1796,12 +1553,18 @@ events:
       - "/usr/bin/"
       - "/var/lib/snapd/snap/bin/include/"
       - "/var/lib/snapd/snap/bin/"
-      - "/home/hugo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts/include/"
-      - "/home/hugo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts/"
-      - "/home/hugo/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/include/"
-      - "/home/hugo/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/"
-      - "/usr/share/code/bin/copilot-shim/include/"
-      - "/usr/share/code/bin/copilot-shim/"
+      - "/usr/share/code/resources/app/node_modules.asar.unpacked/@vscode/ripgrep-universal/bin/linux-x64/include/"
+      - "/usr/share/code/resources/app/node_modules.asar.unpacked/@vscode/ripgrep-universal/bin/linux-x64/"
+      - "/usr/local/sbin/include/"
+      - "/usr/local/sbin/"
+      - "/usr/sbin/include/"
+      - "/usr/sbin/"
+      - "/sbin/include/"
+      - "/sbin/"
+      - "/bin/include/"
+      - "/bin/"
+      - "/usr/share/code/resources/app/node_modules.asar.unpacked/@github/copilot-sdk-linux-x64/ripgrep/bin/linux-x64/include/"
+      - "/usr/share/code/resources/app/node_modules.asar.unpacked/@github/copilot-sdk-linux-x64/ripgrep/bin/linux-x64/"
       - "/usr/local/include/include/"
       - "/usr/local/include/"
       - "/usr/local/include/"
@@ -1829,8 +1592,6 @@ events:
       - "/zlib/include/"
       - "/zlib/"
     searched_directories:
-      - "/home/hugo/Documents/projects/personal-api/.venv/bin/include/zlib.h"
-      - "/home/hugo/Documents/projects/personal-api/.venv/bin/zlib.h"
       - "/home/hugo/.wakatime/include/zlib.h"
       - "/home/hugo/.wakatime/zlib.h"
       - "/home/hugo/.cargo/bin/include/zlib.h"
@@ -1845,12 +1606,18 @@ events:
       - "/usr/bin/zlib.h"
       - "/var/lib/snapd/snap/bin/include/zlib.h"
       - "/var/lib/snapd/snap/bin/zlib.h"
-      - "/home/hugo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts/include/zlib.h"
-      - "/home/hugo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts/zlib.h"
-      - "/home/hugo/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/include/zlib.h"
-      - "/home/hugo/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/zlib.h"
-      - "/usr/share/code/bin/copilot-shim/include/zlib.h"
-      - "/usr/share/code/bin/copilot-shim/zlib.h"
+      - "/usr/share/code/resources/app/node_modules.asar.unpacked/@vscode/ripgrep-universal/bin/linux-x64/include/zlib.h"
+      - "/usr/share/code/resources/app/node_modules.asar.unpacked/@vscode/ripgrep-universal/bin/linux-x64/zlib.h"
+      - "/usr/local/sbin/include/zlib.h"
+      - "/usr/local/sbin/zlib.h"
+      - "/usr/sbin/include/zlib.h"
+      - "/usr/sbin/zlib.h"
+      - "/sbin/include/zlib.h"
+      - "/sbin/zlib.h"
+      - "/bin/include/zlib.h"
+      - "/bin/zlib.h"
+      - "/usr/share/code/resources/app/node_modules.asar.unpacked/@github/copilot-sdk-linux-x64/ripgrep/bin/linux-x64/include/zlib.h"
+      - "/usr/share/code/resources/app/node_modules.asar.unpacked/@github/copilot-sdk-linux-x64/ripgrep/bin/linux-x64/zlib.h"
       - "/usr/local/include/include/zlib.h"
       - "/usr/local/include/zlib.h"
       - "/usr/local/include/zlib.h"
@@ -1859,19 +1626,19 @@ events:
     found: "/usr/include/"
     search_context:
       ENV{PATH}:
-        - "/home/hugo/Documents/projects/personal-api/.venv/bin"
-        - "/home/hugo/.wakatime"
         - "/home/hugo/.wakatime"
         - "/home/hugo/.cargo/bin"
-        - "/home/hugo/.wakatime"
         - "/home/hugo/.local/bin"
         - "/home/hugo/bin"
         - "/usr/local/bin"
         - "/usr/bin"
         - "/var/lib/snapd/snap/bin"
-        - "/home/hugo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts"
-        - "/home/hugo/.config/Code/User/globalStorage/github.copilot-chat/debugCommand"
-        - "/usr/share/code/bin/copilot-shim"
+        - "/usr/share/code/resources/app/node_modules.asar.unpacked/@vscode/ripgrep-universal/bin/linux-x64"
+        - "/usr/local/sbin"
+        - "/usr/sbin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/share/code/resources/app/node_modules.asar.unpacked/@github/copilot-sdk-linux-x64/ripgrep/bin/linux-x64"
       CMAKE_INSTALL_PREFIX: "/usr/local"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "/usr/local"
@@ -1910,7 +1677,6 @@ events:
       - "zlibvc"
       - "zlibstat"
     candidate_directories:
-      - "/home/hugo/Documents/projects/personal-api/.venv/bin/"
       - "/home/hugo/.wakatime/"
       - "/home/hugo/.cargo/bin/"
       - "/home/hugo/.local/bin/lib/"
@@ -1918,9 +1684,12 @@ events:
       - "/usr/local/bin/"
       - "/usr/bin/"
       - "/var/lib/snapd/snap/bin/"
-      - "/home/hugo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts/"
-      - "/home/hugo/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/"
-      - "/usr/share/code/bin/copilot-shim/"
+      - "/usr/share/code/resources/app/node_modules.asar.unpacked/@vscode/ripgrep-universal/bin/linux-x64/"
+      - "/usr/local/sbin/"
+      - "/usr/sbin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/share/code/resources/app/node_modules.asar.unpacked/@github/copilot-sdk-linux-x64/ripgrep/bin/linux-x64/"
       - "/usr/local/lib64/"
       - "/usr/local/lib/"
       - "/usr/local/lib64/"
@@ -1936,14 +1705,6 @@ events:
       - "/opt/"
       - "/usr/lib64/X11/"
     searched_directories:
-      - "/home/hugo/Documents/projects/personal-api/.venv/bin/"
-      - "/home/hugo/Documents/projects/personal-api/.venv/bin/"
-      - "/home/hugo/Documents/projects/personal-api/.venv/bin/"
-      - "/home/hugo/Documents/projects/personal-api/.venv/bin/"
-      - "/home/hugo/Documents/projects/personal-api/.venv/bin/"
-      - "/home/hugo/Documents/projects/personal-api/.venv/bin/"
-      - "/home/hugo/Documents/projects/personal-api/.venv/bin/"
-      - "/home/hugo/Documents/projects/personal-api/.venv/bin/"
       - "/home/hugo/.wakatime/"
       - "/home/hugo/.wakatime/"
       - "/home/hugo/.wakatime/"
@@ -2000,30 +1761,54 @@ events:
       - "/var/lib/snapd/snap/bin/"
       - "/var/lib/snapd/snap/bin/"
       - "/var/lib/snapd/snap/bin/"
-      - "/home/hugo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts/"
-      - "/home/hugo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts/"
-      - "/home/hugo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts/"
-      - "/home/hugo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts/"
-      - "/home/hugo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts/"
-      - "/home/hugo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts/"
-      - "/home/hugo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts/"
-      - "/home/hugo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts/"
-      - "/home/hugo/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/"
-      - "/home/hugo/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/"
-      - "/home/hugo/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/"
-      - "/home/hugo/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/"
-      - "/home/hugo/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/"
-      - "/home/hugo/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/"
-      - "/home/hugo/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/"
-      - "/home/hugo/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/"
-      - "/usr/share/code/bin/copilot-shim/"
-      - "/usr/share/code/bin/copilot-shim/"
-      - "/usr/share/code/bin/copilot-shim/"
-      - "/usr/share/code/bin/copilot-shim/"
-      - "/usr/share/code/bin/copilot-shim/"
-      - "/usr/share/code/bin/copilot-shim/"
-      - "/usr/share/code/bin/copilot-shim/"
-      - "/usr/share/code/bin/copilot-shim/"
+      - "/usr/share/code/resources/app/node_modules.asar.unpacked/@vscode/ripgrep-universal/bin/linux-x64/"
+      - "/usr/share/code/resources/app/node_modules.asar.unpacked/@vscode/ripgrep-universal/bin/linux-x64/"
+      - "/usr/share/code/resources/app/node_modules.asar.unpacked/@vscode/ripgrep-universal/bin/linux-x64/"
+      - "/usr/share/code/resources/app/node_modules.asar.unpacked/@vscode/ripgrep-universal/bin/linux-x64/"
+      - "/usr/share/code/resources/app/node_modules.asar.unpacked/@vscode/ripgrep-universal/bin/linux-x64/"
+      - "/usr/share/code/resources/app/node_modules.asar.unpacked/@vscode/ripgrep-universal/bin/linux-x64/"
+      - "/usr/share/code/resources/app/node_modules.asar.unpacked/@vscode/ripgrep-universal/bin/linux-x64/"
+      - "/usr/share/code/resources/app/node_modules.asar.unpacked/@vscode/ripgrep-universal/bin/linux-x64/"
+      - "/usr/local/sbin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/sbin/"
+      - "/usr/sbin/"
+      - "/usr/sbin/"
+      - "/usr/sbin/"
+      - "/usr/sbin/"
+      - "/usr/sbin/"
+      - "/usr/sbin/"
+      - "/usr/sbin/"
+      - "/usr/sbin/"
+      - "/sbin/"
+      - "/sbin/"
+      - "/sbin/"
+      - "/sbin/"
+      - "/sbin/"
+      - "/sbin/"
+      - "/sbin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/bin/"
+      - "/bin/"
+      - "/bin/"
+      - "/bin/"
+      - "/bin/"
+      - "/bin/"
+      - "/bin/"
+      - "/usr/share/code/resources/app/node_modules.asar.unpacked/@github/copilot-sdk-linux-x64/ripgrep/bin/linux-x64/"
+      - "/usr/share/code/resources/app/node_modules.asar.unpacked/@github/copilot-sdk-linux-x64/ripgrep/bin/linux-x64/"
+      - "/usr/share/code/resources/app/node_modules.asar.unpacked/@github/copilot-sdk-linux-x64/ripgrep/bin/linux-x64/"
+      - "/usr/share/code/resources/app/node_modules.asar.unpacked/@github/copilot-sdk-linux-x64/ripgrep/bin/linux-x64/"
+      - "/usr/share/code/resources/app/node_modules.asar.unpacked/@github/copilot-sdk-linux-x64/ripgrep/bin/linux-x64/"
+      - "/usr/share/code/resources/app/node_modules.asar.unpacked/@github/copilot-sdk-linux-x64/ripgrep/bin/linux-x64/"
+      - "/usr/share/code/resources/app/node_modules.asar.unpacked/@github/copilot-sdk-linux-x64/ripgrep/bin/linux-x64/"
+      - "/usr/share/code/resources/app/node_modules.asar.unpacked/@github/copilot-sdk-linux-x64/ripgrep/bin/linux-x64/"
       - "/usr/local/lib64/"
       - "/usr/local/lib64/"
       - "/usr/local/lib64/"
@@ -2067,19 +1852,19 @@ events:
     found: "/usr/lib64/libz.so"
     search_context:
       ENV{PATH}:
-        - "/home/hugo/Documents/projects/personal-api/.venv/bin"
-        - "/home/hugo/.wakatime"
         - "/home/hugo/.wakatime"
         - "/home/hugo/.cargo/bin"
-        - "/home/hugo/.wakatime"
         - "/home/hugo/.local/bin"
         - "/home/hugo/bin"
         - "/usr/local/bin"
         - "/usr/bin"
         - "/var/lib/snapd/snap/bin"
-        - "/home/hugo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts"
-        - "/home/hugo/.config/Code/User/globalStorage/github.copilot-chat/debugCommand"
-        - "/usr/share/code/bin/copilot-shim"
+        - "/usr/share/code/resources/app/node_modules.asar.unpacked/@vscode/ripgrep-universal/bin/linux-x64"
+        - "/usr/local/sbin"
+        - "/usr/sbin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/share/code/resources/app/node_modules.asar.unpacked/@github/copilot-sdk-linux-x64/ripgrep/bin/linux-x64"
       CMAKE_INSTALL_PREFIX: "/usr/local"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "/usr/local"
@@ -2119,7 +1904,6 @@ events:
       - "zlibvcd"
       - "zlibstatd"
     candidate_directories:
-      - "/home/hugo/Documents/projects/personal-api/.venv/bin/"
       - "/home/hugo/.wakatime/"
       - "/home/hugo/.cargo/bin/"
       - "/home/hugo/.local/bin/lib/"
@@ -2127,9 +1911,12 @@ events:
       - "/usr/local/bin/"
       - "/usr/bin/"
       - "/var/lib/snapd/snap/bin/"
-      - "/home/hugo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts/"
-      - "/home/hugo/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/"
-      - "/usr/share/code/bin/copilot-shim/"
+      - "/usr/share/code/resources/app/node_modules.asar.unpacked/@vscode/ripgrep-universal/bin/linux-x64/"
+      - "/usr/local/sbin/"
+      - "/usr/sbin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/share/code/resources/app/node_modules.asar.unpacked/@github/copilot-sdk-linux-x64/ripgrep/bin/linux-x64/"
       - "/usr/local/lib64/"
       - "/usr/local/lib/"
       - "/usr/local/lib64/"
@@ -2145,15 +1932,6 @@ events:
       - "/opt/"
       - "/usr/lib64/X11/"
     searched_directories:
-      - "/home/hugo/Documents/projects/personal-api/.venv/bin/"
-      - "/home/hugo/Documents/projects/personal-api/.venv/bin/"
-      - "/home/hugo/Documents/projects/personal-api/.venv/bin/"
-      - "/home/hugo/Documents/projects/personal-api/.venv/bin/"
-      - "/home/hugo/Documents/projects/personal-api/.venv/bin/"
-      - "/home/hugo/Documents/projects/personal-api/.venv/bin/"
-      - "/home/hugo/Documents/projects/personal-api/.venv/bin/"
-      - "/home/hugo/Documents/projects/personal-api/.venv/bin/"
-      - "/home/hugo/Documents/projects/personal-api/.venv/bin/"
       - "/home/hugo/.wakatime/"
       - "/home/hugo/.wakatime/"
       - "/home/hugo/.wakatime/"
@@ -2217,33 +1995,60 @@ events:
       - "/var/lib/snapd/snap/bin/"
       - "/var/lib/snapd/snap/bin/"
       - "/var/lib/snapd/snap/bin/"
-      - "/home/hugo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts/"
-      - "/home/hugo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts/"
-      - "/home/hugo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts/"
-      - "/home/hugo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts/"
-      - "/home/hugo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts/"
-      - "/home/hugo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts/"
-      - "/home/hugo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts/"
-      - "/home/hugo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts/"
-      - "/home/hugo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts/"
-      - "/home/hugo/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/"
-      - "/home/hugo/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/"
-      - "/home/hugo/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/"
-      - "/home/hugo/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/"
-      - "/home/hugo/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/"
-      - "/home/hugo/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/"
-      - "/home/hugo/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/"
-      - "/home/hugo/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/"
-      - "/home/hugo/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/"
-      - "/usr/share/code/bin/copilot-shim/"
-      - "/usr/share/code/bin/copilot-shim/"
-      - "/usr/share/code/bin/copilot-shim/"
-      - "/usr/share/code/bin/copilot-shim/"
-      - "/usr/share/code/bin/copilot-shim/"
-      - "/usr/share/code/bin/copilot-shim/"
-      - "/usr/share/code/bin/copilot-shim/"
-      - "/usr/share/code/bin/copilot-shim/"
-      - "/usr/share/code/bin/copilot-shim/"
+      - "/usr/share/code/resources/app/node_modules.asar.unpacked/@vscode/ripgrep-universal/bin/linux-x64/"
+      - "/usr/share/code/resources/app/node_modules.asar.unpacked/@vscode/ripgrep-universal/bin/linux-x64/"
+      - "/usr/share/code/resources/app/node_modules.asar.unpacked/@vscode/ripgrep-universal/bin/linux-x64/"
+      - "/usr/share/code/resources/app/node_modules.asar.unpacked/@vscode/ripgrep-universal/bin/linux-x64/"
+      - "/usr/share/code/resources/app/node_modules.asar.unpacked/@vscode/ripgrep-universal/bin/linux-x64/"
+      - "/usr/share/code/resources/app/node_modules.asar.unpacked/@vscode/ripgrep-universal/bin/linux-x64/"
+      - "/usr/share/code/resources/app/node_modules.asar.unpacked/@vscode/ripgrep-universal/bin/linux-x64/"
+      - "/usr/share/code/resources/app/node_modules.asar.unpacked/@vscode/ripgrep-universal/bin/linux-x64/"
+      - "/usr/share/code/resources/app/node_modules.asar.unpacked/@vscode/ripgrep-universal/bin/linux-x64/"
+      - "/usr/local/sbin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/sbin/"
+      - "/usr/sbin/"
+      - "/usr/sbin/"
+      - "/usr/sbin/"
+      - "/usr/sbin/"
+      - "/usr/sbin/"
+      - "/usr/sbin/"
+      - "/usr/sbin/"
+      - "/usr/sbin/"
+      - "/usr/sbin/"
+      - "/sbin/"
+      - "/sbin/"
+      - "/sbin/"
+      - "/sbin/"
+      - "/sbin/"
+      - "/sbin/"
+      - "/sbin/"
+      - "/sbin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/bin/"
+      - "/bin/"
+      - "/bin/"
+      - "/bin/"
+      - "/bin/"
+      - "/bin/"
+      - "/bin/"
+      - "/bin/"
+      - "/usr/share/code/resources/app/node_modules.asar.unpacked/@github/copilot-sdk-linux-x64/ripgrep/bin/linux-x64/"
+      - "/usr/share/code/resources/app/node_modules.asar.unpacked/@github/copilot-sdk-linux-x64/ripgrep/bin/linux-x64/"
+      - "/usr/share/code/resources/app/node_modules.asar.unpacked/@github/copilot-sdk-linux-x64/ripgrep/bin/linux-x64/"
+      - "/usr/share/code/resources/app/node_modules.asar.unpacked/@github/copilot-sdk-linux-x64/ripgrep/bin/linux-x64/"
+      - "/usr/share/code/resources/app/node_modules.asar.unpacked/@github/copilot-sdk-linux-x64/ripgrep/bin/linux-x64/"
+      - "/usr/share/code/resources/app/node_modules.asar.unpacked/@github/copilot-sdk-linux-x64/ripgrep/bin/linux-x64/"
+      - "/usr/share/code/resources/app/node_modules.asar.unpacked/@github/copilot-sdk-linux-x64/ripgrep/bin/linux-x64/"
+      - "/usr/share/code/resources/app/node_modules.asar.unpacked/@github/copilot-sdk-linux-x64/ripgrep/bin/linux-x64/"
+      - "/usr/share/code/resources/app/node_modules.asar.unpacked/@github/copilot-sdk-linux-x64/ripgrep/bin/linux-x64/"
       - "/usr/local/lib64/"
       - "/usr/local/lib64/"
       - "/usr/local/lib64/"
@@ -2373,19 +2178,19 @@ events:
     found: false
     search_context:
       ENV{PATH}:
-        - "/home/hugo/Documents/projects/personal-api/.venv/bin"
-        - "/home/hugo/.wakatime"
         - "/home/hugo/.wakatime"
         - "/home/hugo/.cargo/bin"
-        - "/home/hugo/.wakatime"
         - "/home/hugo/.local/bin"
         - "/home/hugo/bin"
         - "/usr/local/bin"
         - "/usr/bin"
         - "/var/lib/snapd/snap/bin"
-        - "/home/hugo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts"
-        - "/home/hugo/.config/Code/User/globalStorage/github.copilot-chat/debugCommand"
-        - "/usr/share/code/bin/copilot-shim"
+        - "/usr/share/code/resources/app/node_modules.asar.unpacked/@vscode/ripgrep-universal/bin/linux-x64"
+        - "/usr/local/sbin"
+        - "/usr/sbin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/share/code/resources/app/node_modules.asar.unpacked/@github/copilot-sdk-linux-x64/ripgrep/bin/linux-x64"
       CMAKE_INSTALL_PREFIX: "/usr/local"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "/usr/local"
@@ -2418,9 +2223,6 @@ events:
       - "brotli/decode.h"
       - "brotli/encode.h"
     candidate_directories:
-      - "/home/hugo/Documents/projects/personal-api/.venv/bin/include/"
-      - "/home/hugo/Documents/projects/personal-api/.venv/bin/includes/"
-      - "/home/hugo/Documents/projects/personal-api/.venv/bin/"
       - "/home/hugo/.wakatime/include/"
       - "/home/hugo/.wakatime/includes/"
       - "/home/hugo/.wakatime/"
@@ -2442,15 +2244,24 @@ events:
       - "/var/lib/snapd/snap/bin/include/"
       - "/var/lib/snapd/snap/bin/includes/"
       - "/var/lib/snapd/snap/bin/"
-      - "/home/hugo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts/include/"
-      - "/home/hugo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts/includes/"
-      - "/home/hugo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts/"
-      - "/home/hugo/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/include/"
-      - "/home/hugo/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/includes/"
-      - "/home/hugo/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/"
-      - "/usr/share/code/bin/copilot-shim/include/"
-      - "/usr/share/code/bin/copilot-shim/includes/"
-      - "/usr/share/code/bin/copilot-shim/"
+      - "/usr/share/code/resources/app/node_modules.asar.unpacked/@vscode/ripgrep-universal/bin/linux-x64/include/"
+      - "/usr/share/code/resources/app/node_modules.asar.unpacked/@vscode/ripgrep-universal/bin/linux-x64/includes/"
+      - "/usr/share/code/resources/app/node_modules.asar.unpacked/@vscode/ripgrep-universal/bin/linux-x64/"
+      - "/usr/local/sbin/include/"
+      - "/usr/local/sbin/includes/"
+      - "/usr/local/sbin/"
+      - "/usr/sbin/include/"
+      - "/usr/sbin/includes/"
+      - "/usr/sbin/"
+      - "/sbin/include/"
+      - "/sbin/includes/"
+      - "/sbin/"
+      - "/bin/include/"
+      - "/bin/includes/"
+      - "/bin/"
+      - "/usr/share/code/resources/app/node_modules.asar.unpacked/@github/copilot-sdk-linux-x64/ripgrep/bin/linux-x64/include/"
+      - "/usr/share/code/resources/app/node_modules.asar.unpacked/@github/copilot-sdk-linux-x64/ripgrep/bin/linux-x64/includes/"
+      - "/usr/share/code/resources/app/node_modules.asar.unpacked/@github/copilot-sdk-linux-x64/ripgrep/bin/linux-x64/"
       - "/usr/local/include/include/"
       - "/usr/local/include/includes/"
       - "/usr/local/include/"
@@ -2488,9 +2299,6 @@ events:
       - "/usr/include/X11/includes/"
       - "/usr/include/X11/"
     searched_directories:
-      - "/home/hugo/Documents/projects/personal-api/.venv/bin/include/brotli/decode.h"
-      - "/home/hugo/Documents/projects/personal-api/.venv/bin/includes/brotli/decode.h"
-      - "/home/hugo/Documents/projects/personal-api/.venv/bin/brotli/decode.h"
       - "/home/hugo/.wakatime/include/brotli/decode.h"
       - "/home/hugo/.wakatime/includes/brotli/decode.h"
       - "/home/hugo/.wakatime/brotli/decode.h"
@@ -2512,15 +2320,24 @@ events:
       - "/var/lib/snapd/snap/bin/include/brotli/decode.h"
       - "/var/lib/snapd/snap/bin/includes/brotli/decode.h"
       - "/var/lib/snapd/snap/bin/brotli/decode.h"
-      - "/home/hugo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts/include/brotli/decode.h"
-      - "/home/hugo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts/includes/brotli/decode.h"
-      - "/home/hugo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts/brotli/decode.h"
-      - "/home/hugo/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/include/brotli/decode.h"
-      - "/home/hugo/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/includes/brotli/decode.h"
-      - "/home/hugo/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/brotli/decode.h"
-      - "/usr/share/code/bin/copilot-shim/include/brotli/decode.h"
-      - "/usr/share/code/bin/copilot-shim/includes/brotli/decode.h"
-      - "/usr/share/code/bin/copilot-shim/brotli/decode.h"
+      - "/usr/share/code/resources/app/node_modules.asar.unpacked/@vscode/ripgrep-universal/bin/linux-x64/include/brotli/decode.h"
+      - "/usr/share/code/resources/app/node_modules.asar.unpacked/@vscode/ripgrep-universal/bin/linux-x64/includes/brotli/decode.h"
+      - "/usr/share/code/resources/app/node_modules.asar.unpacked/@vscode/ripgrep-universal/bin/linux-x64/brotli/decode.h"
+      - "/usr/local/sbin/include/brotli/decode.h"
+      - "/usr/local/sbin/includes/brotli/decode.h"
+      - "/usr/local/sbin/brotli/decode.h"
+      - "/usr/sbin/include/brotli/decode.h"
+      - "/usr/sbin/includes/brotli/decode.h"
+      - "/usr/sbin/brotli/decode.h"
+      - "/sbin/include/brotli/decode.h"
+      - "/sbin/includes/brotli/decode.h"
+      - "/sbin/brotli/decode.h"
+      - "/bin/include/brotli/decode.h"
+      - "/bin/includes/brotli/decode.h"
+      - "/bin/brotli/decode.h"
+      - "/usr/share/code/resources/app/node_modules.asar.unpacked/@github/copilot-sdk-linux-x64/ripgrep/bin/linux-x64/include/brotli/decode.h"
+      - "/usr/share/code/resources/app/node_modules.asar.unpacked/@github/copilot-sdk-linux-x64/ripgrep/bin/linux-x64/includes/brotli/decode.h"
+      - "/usr/share/code/resources/app/node_modules.asar.unpacked/@github/copilot-sdk-linux-x64/ripgrep/bin/linux-x64/brotli/decode.h"
       - "/usr/local/include/include/brotli/decode.h"
       - "/usr/local/include/includes/brotli/decode.h"
       - "/usr/local/include/brotli/decode.h"
@@ -2532,19 +2349,19 @@ events:
     found: "/usr/include/"
     search_context:
       ENV{PATH}:
-        - "/home/hugo/Documents/projects/personal-api/.venv/bin"
-        - "/home/hugo/.wakatime"
         - "/home/hugo/.wakatime"
         - "/home/hugo/.cargo/bin"
-        - "/home/hugo/.wakatime"
         - "/home/hugo/.local/bin"
         - "/home/hugo/bin"
         - "/usr/local/bin"
         - "/usr/bin"
         - "/var/lib/snapd/snap/bin"
-        - "/home/hugo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts"
-        - "/home/hugo/.config/Code/User/globalStorage/github.copilot-chat/debugCommand"
-        - "/usr/share/code/bin/copilot-shim"
+        - "/usr/share/code/resources/app/node_modules.asar.unpacked/@vscode/ripgrep-universal/bin/linux-x64"
+        - "/usr/local/sbin"
+        - "/usr/sbin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/share/code/resources/app/node_modules.asar.unpacked/@github/copilot-sdk-linux-x64/ripgrep/bin/linux-x64"
       CMAKE_INSTALL_PREFIX: "/usr/local"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "/usr/local"
@@ -2584,19 +2401,19 @@ events:
     found: "/usr/lib64/libbrotlicommon.so"
     search_context:
       ENV{PATH}:
-        - "/home/hugo/Documents/projects/personal-api/.venv/bin"
-        - "/home/hugo/.wakatime"
         - "/home/hugo/.wakatime"
         - "/home/hugo/.cargo/bin"
-        - "/home/hugo/.wakatime"
         - "/home/hugo/.local/bin"
         - "/home/hugo/bin"
         - "/usr/local/bin"
         - "/usr/bin"
         - "/var/lib/snapd/snap/bin"
-        - "/home/hugo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts"
-        - "/home/hugo/.config/Code/User/globalStorage/github.copilot-chat/debugCommand"
-        - "/usr/share/code/bin/copilot-shim"
+        - "/usr/share/code/resources/app/node_modules.asar.unpacked/@vscode/ripgrep-universal/bin/linux-x64"
+        - "/usr/local/sbin"
+        - "/usr/sbin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/share/code/resources/app/node_modules.asar.unpacked/@github/copilot-sdk-linux-x64/ripgrep/bin/linux-x64"
       CMAKE_INSTALL_PREFIX: "/usr/local"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "/usr/local"
@@ -2636,19 +2453,19 @@ events:
     found: "/usr/lib64/libbrotlidec.so"
     search_context:
       ENV{PATH}:
-        - "/home/hugo/Documents/projects/personal-api/.venv/bin"
-        - "/home/hugo/.wakatime"
         - "/home/hugo/.wakatime"
         - "/home/hugo/.cargo/bin"
-        - "/home/hugo/.wakatime"
         - "/home/hugo/.local/bin"
         - "/home/hugo/bin"
         - "/usr/local/bin"
         - "/usr/bin"
         - "/var/lib/snapd/snap/bin"
-        - "/home/hugo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts"
-        - "/home/hugo/.config/Code/User/globalStorage/github.copilot-chat/debugCommand"
-        - "/usr/share/code/bin/copilot-shim"
+        - "/usr/share/code/resources/app/node_modules.asar.unpacked/@vscode/ripgrep-universal/bin/linux-x64"
+        - "/usr/local/sbin"
+        - "/usr/sbin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/share/code/resources/app/node_modules.asar.unpacked/@github/copilot-sdk-linux-x64/ripgrep/bin/linux-x64"
       CMAKE_INSTALL_PREFIX: "/usr/local"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "/usr/local"
@@ -2688,19 +2505,19 @@ events:
     found: "/usr/lib64/libbrotlienc.so"
     search_context:
       ENV{PATH}:
-        - "/home/hugo/Documents/projects/personal-api/.venv/bin"
-        - "/home/hugo/.wakatime"
         - "/home/hugo/.wakatime"
         - "/home/hugo/.cargo/bin"
-        - "/home/hugo/.wakatime"
         - "/home/hugo/.local/bin"
         - "/home/hugo/bin"
         - "/usr/local/bin"
         - "/usr/bin"
         - "/var/lib/snapd/snap/bin"
-        - "/home/hugo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts"
-        - "/home/hugo/.config/Code/User/globalStorage/github.copilot-chat/debugCommand"
-        - "/usr/share/code/bin/copilot-shim"
+        - "/usr/share/code/resources/app/node_modules.asar.unpacked/@vscode/ripgrep-universal/bin/linux-x64"
+        - "/usr/local/sbin"
+        - "/usr/sbin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/share/code/resources/app/node_modules.asar.unpacked/@github/copilot-sdk-linux-x64/ripgrep/bin/linux-x64"
       CMAKE_INSTALL_PREFIX: "/usr/local"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "/usr/local"
@@ -2713,59 +2530,6 @@ events:
         - "/opt"
       CMAKE_SYSTEM_LIBRARY_PATH:
         - "/usr/lib/X11"
-  -
-    kind: "find-v1"
-    backtrace:
-      - "/usr/share/cmake/Modules/CMakeDetermineCompiler.cmake:54 (find_program)"
-      - "/usr/share/cmake/Modules/CMakeDetermineCCompiler.cmake:64 (_cmake_find_compiler)"
-      - "build/_deps/slint-src/api/cpp/CMakeLists.txt:8 (project)"
-    mode: "program"
-    variable: "CMAKE_C_COMPILER"
-    description: "C compiler"
-    settings:
-      SearchFramework: "NEVER"
-      SearchAppBundle: "NEVER"
-      CMAKE_FIND_USE_CMAKE_PATH: true
-      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
-      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
-      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
-      CMAKE_FIND_USE_INSTALL_PREFIX: true
-    names:
-      - "cc"
-      - "gcc"
-      - "cl"
-      - "bcc"
-      - "xlc"
-      - "icx"
-      - "clang"
-    candidate_directories:
-      - "/usr/bin/"
-    found: "/usr/bin/cc"
-    search_context:
-      ENV{PATH}:
-        - "/home/hugo/Documents/projects/personal-api/.venv/bin"
-        - "/home/hugo/.wakatime"
-        - "/home/hugo/.wakatime"
-        - "/home/hugo/.cargo/bin"
-        - "/home/hugo/.wakatime"
-        - "/home/hugo/.local/bin"
-        - "/home/hugo/bin"
-        - "/usr/local/bin"
-        - "/usr/bin"
-        - "/var/lib/snapd/snap/bin"
-        - "/home/hugo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts"
-        - "/home/hugo/.config/Code/User/globalStorage/github.copilot-chat/debugCommand"
-        - "/usr/share/code/bin/copilot-shim"
-      CMAKE_INSTALL_PREFIX: "/usr/local"
-      CMAKE_SYSTEM_PREFIX_PATH:
-        - "/usr/local"
-        - "/usr"
-        - "/"
-        - "/usr"
-        - "/usr/local"
-        - "/usr/X11R6"
-        - "/usr/pkg"
-        - "/opt"
   -
     kind: "find-v1"
     backtrace:
@@ -2793,19 +2557,19 @@ events:
     found: "/usr/share/cmake/Modules/CMakeCCompilerId.c.in"
     search_context:
       ENV{PATH}:
-        - "/home/hugo/Documents/projects/personal-api/.venv/bin"
-        - "/home/hugo/.wakatime"
         - "/home/hugo/.wakatime"
         - "/home/hugo/.cargo/bin"
-        - "/home/hugo/.wakatime"
         - "/home/hugo/.local/bin"
         - "/home/hugo/bin"
         - "/usr/local/bin"
         - "/usr/bin"
         - "/var/lib/snapd/snap/bin"
-        - "/home/hugo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts"
-        - "/home/hugo/.config/Code/User/globalStorage/github.copilot-chat/debugCommand"
-        - "/usr/share/code/bin/copilot-shim"
+        - "/usr/share/code/resources/app/node_modules.asar.unpacked/@vscode/ripgrep-universal/bin/linux-x64"
+        - "/usr/local/sbin"
+        - "/usr/sbin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/share/code/resources/app/node_modules.asar.unpacked/@github/copilot-sdk-linux-x64/ripgrep/bin/linux-x64"
       CMAKE_INSTALL_PREFIX: "/usr/local"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "/usr/local"
@@ -2827,7 +2591,7 @@ events:
       - "build/_deps/slint-src/api/cpp/CMakeLists.txt:8 (project)"
     message: |
       Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
-      Compiler: /usr/bin/cc 
+      Compiler: /usr/bin/gcc 
       Build flags: 
       Id flags:  
       
@@ -2864,16 +2628,18 @@ events:
       - "gcc-ar"
     candidate_directories:
       - "/usr/bin/"
-      - "/home/hugo/Documents/projects/personal-api/.venv/bin/"
       - "/home/hugo/.wakatime/"
       - "/home/hugo/.cargo/bin/"
       - "/home/hugo/.local/bin/"
       - "/home/hugo/bin/"
       - "/usr/local/bin/"
       - "/var/lib/snapd/snap/bin/"
-      - "/home/hugo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts/"
-      - "/home/hugo/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/"
-      - "/usr/share/code/bin/copilot-shim/"
+      - "/usr/share/code/resources/app/node_modules.asar.unpacked/@vscode/ripgrep-universal/bin/linux-x64/"
+      - "/usr/local/sbin/"
+      - "/usr/sbin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/share/code/resources/app/node_modules.asar.unpacked/@github/copilot-sdk-linux-x64/ripgrep/bin/linux-x64/"
       - "/usr/local/bin/"
       - "/usr/local/sbin/"
       - "/usr/local/"
@@ -2893,16 +2659,18 @@ events:
       - "/opt/"
     searched_directories:
       - "/usr/bin/gcc-ar-16.2"
-      - "/home/hugo/Documents/projects/personal-api/.venv/bin/gcc-ar-16.2"
       - "/home/hugo/.wakatime/gcc-ar-16.2"
       - "/home/hugo/.cargo/bin/gcc-ar-16.2"
       - "/home/hugo/.local/bin/gcc-ar-16.2"
       - "/home/hugo/bin/gcc-ar-16.2"
       - "/usr/local/bin/gcc-ar-16.2"
       - "/var/lib/snapd/snap/bin/gcc-ar-16.2"
-      - "/home/hugo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts/gcc-ar-16.2"
-      - "/home/hugo/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/gcc-ar-16.2"
-      - "/usr/share/code/bin/copilot-shim/gcc-ar-16.2"
+      - "/usr/share/code/resources/app/node_modules.asar.unpacked/@vscode/ripgrep-universal/bin/linux-x64/gcc-ar-16.2"
+      - "/usr/local/sbin/gcc-ar-16.2"
+      - "/usr/sbin/gcc-ar-16.2"
+      - "/sbin/gcc-ar-16.2"
+      - "/bin/gcc-ar-16.2"
+      - "/usr/share/code/resources/app/node_modules.asar.unpacked/@github/copilot-sdk-linux-x64/ripgrep/bin/linux-x64/gcc-ar-16.2"
       - "/usr/local/bin/gcc-ar-16.2"
       - "/usr/local/sbin/gcc-ar-16.2"
       - "/usr/local/gcc-ar-16.2"
@@ -2921,16 +2689,18 @@ events:
       - "/opt/sbin/gcc-ar-16.2"
       - "/opt/gcc-ar-16.2"
       - "/usr/bin/gcc-ar-16"
-      - "/home/hugo/Documents/projects/personal-api/.venv/bin/gcc-ar-16"
       - "/home/hugo/.wakatime/gcc-ar-16"
       - "/home/hugo/.cargo/bin/gcc-ar-16"
       - "/home/hugo/.local/bin/gcc-ar-16"
       - "/home/hugo/bin/gcc-ar-16"
       - "/usr/local/bin/gcc-ar-16"
       - "/var/lib/snapd/snap/bin/gcc-ar-16"
-      - "/home/hugo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts/gcc-ar-16"
-      - "/home/hugo/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/gcc-ar-16"
-      - "/usr/share/code/bin/copilot-shim/gcc-ar-16"
+      - "/usr/share/code/resources/app/node_modules.asar.unpacked/@vscode/ripgrep-universal/bin/linux-x64/gcc-ar-16"
+      - "/usr/local/sbin/gcc-ar-16"
+      - "/usr/sbin/gcc-ar-16"
+      - "/sbin/gcc-ar-16"
+      - "/bin/gcc-ar-16"
+      - "/usr/share/code/resources/app/node_modules.asar.unpacked/@github/copilot-sdk-linux-x64/ripgrep/bin/linux-x64/gcc-ar-16"
       - "/usr/local/bin/gcc-ar-16"
       - "/usr/local/sbin/gcc-ar-16"
       - "/usr/local/gcc-ar-16"
@@ -2949,16 +2719,18 @@ events:
       - "/opt/sbin/gcc-ar-16"
       - "/opt/gcc-ar-16"
       - "/usr/bin/gcc-ar16"
-      - "/home/hugo/Documents/projects/personal-api/.venv/bin/gcc-ar16"
       - "/home/hugo/.wakatime/gcc-ar16"
       - "/home/hugo/.cargo/bin/gcc-ar16"
       - "/home/hugo/.local/bin/gcc-ar16"
       - "/home/hugo/bin/gcc-ar16"
       - "/usr/local/bin/gcc-ar16"
       - "/var/lib/snapd/snap/bin/gcc-ar16"
-      - "/home/hugo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts/gcc-ar16"
-      - "/home/hugo/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/gcc-ar16"
-      - "/usr/share/code/bin/copilot-shim/gcc-ar16"
+      - "/usr/share/code/resources/app/node_modules.asar.unpacked/@vscode/ripgrep-universal/bin/linux-x64/gcc-ar16"
+      - "/usr/local/sbin/gcc-ar16"
+      - "/usr/sbin/gcc-ar16"
+      - "/sbin/gcc-ar16"
+      - "/bin/gcc-ar16"
+      - "/usr/share/code/resources/app/node_modules.asar.unpacked/@github/copilot-sdk-linux-x64/ripgrep/bin/linux-x64/gcc-ar16"
       - "/usr/local/bin/gcc-ar16"
       - "/usr/local/sbin/gcc-ar16"
       - "/usr/local/gcc-ar16"
@@ -2979,19 +2751,19 @@ events:
     found: "/usr/bin/gcc-ar"
     search_context:
       ENV{PATH}:
-        - "/home/hugo/Documents/projects/personal-api/.venv/bin"
-        - "/home/hugo/.wakatime"
         - "/home/hugo/.wakatime"
         - "/home/hugo/.cargo/bin"
-        - "/home/hugo/.wakatime"
         - "/home/hugo/.local/bin"
         - "/home/hugo/bin"
         - "/usr/local/bin"
         - "/usr/bin"
         - "/var/lib/snapd/snap/bin"
-        - "/home/hugo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts"
-        - "/home/hugo/.config/Code/User/globalStorage/github.copilot-chat/debugCommand"
-        - "/usr/share/code/bin/copilot-shim"
+        - "/usr/share/code/resources/app/node_modules.asar.unpacked/@vscode/ripgrep-universal/bin/linux-x64"
+        - "/usr/local/sbin"
+        - "/usr/sbin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/share/code/resources/app/node_modules.asar.unpacked/@github/copilot-sdk-linux-x64/ripgrep/bin/linux-x64"
       CMAKE_INSTALL_PREFIX: "/usr/local"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "/usr/local"
@@ -3026,16 +2798,18 @@ events:
       - "gcc-ranlib"
     candidate_directories:
       - "/usr/bin/"
-      - "/home/hugo/Documents/projects/personal-api/.venv/bin/"
       - "/home/hugo/.wakatime/"
       - "/home/hugo/.cargo/bin/"
       - "/home/hugo/.local/bin/"
       - "/home/hugo/bin/"
       - "/usr/local/bin/"
       - "/var/lib/snapd/snap/bin/"
-      - "/home/hugo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts/"
-      - "/home/hugo/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/"
-      - "/usr/share/code/bin/copilot-shim/"
+      - "/usr/share/code/resources/app/node_modules.asar.unpacked/@vscode/ripgrep-universal/bin/linux-x64/"
+      - "/usr/local/sbin/"
+      - "/usr/sbin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/share/code/resources/app/node_modules.asar.unpacked/@github/copilot-sdk-linux-x64/ripgrep/bin/linux-x64/"
       - "/usr/local/bin/"
       - "/usr/local/sbin/"
       - "/usr/local/"
@@ -3055,16 +2829,18 @@ events:
       - "/opt/"
     searched_directories:
       - "/usr/bin/gcc-ranlib-16.2"
-      - "/home/hugo/Documents/projects/personal-api/.venv/bin/gcc-ranlib-16.2"
       - "/home/hugo/.wakatime/gcc-ranlib-16.2"
       - "/home/hugo/.cargo/bin/gcc-ranlib-16.2"
       - "/home/hugo/.local/bin/gcc-ranlib-16.2"
       - "/home/hugo/bin/gcc-ranlib-16.2"
       - "/usr/local/bin/gcc-ranlib-16.2"
       - "/var/lib/snapd/snap/bin/gcc-ranlib-16.2"
-      - "/home/hugo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts/gcc-ranlib-16.2"
-      - "/home/hugo/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/gcc-ranlib-16.2"
-      - "/usr/share/code/bin/copilot-shim/gcc-ranlib-16.2"
+      - "/usr/share/code/resources/app/node_modules.asar.unpacked/@vscode/ripgrep-universal/bin/linux-x64/gcc-ranlib-16.2"
+      - "/usr/local/sbin/gcc-ranlib-16.2"
+      - "/usr/sbin/gcc-ranlib-16.2"
+      - "/sbin/gcc-ranlib-16.2"
+      - "/bin/gcc-ranlib-16.2"
+      - "/usr/share/code/resources/app/node_modules.asar.unpacked/@github/copilot-sdk-linux-x64/ripgrep/bin/linux-x64/gcc-ranlib-16.2"
       - "/usr/local/bin/gcc-ranlib-16.2"
       - "/usr/local/sbin/gcc-ranlib-16.2"
       - "/usr/local/gcc-ranlib-16.2"
@@ -3083,16 +2859,18 @@ events:
       - "/opt/sbin/gcc-ranlib-16.2"
       - "/opt/gcc-ranlib-16.2"
       - "/usr/bin/gcc-ranlib-16"
-      - "/home/hugo/Documents/projects/personal-api/.venv/bin/gcc-ranlib-16"
       - "/home/hugo/.wakatime/gcc-ranlib-16"
       - "/home/hugo/.cargo/bin/gcc-ranlib-16"
       - "/home/hugo/.local/bin/gcc-ranlib-16"
       - "/home/hugo/bin/gcc-ranlib-16"
       - "/usr/local/bin/gcc-ranlib-16"
       - "/var/lib/snapd/snap/bin/gcc-ranlib-16"
-      - "/home/hugo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts/gcc-ranlib-16"
-      - "/home/hugo/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/gcc-ranlib-16"
-      - "/usr/share/code/bin/copilot-shim/gcc-ranlib-16"
+      - "/usr/share/code/resources/app/node_modules.asar.unpacked/@vscode/ripgrep-universal/bin/linux-x64/gcc-ranlib-16"
+      - "/usr/local/sbin/gcc-ranlib-16"
+      - "/usr/sbin/gcc-ranlib-16"
+      - "/sbin/gcc-ranlib-16"
+      - "/bin/gcc-ranlib-16"
+      - "/usr/share/code/resources/app/node_modules.asar.unpacked/@github/copilot-sdk-linux-x64/ripgrep/bin/linux-x64/gcc-ranlib-16"
       - "/usr/local/bin/gcc-ranlib-16"
       - "/usr/local/sbin/gcc-ranlib-16"
       - "/usr/local/gcc-ranlib-16"
@@ -3111,16 +2889,18 @@ events:
       - "/opt/sbin/gcc-ranlib-16"
       - "/opt/gcc-ranlib-16"
       - "/usr/bin/gcc-ranlib16"
-      - "/home/hugo/Documents/projects/personal-api/.venv/bin/gcc-ranlib16"
       - "/home/hugo/.wakatime/gcc-ranlib16"
       - "/home/hugo/.cargo/bin/gcc-ranlib16"
       - "/home/hugo/.local/bin/gcc-ranlib16"
       - "/home/hugo/bin/gcc-ranlib16"
       - "/usr/local/bin/gcc-ranlib16"
       - "/var/lib/snapd/snap/bin/gcc-ranlib16"
-      - "/home/hugo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts/gcc-ranlib16"
-      - "/home/hugo/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/gcc-ranlib16"
-      - "/usr/share/code/bin/copilot-shim/gcc-ranlib16"
+      - "/usr/share/code/resources/app/node_modules.asar.unpacked/@vscode/ripgrep-universal/bin/linux-x64/gcc-ranlib16"
+      - "/usr/local/sbin/gcc-ranlib16"
+      - "/usr/sbin/gcc-ranlib16"
+      - "/sbin/gcc-ranlib16"
+      - "/bin/gcc-ranlib16"
+      - "/usr/share/code/resources/app/node_modules.asar.unpacked/@github/copilot-sdk-linux-x64/ripgrep/bin/linux-x64/gcc-ranlib16"
       - "/usr/local/bin/gcc-ranlib16"
       - "/usr/local/sbin/gcc-ranlib16"
       - "/usr/local/gcc-ranlib16"
@@ -3141,19 +2921,19 @@ events:
     found: "/usr/bin/gcc-ranlib"
     search_context:
       ENV{PATH}:
-        - "/home/hugo/Documents/projects/personal-api/.venv/bin"
-        - "/home/hugo/.wakatime"
         - "/home/hugo/.wakatime"
         - "/home/hugo/.cargo/bin"
-        - "/home/hugo/.wakatime"
         - "/home/hugo/.local/bin"
         - "/home/hugo/bin"
         - "/usr/local/bin"
         - "/usr/bin"
         - "/var/lib/snapd/snap/bin"
-        - "/home/hugo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts"
-        - "/home/hugo/.config/Code/User/globalStorage/github.copilot-chat/debugCommand"
-        - "/usr/share/code/bin/copilot-shim"
+        - "/usr/share/code/resources/app/node_modules.asar.unpacked/@vscode/ripgrep-universal/bin/linux-x64"
+        - "/usr/local/sbin"
+        - "/usr/sbin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/share/code/resources/app/node_modules.asar.unpacked/@github/copilot-sdk-linux-x64/ripgrep/bin/linux-x64"
       CMAKE_INSTALL_PREFIX: "/usr/local"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "/usr/local"
@@ -3173,8 +2953,8 @@ events:
     checks:
       - "Detecting C compiler ABI info"
     directories:
-      source: "/home/hugo/Documents/projects/personal-api/build/CMakeFiles/CMakeScratch/TryCompile-o5GVgE"
-      binary: "/home/hugo/Documents/projects/personal-api/build/CMakeFiles/CMakeScratch/TryCompile-o5GVgE"
+      source: "/home/hugo/Documents/projects/personal-api/build/CMakeFiles/CMakeScratch/TryCompile-NFVmdb"
+      binary: "/home/hugo/Documents/projects/personal-api/build/CMakeFiles/CMakeScratch/TryCompile-NFVmdb"
     cmakeVariables:
       CMAKE_CXX_STDLIB_MODULES_JSON: ""
       CMAKE_C_FLAGS: ""
@@ -3184,15 +2964,12 @@ events:
       variable: "CMAKE_C_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: '/home/hugo/Documents/projects/personal-api/build/CMakeFiles/CMakeScratch/TryCompile-o5GVgE'
+        Change Dir: '/home/hugo/Documents/projects/personal-api/build/CMakeFiles/CMakeScratch/TryCompile-NFVmdb'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_14cc8/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_14cc8.dir/build.make CMakeFiles/cmTC_14cc8.dir/build
-        gmake[1]: Entering directory '/home/hugo/Documents/projects/personal-api/build/CMakeFiles/CMakeScratch/TryCompile-o5GVgE'
-        Building C object CMakeFiles/cmTC_14cc8.dir/CMakeCCompilerABI.c.o
-        /usr/bin/cc   -v -o CMakeFiles/cmTC_14cc8.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake/Modules/CMakeCCompilerABI.c
+        Run Build Command(s): /usr/bin/ninja-build -v cmTC_f5802
+        [1/2] /usr/bin/gcc   -v -o CMakeFiles/cmTC_f5802.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake/Modules/CMakeCCompilerABI.c
         Using built-in specs.
-        COLLECT_GCC=/usr/bin/cc
+        COLLECT_GCC=/usr/bin/gcc
         OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa
         OFFLOAD_TARGET_DEFAULT=1
         Target: x86_64-redhat-linux
@@ -3200,8 +2977,8 @@ events:
         Thread model: posix
         Supported LTO compression algorithms: zlib zstd
         gcc version 16.2.1 20260819 (Red Hat 16.2.1-2) (GCC) 
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_14cc8.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-mtls-dialect=gnu2' '-dumpdir' 'CMakeFiles/cmTC_14cc8.dir/'
-         /usr/libexec/gcc/x86_64-redhat-linux/16/cc1 -quiet -v /usr/share/cmake/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_14cc8.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -mtls-dialect=gnu2 -version -o /tmp/ccNCFt1Z.s
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_f5802.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-mtls-dialect=gnu2' '-dumpdir' 'CMakeFiles/cmTC_f5802.dir/'
+         /usr/libexec/gcc/x86_64-redhat-linux/16/cc1 -quiet -v /usr/share/cmake/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_f5802.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -mtls-dialect=gnu2 -version -o /tmp/ccsBczY8.s
         GNU C23 (GCC) version 16.2.1 20260819 (Red Hat 16.2.1-2) (x86_64-redhat-linux)
         	compiled by GNU C version 16.2.1 20260819 (Red Hat 16.2.1-2), GMP version 6.3.0, MPFR version 4.2.2, MPC version 1.4.1, isl version isl-0.24-GMP
         
@@ -3215,16 +2992,15 @@ events:
          /usr/include
         End of search list.
         Compiler executable checksum: 9bab69ee039b57e5d63c6dcf5d331ec2
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_14cc8.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-mtls-dialect=gnu2' '-dumpdir' 'CMakeFiles/cmTC_14cc8.dir/'
-         as -v --64 -o CMakeFiles/cmTC_14cc8.dir/CMakeCCompilerABI.c.o /tmp/ccNCFt1Z.s
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_f5802.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-mtls-dialect=gnu2' '-dumpdir' 'CMakeFiles/cmTC_f5802.dir/'
+         as -v --64 -o CMakeFiles/cmTC_f5802.dir/CMakeCCompilerABI.c.o /tmp/ccsBczY8.s
         GNU assembler version 2.46.1 (x86_64-redhat-linux) using BFD version version 2.46.1-1.fc44
         COMPILER_PATH=/usr/libexec/gcc/x86_64-redhat-linux/16/:/usr/libexec/gcc/x86_64-redhat-linux/16/:/usr/libexec/gcc/x86_64-redhat-linux/:/usr/lib/gcc/x86_64-redhat-linux/16/:/usr/lib/gcc/x86_64-redhat-linux/
         LIBRARY_PATH=/usr/lib/gcc/x86_64-redhat-linux/16/:/usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib/gcc/x86_64-redhat-linux/16/../../../:/lib/:/usr/lib/
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_14cc8.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-mtls-dialect=gnu2' '-dumpdir' 'CMakeFiles/cmTC_14cc8.dir/CMakeCCompilerABI.c.'
-        Linking C executable cmTC_14cc8
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_14cc8.dir/link.txt --verbose=1
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_f5802.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-mtls-dialect=gnu2' '-dumpdir' 'CMakeFiles/cmTC_f5802.dir/CMakeCCompilerABI.c.'
+        [2/2] : && /usr/bin/gcc  -v -Wl,-v CMakeFiles/cmTC_f5802.dir/CMakeCCompilerABI.c.o -o cmTC_f5802   && :
         Using built-in specs.
-        COLLECT_GCC=/usr/bin/cc
+        COLLECT_GCC=/usr/bin/gcc
         COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-redhat-linux/16/lto-wrapper
         OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa
         OFFLOAD_TARGET_DEFAULT=1
@@ -3235,14 +3011,12 @@ events:
         gcc version 16.2.1 20260819 (Red Hat 16.2.1-2) (GCC) 
         COMPILER_PATH=/usr/libexec/gcc/x86_64-redhat-linux/16/:/usr/libexec/gcc/x86_64-redhat-linux/16/:/usr/libexec/gcc/x86_64-redhat-linux/:/usr/lib/gcc/x86_64-redhat-linux/16/:/usr/lib/gcc/x86_64-redhat-linux/
         LIBRARY_PATH=/usr/lib/gcc/x86_64-redhat-linux/16/:/usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib/gcc/x86_64-redhat-linux/16/../../../:/lib/:/usr/lib/
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_14cc8' '-mtune=generic' '-march=x86-64' '-mtls-dialect=gnu2' '-dumpdir' 'cmTC_14cc8.'
-         /usr/libexec/gcc/x86_64-redhat-linux/16/collect2 -plugin /usr/libexec/gcc/x86_64-redhat-linux/16/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/16/lto-wrapper -plugin-opt=-fresolution=/tmp/ccJ2o2Zi.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s_asneeded -plugin-opt=-pass-through=-latomic_asneeded -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s_asneeded --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_14cc8 /usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/16/crtbegin.o -L/usr/lib/gcc/x86_64-redhat-linux/16 -L/usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/16/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_14cc8.dir/CMakeCCompilerABI.c.o -lgcc -lgcc_s_asneeded -latomic_asneeded -lc -lgcc -lgcc_s_asneeded /usr/lib/gcc/x86_64-redhat-linux/16/crtend.o /usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crtn.o
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_f5802' '-mtune=generic' '-march=x86-64' '-mtls-dialect=gnu2' '-dumpdir' 'cmTC_f5802.'
+         /usr/libexec/gcc/x86_64-redhat-linux/16/collect2 -plugin /usr/libexec/gcc/x86_64-redhat-linux/16/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/16/lto-wrapper -plugin-opt=-fresolution=/tmp/cc2fFSOa.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s_asneeded -plugin-opt=-pass-through=-latomic_asneeded -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s_asneeded --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_f5802 /usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/16/crtbegin.o -L/usr/lib/gcc/x86_64-redhat-linux/16 -L/usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/16/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_f5802.dir/CMakeCCompilerABI.c.o -lgcc -lgcc_s_asneeded -latomic_asneeded -lc -lgcc -lgcc_s_asneeded /usr/lib/gcc/x86_64-redhat-linux/16/crtend.o /usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crtn.o
         collect2 version 16.2.1 20260819 (Red Hat 16.2.1-2)
-        /usr/bin/ld -plugin /usr/libexec/gcc/x86_64-redhat-linux/16/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/16/lto-wrapper -plugin-opt=-fresolution=/tmp/ccJ2o2Zi.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s_asneeded -plugin-opt=-pass-through=-latomic_asneeded -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s_asneeded --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_14cc8 /usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/16/crtbegin.o -L/usr/lib/gcc/x86_64-redhat-linux/16 -L/usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/16/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_14cc8.dir/CMakeCCompilerABI.c.o -lgcc -lgcc_s_asneeded -latomic_asneeded -lc -lgcc -lgcc_s_asneeded /usr/lib/gcc/x86_64-redhat-linux/16/crtend.o /usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crtn.o
+        /usr/bin/ld -plugin /usr/libexec/gcc/x86_64-redhat-linux/16/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/16/lto-wrapper -plugin-opt=-fresolution=/tmp/cc2fFSOa.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s_asneeded -plugin-opt=-pass-through=-latomic_asneeded -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s_asneeded --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_f5802 /usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/16/crtbegin.o -L/usr/lib/gcc/x86_64-redhat-linux/16 -L/usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/16/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_f5802.dir/CMakeCCompilerABI.c.o -lgcc -lgcc_s_asneeded -latomic_asneeded -lc -lgcc -lgcc_s_asneeded /usr/lib/gcc/x86_64-redhat-linux/16/crtend.o /usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crtn.o
         GNU ld version 2.46.1-1.fc44
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_14cc8' '-mtune=generic' '-march=x86-64' '-mtls-dialect=gnu2' '-dumpdir' 'cmTC_14cc8.'
-        /usr/bin/cc  -v -Wl,-v CMakeFiles/cmTC_14cc8.dir/CMakeCCompilerABI.c.o -o cmTC_14cc8
-        gmake[1]: Leaving directory '/home/hugo/Documents/projects/personal-api/build/CMakeFiles/CMakeScratch/TryCompile-o5GVgE'
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_f5802' '-mtune=generic' '-march=x86-64' '-mtls-dialect=gnu2' '-dumpdir' 'cmTC_f5802.'
         
       exitCode: 0
   -
@@ -3275,15 +3049,12 @@ events:
       Parsed C implicit link information:
         link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
         linker tool regex: [^[ 	]*(->|"|[0-9]+>[ 	-]*Build:[ 	0-9]+ ms[ 	]*)?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)))("|,| |$)]
-        ignore line: [Change Dir: '/home/hugo/Documents/projects/personal-api/build/CMakeFiles/CMakeScratch/TryCompile-o5GVgE']
+        ignore line: [Change Dir: '/home/hugo/Documents/projects/personal-api/build/CMakeFiles/CMakeScratch/TryCompile-NFVmdb']
         ignore line: []
-        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_14cc8/fast]
-        ignore line: [/usr/bin/gmake  -f CMakeFiles/cmTC_14cc8.dir/build.make CMakeFiles/cmTC_14cc8.dir/build]
-        ignore line: [gmake[1]: Entering directory '/home/hugo/Documents/projects/personal-api/build/CMakeFiles/CMakeScratch/TryCompile-o5GVgE']
-        ignore line: [Building C object CMakeFiles/cmTC_14cc8.dir/CMakeCCompilerABI.c.o]
-        ignore line: [/usr/bin/cc   -v -o CMakeFiles/cmTC_14cc8.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake/Modules/CMakeCCompilerABI.c]
+        ignore line: [Run Build Command(s): /usr/bin/ninja-build -v cmTC_f5802]
+        ignore line: [[1/2] /usr/bin/gcc   -v -o CMakeFiles/cmTC_f5802.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake/Modules/CMakeCCompilerABI.c]
         ignore line: [Using built-in specs.]
-        ignore line: [COLLECT_GCC=/usr/bin/cc]
+        ignore line: [COLLECT_GCC=/usr/bin/gcc]
         ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa]
         ignore line: [OFFLOAD_TARGET_DEFAULT=1]
         ignore line: [Target: x86_64-redhat-linux]
@@ -3291,8 +3062,8 @@ events:
         ignore line: [Thread model: posix]
         ignore line: [Supported LTO compression algorithms: zlib zstd]
         ignore line: [gcc version 16.2.1 20260819 (Red Hat 16.2.1-2) (GCC) ]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_14cc8.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-mtls-dialect=gnu2' '-dumpdir' 'CMakeFiles/cmTC_14cc8.dir/']
-        ignore line: [ /usr/libexec/gcc/x86_64-redhat-linux/16/cc1 -quiet -v /usr/share/cmake/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_14cc8.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -mtls-dialect=gnu2 -version -o /tmp/ccNCFt1Z.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_f5802.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-mtls-dialect=gnu2' '-dumpdir' 'CMakeFiles/cmTC_f5802.dir/']
+        ignore line: [ /usr/libexec/gcc/x86_64-redhat-linux/16/cc1 -quiet -v /usr/share/cmake/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_f5802.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -mtls-dialect=gnu2 -version -o /tmp/ccsBczY8.s]
         ignore line: [GNU C23 (GCC) version 16.2.1 20260819 (Red Hat 16.2.1-2) (x86_64-redhat-linux)]
         ignore line: [	compiled by GNU C version 16.2.1 20260819 (Red Hat 16.2.1-2)  GMP version 6.3.0  MPFR version 4.2.2  MPC version 1.4.1  isl version isl-0.24-GMP]
         ignore line: []
@@ -3306,16 +3077,15 @@ events:
         ignore line: [ /usr/include]
         ignore line: [End of search list.]
         ignore line: [Compiler executable checksum: 9bab69ee039b57e5d63c6dcf5d331ec2]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_14cc8.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-mtls-dialect=gnu2' '-dumpdir' 'CMakeFiles/cmTC_14cc8.dir/']
-        ignore line: [ as -v --64 -o CMakeFiles/cmTC_14cc8.dir/CMakeCCompilerABI.c.o /tmp/ccNCFt1Z.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_f5802.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-mtls-dialect=gnu2' '-dumpdir' 'CMakeFiles/cmTC_f5802.dir/']
+        ignore line: [ as -v --64 -o CMakeFiles/cmTC_f5802.dir/CMakeCCompilerABI.c.o /tmp/ccsBczY8.s]
         ignore line: [GNU assembler version 2.46.1 (x86_64-redhat-linux) using BFD version version 2.46.1-1.fc44]
         ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-redhat-linux/16/:/usr/libexec/gcc/x86_64-redhat-linux/16/:/usr/libexec/gcc/x86_64-redhat-linux/:/usr/lib/gcc/x86_64-redhat-linux/16/:/usr/lib/gcc/x86_64-redhat-linux/]
         ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-redhat-linux/16/:/usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib/gcc/x86_64-redhat-linux/16/../../../:/lib/:/usr/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_14cc8.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-mtls-dialect=gnu2' '-dumpdir' 'CMakeFiles/cmTC_14cc8.dir/CMakeCCompilerABI.c.']
-        ignore line: [Linking C executable cmTC_14cc8]
-        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_14cc8.dir/link.txt --verbose=1]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_f5802.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-mtls-dialect=gnu2' '-dumpdir' 'CMakeFiles/cmTC_f5802.dir/CMakeCCompilerABI.c.']
+        ignore line: [[2/2] : && /usr/bin/gcc  -v -Wl -v CMakeFiles/cmTC_f5802.dir/CMakeCCompilerABI.c.o -o cmTC_f5802   && :]
         ignore line: [Using built-in specs.]
-        ignore line: [COLLECT_GCC=/usr/bin/cc]
+        ignore line: [COLLECT_GCC=/usr/bin/gcc]
         ignore line: [COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-redhat-linux/16/lto-wrapper]
         ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa]
         ignore line: [OFFLOAD_TARGET_DEFAULT=1]
@@ -3326,13 +3096,13 @@ events:
         ignore line: [gcc version 16.2.1 20260819 (Red Hat 16.2.1-2) (GCC) ]
         ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-redhat-linux/16/:/usr/libexec/gcc/x86_64-redhat-linux/16/:/usr/libexec/gcc/x86_64-redhat-linux/:/usr/lib/gcc/x86_64-redhat-linux/16/:/usr/lib/gcc/x86_64-redhat-linux/]
         ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-redhat-linux/16/:/usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib/gcc/x86_64-redhat-linux/16/../../../:/lib/:/usr/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_14cc8' '-mtune=generic' '-march=x86-64' '-mtls-dialect=gnu2' '-dumpdir' 'cmTC_14cc8.']
-        link line: [ /usr/libexec/gcc/x86_64-redhat-linux/16/collect2 -plugin /usr/libexec/gcc/x86_64-redhat-linux/16/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/16/lto-wrapper -plugin-opt=-fresolution=/tmp/ccJ2o2Zi.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s_asneeded -plugin-opt=-pass-through=-latomic_asneeded -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s_asneeded --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_14cc8 /usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/16/crtbegin.o -L/usr/lib/gcc/x86_64-redhat-linux/16 -L/usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/16/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_14cc8.dir/CMakeCCompilerABI.c.o -lgcc -lgcc_s_asneeded -latomic_asneeded -lc -lgcc -lgcc_s_asneeded /usr/lib/gcc/x86_64-redhat-linux/16/crtend.o /usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crtn.o]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_f5802' '-mtune=generic' '-march=x86-64' '-mtls-dialect=gnu2' '-dumpdir' 'cmTC_f5802.']
+        link line: [ /usr/libexec/gcc/x86_64-redhat-linux/16/collect2 -plugin /usr/libexec/gcc/x86_64-redhat-linux/16/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/16/lto-wrapper -plugin-opt=-fresolution=/tmp/cc2fFSOa.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s_asneeded -plugin-opt=-pass-through=-latomic_asneeded -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s_asneeded --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_f5802 /usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/16/crtbegin.o -L/usr/lib/gcc/x86_64-redhat-linux/16 -L/usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/16/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_f5802.dir/CMakeCCompilerABI.c.o -lgcc -lgcc_s_asneeded -latomic_asneeded -lc -lgcc -lgcc_s_asneeded /usr/lib/gcc/x86_64-redhat-linux/16/crtend.o /usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crtn.o]
           arg [/usr/libexec/gcc/x86_64-redhat-linux/16/collect2] ==> ignore
           arg [-plugin] ==> ignore
           arg [/usr/libexec/gcc/x86_64-redhat-linux/16/liblto_plugin.so] ==> ignore
           arg [-plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/16/lto-wrapper] ==> ignore
-          arg [-plugin-opt=-fresolution=/tmp/ccJ2o2Zi.res] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/cc2fFSOa.res] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc_s_asneeded] ==> ignore
           arg [-plugin-opt=-pass-through=-latomic_asneeded] ==> ignore
@@ -3348,7 +3118,7 @@ events:
           arg [-dynamic-linker] ==> ignore
           arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
           arg [-o] ==> ignore
-          arg [cmTC_14cc8] ==> ignore
+          arg [cmTC_f5802] ==> ignore
           arg [/usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crt1.o] ==> obj [/usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crt1.o]
           arg [/usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crti.o] ==> obj [/usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crti.o]
           arg [/usr/lib/gcc/x86_64-redhat-linux/16/crtbegin.o] ==> obj [/usr/lib/gcc/x86_64-redhat-linux/16/crtbegin.o]
@@ -3360,7 +3130,7 @@ events:
           arg [-L/lib] ==> dir [/lib]
           arg [-L/usr/lib] ==> dir [/usr/lib]
           arg [-v] ==> ignore
-          arg [CMakeFiles/cmTC_14cc8.dir/CMakeCCompilerABI.c.o] ==> ignore
+          arg [CMakeFiles/cmTC_f5802.dir/CMakeCCompilerABI.c.o] ==> ignore
           arg [-lgcc] ==> lib [gcc]
           arg [-lgcc_s_asneeded] ==> lib [gcc_s_asneeded]
           arg [-latomic_asneeded] ==> lib [atomic_asneeded]
@@ -3370,7 +3140,7 @@ events:
           arg [/usr/lib/gcc/x86_64-redhat-linux/16/crtend.o] ==> obj [/usr/lib/gcc/x86_64-redhat-linux/16/crtend.o]
           arg [/usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crtn.o] ==> obj [/usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crtn.o]
         ignore line: [collect2 version 16.2.1 20260819 (Red Hat 16.2.1-2)]
-        ignore line: [/usr/bin/ld -plugin /usr/libexec/gcc/x86_64-redhat-linux/16/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/16/lto-wrapper -plugin-opt=-fresolution=/tmp/ccJ2o2Zi.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s_asneeded -plugin-opt=-pass-through=-latomic_asneeded -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s_asneeded --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_14cc8 /usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/16/crtbegin.o -L/usr/lib/gcc/x86_64-redhat-linux/16 -L/usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/16/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_14cc8.dir/CMakeCCompilerABI.c.o -lgcc -lgcc_s_asneeded -latomic_asneeded -lc -lgcc -lgcc_s_asneeded /usr/lib/gcc/x86_64-redhat-linux/16/crtend.o /usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crtn.o]
+        ignore line: [/usr/bin/ld -plugin /usr/libexec/gcc/x86_64-redhat-linux/16/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/16/lto-wrapper -plugin-opt=-fresolution=/tmp/cc2fFSOa.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s_asneeded -plugin-opt=-pass-through=-latomic_asneeded -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s_asneeded --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_f5802 /usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/16/crtbegin.o -L/usr/lib/gcc/x86_64-redhat-linux/16 -L/usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/16/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_f5802.dir/CMakeCCompilerABI.c.o -lgcc -lgcc_s_asneeded -latomic_asneeded -lc -lgcc -lgcc_s_asneeded /usr/lib/gcc/x86_64-redhat-linux/16/crtend.o /usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crtn.o]
         linker tool for 'C': /usr/bin/ld
         collapse obj [/usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crt1.o] ==> [/usr/lib64/crt1.o]
         collapse obj [/usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crti.o] ==> [/usr/lib64/crti.o]
@@ -3471,38 +3241,6 @@ events:
         reason: "no_exist"
       -
         path: "/home/hugo/Documents/projects/personal-api/build/CMakeFiles/pkgRedirects/share/cps/corrosion.cps"
-        mode: "cps"
-        reason: "no_exist"
-      -
-        path: "/home/hugo/Documents/projects/personal-api/.venv/CorrosionConfig.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/home/hugo/Documents/projects/personal-api/.venv/corrosion-config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/home/hugo/Documents/projects/personal-api/.venv/lib64/cps/Corrosion.cps"
-        mode: "cps"
-        reason: "no_exist"
-      -
-        path: "/home/hugo/Documents/projects/personal-api/.venv/lib64/cps/corrosion.cps"
-        mode: "cps"
-        reason: "no_exist"
-      -
-        path: "/home/hugo/Documents/projects/personal-api/.venv/lib/cps/Corrosion.cps"
-        mode: "cps"
-        reason: "no_exist"
-      -
-        path: "/home/hugo/Documents/projects/personal-api/.venv/lib/cps/corrosion.cps"
-        mode: "cps"
-        reason: "no_exist"
-      -
-        path: "/home/hugo/Documents/projects/personal-api/.venv/share/cps/Corrosion.cps"
-        mode: "cps"
-        reason: "no_exist"
-      -
-        path: "/home/hugo/Documents/projects/personal-api/.venv/share/cps/corrosion.cps"
         mode: "cps"
         reason: "no_exist"
       -
@@ -3730,99 +3468,35 @@ events:
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/hugo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts/CorrosionConfig.cmake"
+        path: "/usr/share/code/resources/app/node_modules.asar.unpacked/@vscode/ripgrep-universal/bin/linux-x64/CorrosionConfig.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/home/hugo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts/corrosion-config.cmake"
+        path: "/usr/share/code/resources/app/node_modules.asar.unpacked/@vscode/ripgrep-universal/bin/linux-x64/corrosion-config.cmake"
         mode: "config"
         reason: "no_exist"
       -
-        path: "/home/hugo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts/lib64/cps/Corrosion.cps"
+        path: "/usr/share/code/resources/app/node_modules.asar.unpacked/@vscode/ripgrep-universal/bin/linux-x64/lib64/cps/Corrosion.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/hugo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts/lib64/cps/corrosion.cps"
+        path: "/usr/share/code/resources/app/node_modules.asar.unpacked/@vscode/ripgrep-universal/bin/linux-x64/lib64/cps/corrosion.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/hugo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts/lib/cps/Corrosion.cps"
+        path: "/usr/share/code/resources/app/node_modules.asar.unpacked/@vscode/ripgrep-universal/bin/linux-x64/lib/cps/Corrosion.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/hugo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts/lib/cps/corrosion.cps"
+        path: "/usr/share/code/resources/app/node_modules.asar.unpacked/@vscode/ripgrep-universal/bin/linux-x64/lib/cps/corrosion.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/hugo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts/share/cps/Corrosion.cps"
+        path: "/usr/share/code/resources/app/node_modules.asar.unpacked/@vscode/ripgrep-universal/bin/linux-x64/share/cps/Corrosion.cps"
         mode: "cps"
         reason: "no_exist"
       -
-        path: "/home/hugo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts/share/cps/corrosion.cps"
-        mode: "cps"
-        reason: "no_exist"
-      -
-        path: "/home/hugo/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/CorrosionConfig.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/home/hugo/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/corrosion-config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/home/hugo/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/lib64/cps/Corrosion.cps"
-        mode: "cps"
-        reason: "no_exist"
-      -
-        path: "/home/hugo/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/lib64/cps/corrosion.cps"
-        mode: "cps"
-        reason: "no_exist"
-      -
-        path: "/home/hugo/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/lib/cps/Corrosion.cps"
-        mode: "cps"
-        reason: "no_exist"
-      -
-        path: "/home/hugo/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/lib/cps/corrosion.cps"
-        mode: "cps"
-        reason: "no_exist"
-      -
-        path: "/home/hugo/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/share/cps/Corrosion.cps"
-        mode: "cps"
-        reason: "no_exist"
-      -
-        path: "/home/hugo/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/share/cps/corrosion.cps"
-        mode: "cps"
-        reason: "no_exist"
-      -
-        path: "/usr/share/code/bin/copilot-shim/CorrosionConfig.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/usr/share/code/bin/copilot-shim/corrosion-config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/usr/share/code/bin/copilot-shim/lib64/cps/Corrosion.cps"
-        mode: "cps"
-        reason: "no_exist"
-      -
-        path: "/usr/share/code/bin/copilot-shim/lib64/cps/corrosion.cps"
-        mode: "cps"
-        reason: "no_exist"
-      -
-        path: "/usr/share/code/bin/copilot-shim/lib/cps/Corrosion.cps"
-        mode: "cps"
-        reason: "no_exist"
-      -
-        path: "/usr/share/code/bin/copilot-shim/lib/cps/corrosion.cps"
-        mode: "cps"
-        reason: "no_exist"
-      -
-        path: "/usr/share/code/bin/copilot-shim/share/cps/Corrosion.cps"
-        mode: "cps"
-        reason: "no_exist"
-      -
-        path: "/usr/share/code/bin/copilot-shim/share/cps/corrosion.cps"
+        path: "/usr/share/code/resources/app/node_modules.asar.unpacked/@vscode/ripgrep-universal/bin/linux-x64/share/cps/corrosion.cps"
         mode: "cps"
         reason: "no_exist"
       -
@@ -3855,6 +3529,38 @@ events:
         reason: "no_exist"
       -
         path: "/share/cps/corrosion.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/usr/share/code/resources/app/node_modules.asar.unpacked/@github/copilot-sdk-linux-x64/ripgrep/bin/linux-x64/CorrosionConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/share/code/resources/app/node_modules.asar.unpacked/@github/copilot-sdk-linux-x64/ripgrep/bin/linux-x64/corrosion-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/share/code/resources/app/node_modules.asar.unpacked/@github/copilot-sdk-linux-x64/ripgrep/bin/linux-x64/lib64/cps/Corrosion.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/usr/share/code/resources/app/node_modules.asar.unpacked/@github/copilot-sdk-linux-x64/ripgrep/bin/linux-x64/lib64/cps/corrosion.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/usr/share/code/resources/app/node_modules.asar.unpacked/@github/copilot-sdk-linux-x64/ripgrep/bin/linux-x64/lib/cps/Corrosion.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/usr/share/code/resources/app/node_modules.asar.unpacked/@github/copilot-sdk-linux-x64/ripgrep/bin/linux-x64/lib/cps/corrosion.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/usr/share/code/resources/app/node_modules.asar.unpacked/@github/copilot-sdk-linux-x64/ripgrep/bin/linux-x64/share/cps/Corrosion.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/usr/share/code/resources/app/node_modules.asar.unpacked/@github/copilot-sdk-linux-x64/ripgrep/bin/linux-x64/share/cps/corrosion.cps"
         mode: "cps"
         reason: "no_exist"
       -
@@ -3892,19 +3598,19 @@ events:
     found: null
     search_context:
       ENV{PATH}:
-        - "/home/hugo/Documents/projects/personal-api/.venv/bin"
-        - "/home/hugo/.wakatime"
         - "/home/hugo/.wakatime"
         - "/home/hugo/.cargo/bin"
-        - "/home/hugo/.wakatime"
         - "/home/hugo/.local/bin"
         - "/home/hugo/bin"
         - "/usr/local/bin"
         - "/usr/bin"
         - "/var/lib/snapd/snap/bin"
-        - "/home/hugo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts"
-        - "/home/hugo/.config/Code/User/globalStorage/github.copilot-chat/debugCommand"
-        - "/usr/share/code/bin/copilot-shim"
+        - "/usr/share/code/resources/app/node_modules.asar.unpacked/@vscode/ripgrep-universal/bin/linux-x64"
+        - "/usr/local/sbin"
+        - "/usr/sbin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/share/code/resources/app/node_modules.asar.unpacked/@github/copilot-sdk-linux-x64/ripgrep/bin/linux-x64"
       CMAKE_INSTALL_PREFIX: "/usr/local"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "/usr/local"
@@ -3935,7 +3641,6 @@ events:
     names:
       - "rustc"
     candidate_directories:
-      - "/home/hugo/Documents/projects/personal-api/.venv/bin/"
       - "/home/hugo/.wakatime/"
       - "/home/hugo/.cargo/bin/"
       - "/home/hugo/.local/bin/"
@@ -3943,9 +3648,12 @@ events:
       - "/usr/local/bin/"
       - "/usr/bin/"
       - "/var/lib/snapd/snap/bin/"
-      - "/home/hugo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts/"
-      - "/home/hugo/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/"
-      - "/usr/share/code/bin/copilot-shim/"
+      - "/usr/share/code/resources/app/node_modules.asar.unpacked/@vscode/ripgrep-universal/bin/linux-x64/"
+      - "/usr/local/sbin/"
+      - "/usr/sbin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/share/code/resources/app/node_modules.asar.unpacked/@github/copilot-sdk-linux-x64/ripgrep/bin/linux-x64/"
       - "/usr/local/bin/"
       - "/usr/local/sbin/"
       - "/usr/local/"
@@ -3964,24 +3672,23 @@ events:
       - "/opt/sbin/"
       - "/opt/"
     searched_directories:
-      - "/home/hugo/Documents/projects/personal-api/.venv/bin/rustc"
       - "/home/hugo/.wakatime/rustc"
     found: "/home/hugo/.cargo/bin/rustc"
     search_context:
       ENV{PATH}:
-        - "/home/hugo/Documents/projects/personal-api/.venv/bin"
-        - "/home/hugo/.wakatime"
         - "/home/hugo/.wakatime"
         - "/home/hugo/.cargo/bin"
-        - "/home/hugo/.wakatime"
         - "/home/hugo/.local/bin"
         - "/home/hugo/bin"
         - "/usr/local/bin"
         - "/usr/bin"
         - "/var/lib/snapd/snap/bin"
-        - "/home/hugo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts"
-        - "/home/hugo/.config/Code/User/globalStorage/github.copilot-chat/debugCommand"
-        - "/usr/share/code/bin/copilot-shim"
+        - "/usr/share/code/resources/app/node_modules.asar.unpacked/@vscode/ripgrep-universal/bin/linux-x64"
+        - "/usr/local/sbin"
+        - "/usr/sbin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/share/code/resources/app/node_modules.asar.unpacked/@github/copilot-sdk-linux-x64/ripgrep/bin/linux-x64"
       CMAKE_INSTALL_PREFIX: "/usr/local"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "/usr/local"
@@ -4016,19 +3723,19 @@ events:
     found: "/home/hugo/.cargo/bin/rustup"
     search_context:
       ENV{PATH}:
-        - "/home/hugo/Documents/projects/personal-api/.venv/bin"
-        - "/home/hugo/.wakatime"
         - "/home/hugo/.wakatime"
         - "/home/hugo/.cargo/bin"
-        - "/home/hugo/.wakatime"
         - "/home/hugo/.local/bin"
         - "/home/hugo/bin"
         - "/usr/local/bin"
         - "/usr/bin"
         - "/var/lib/snapd/snap/bin"
-        - "/home/hugo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts"
-        - "/home/hugo/.config/Code/User/globalStorage/github.copilot-chat/debugCommand"
-        - "/usr/share/code/bin/copilot-shim"
+        - "/usr/share/code/resources/app/node_modules.asar.unpacked/@vscode/ripgrep-universal/bin/linux-x64"
+        - "/usr/local/sbin"
+        - "/usr/sbin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/share/code/resources/app/node_modules.asar.unpacked/@github/copilot-sdk-linux-x64/ripgrep/bin/linux-x64"
       CMAKE_INSTALL_PREFIX: "/usr/local"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "/usr/local"
@@ -4063,19 +3770,19 @@ events:
     found: "/home/hugo/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rustc"
     search_context:
       ENV{PATH}:
-        - "/home/hugo/Documents/projects/personal-api/.venv/bin"
-        - "/home/hugo/.wakatime"
         - "/home/hugo/.wakatime"
         - "/home/hugo/.cargo/bin"
-        - "/home/hugo/.wakatime"
         - "/home/hugo/.local/bin"
         - "/home/hugo/bin"
         - "/usr/local/bin"
         - "/usr/bin"
         - "/var/lib/snapd/snap/bin"
-        - "/home/hugo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts"
-        - "/home/hugo/.config/Code/User/globalStorage/github.copilot-chat/debugCommand"
-        - "/usr/share/code/bin/copilot-shim"
+        - "/usr/share/code/resources/app/node_modules.asar.unpacked/@vscode/ripgrep-universal/bin/linux-x64"
+        - "/usr/local/sbin"
+        - "/usr/sbin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/share/code/resources/app/node_modules.asar.unpacked/@github/copilot-sdk-linux-x64/ripgrep/bin/linux-x64"
       CMAKE_INSTALL_PREFIX: "/usr/local"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "/usr/local"
@@ -4110,19 +3817,19 @@ events:
     found: "/home/hugo/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/cargo"
     search_context:
       ENV{PATH}:
-        - "/home/hugo/Documents/projects/personal-api/.venv/bin"
-        - "/home/hugo/.wakatime"
         - "/home/hugo/.wakatime"
         - "/home/hugo/.cargo/bin"
-        - "/home/hugo/.wakatime"
         - "/home/hugo/.local/bin"
         - "/home/hugo/bin"
         - "/usr/local/bin"
         - "/usr/bin"
         - "/var/lib/snapd/snap/bin"
-        - "/home/hugo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts"
-        - "/home/hugo/.config/Code/User/globalStorage/github.copilot-chat/debugCommand"
-        - "/usr/share/code/bin/copilot-shim"
+        - "/usr/share/code/resources/app/node_modules.asar.unpacked/@vscode/ripgrep-universal/bin/linux-x64"
+        - "/usr/local/sbin"
+        - "/usr/sbin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/share/code/resources/app/node_modules.asar.unpacked/@github/copilot-sdk-linux-x64/ripgrep/bin/linux-x64"
       CMAKE_INSTALL_PREFIX: "/usr/local"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "/usr/local"
@@ -4156,19 +3863,19 @@ events:
     found: "/home/hugo/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rustc"
     search_context:
       ENV{PATH}:
-        - "/home/hugo/Documents/projects/personal-api/.venv/bin"
-        - "/home/hugo/.wakatime"
         - "/home/hugo/.wakatime"
         - "/home/hugo/.cargo/bin"
-        - "/home/hugo/.wakatime"
         - "/home/hugo/.local/bin"
         - "/home/hugo/bin"
         - "/usr/local/bin"
         - "/usr/bin"
         - "/var/lib/snapd/snap/bin"
-        - "/home/hugo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts"
-        - "/home/hugo/.config/Code/User/globalStorage/github.copilot-chat/debugCommand"
-        - "/usr/share/code/bin/copilot-shim"
+        - "/usr/share/code/resources/app/node_modules.asar.unpacked/@vscode/ripgrep-universal/bin/linux-x64"
+        - "/usr/local/sbin"
+        - "/usr/sbin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/share/code/resources/app/node_modules.asar.unpacked/@github/copilot-sdk-linux-x64/ripgrep/bin/linux-x64"
       CMAKE_INSTALL_PREFIX: "/usr/local"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "/usr/local"
@@ -4202,19 +3909,19 @@ events:
     found: "/home/hugo/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/cargo"
     search_context:
       ENV{PATH}:
-        - "/home/hugo/Documents/projects/personal-api/.venv/bin"
-        - "/home/hugo/.wakatime"
         - "/home/hugo/.wakatime"
         - "/home/hugo/.cargo/bin"
-        - "/home/hugo/.wakatime"
         - "/home/hugo/.local/bin"
         - "/home/hugo/bin"
         - "/usr/local/bin"
         - "/usr/bin"
         - "/var/lib/snapd/snap/bin"
-        - "/home/hugo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts"
-        - "/home/hugo/.config/Code/User/globalStorage/github.copilot-chat/debugCommand"
-        - "/usr/share/code/bin/copilot-shim"
+        - "/usr/share/code/resources/app/node_modules.asar.unpacked/@vscode/ripgrep-universal/bin/linux-x64"
+        - "/usr/local/sbin"
+        - "/usr/sbin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/share/code/resources/app/node_modules.asar.unpacked/@github/copilot-sdk-linux-x64/ripgrep/bin/linux-x64"
       CMAKE_INSTALL_PREFIX: "/usr/local"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "/usr/local"
@@ -4252,19 +3959,19 @@ events:
     found: "/usr/lib64/libsqlite3.so"
     search_context:
       ENV{PATH}:
-        - "/home/hugo/Documents/projects/personal-api/.venv/bin"
-        - "/home/hugo/.wakatime"
         - "/home/hugo/.wakatime"
         - "/home/hugo/.cargo/bin"
-        - "/home/hugo/.wakatime"
         - "/home/hugo/.local/bin"
         - "/home/hugo/bin"
         - "/usr/local/bin"
         - "/usr/bin"
         - "/var/lib/snapd/snap/bin"
-        - "/home/hugo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts"
-        - "/home/hugo/.config/Code/User/globalStorage/github.copilot-chat/debugCommand"
-        - "/usr/share/code/bin/copilot-shim"
+        - "/usr/share/code/resources/app/node_modules.asar.unpacked/@vscode/ripgrep-universal/bin/linux-x64"
+        - "/usr/local/sbin"
+        - "/usr/sbin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/share/code/resources/app/node_modules.asar.unpacked/@github/copilot-sdk-linux-x64/ripgrep/bin/linux-x64"
       CMAKE_INSTALL_PREFIX: "/usr/local"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "/usr/local"
@@ -4297,7 +4004,6 @@ events:
       - "sqlite3.h"
     candidate_directories:
       - "/usr/include/"
-      - "/home/hugo/Documents/projects/personal-api/.venv/bin/"
       - "/home/hugo/.wakatime/"
       - "/home/hugo/.cargo/bin/"
       - "/home/hugo/.local/bin/"
@@ -4305,9 +4011,12 @@ events:
       - "/usr/local/bin/"
       - "/usr/bin/"
       - "/var/lib/snapd/snap/bin/"
-      - "/home/hugo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts/"
-      - "/home/hugo/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/"
-      - "/usr/share/code/bin/copilot-shim/"
+      - "/usr/share/code/resources/app/node_modules.asar.unpacked/@vscode/ripgrep-universal/bin/linux-x64/"
+      - "/usr/local/sbin/"
+      - "/usr/sbin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/share/code/resources/app/node_modules.asar.unpacked/@github/copilot-sdk-linux-x64/ripgrep/bin/linux-x64/"
       - "/usr/local/include/"
       - "/usr/local/"
       - "/usr/include/"
@@ -4323,19 +4032,19 @@ events:
     found: "/usr/include/"
     search_context:
       ENV{PATH}:
-        - "/home/hugo/Documents/projects/personal-api/.venv/bin"
-        - "/home/hugo/.wakatime"
         - "/home/hugo/.wakatime"
         - "/home/hugo/.cargo/bin"
-        - "/home/hugo/.wakatime"
         - "/home/hugo/.local/bin"
         - "/home/hugo/bin"
         - "/usr/local/bin"
         - "/usr/bin"
         - "/var/lib/snapd/snap/bin"
-        - "/home/hugo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts"
-        - "/home/hugo/.config/Code/User/globalStorage/github.copilot-chat/debugCommand"
-        - "/usr/share/code/bin/copilot-shim"
+        - "/usr/share/code/resources/app/node_modules.asar.unpacked/@vscode/ripgrep-universal/bin/linux-x64"
+        - "/usr/local/sbin"
+        - "/usr/sbin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/share/code/resources/app/node_modules.asar.unpacked/@github/copilot-sdk-linux-x64/ripgrep/bin/linux-x64"
       CMAKE_INSTALL_PREFIX: "/usr/local"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "/usr/local"
@@ -4369,16 +4078,18 @@ events:
       - "sqlite"
     candidate_directories:
       - "/usr/lib64/"
-      - "/home/hugo/Documents/projects/personal-api/.venv/bin/"
       - "/home/hugo/.wakatime/"
       - "/home/hugo/.cargo/bin/"
       - "/home/hugo/.local/bin/"
       - "/usr/local/bin/"
       - "/usr/bin/"
       - "/var/lib/snapd/snap/bin/"
-      - "/home/hugo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts/"
-      - "/home/hugo/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/"
-      - "/usr/share/code/bin/copilot-shim/"
+      - "/usr/share/code/resources/app/node_modules.asar.unpacked/@vscode/ripgrep-universal/bin/linux-x64/"
+      - "/usr/local/sbin/"
+      - "/usr/sbin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/share/code/resources/app/node_modules.asar.unpacked/@github/copilot-sdk-linux-x64/ripgrep/bin/linux-x64/"
       - "/usr/local/lib64/"
       - "/usr/local/lib/"
       - "/usr/local/"
@@ -4392,19 +4103,19 @@ events:
     found: "/usr/lib64/libsqlite3.so"
     search_context:
       ENV{PATH}:
-        - "/home/hugo/Documents/projects/personal-api/.venv/bin"
-        - "/home/hugo/.wakatime"
         - "/home/hugo/.wakatime"
         - "/home/hugo/.cargo/bin"
-        - "/home/hugo/.wakatime"
         - "/home/hugo/.local/bin"
         - "/home/hugo/bin"
         - "/usr/local/bin"
         - "/usr/bin"
         - "/var/lib/snapd/snap/bin"
-        - "/home/hugo/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts"
-        - "/home/hugo/.config/Code/User/globalStorage/github.copilot-chat/debugCommand"
-        - "/usr/share/code/bin/copilot-shim"
+        - "/usr/share/code/resources/app/node_modules.asar.unpacked/@vscode/ripgrep-universal/bin/linux-x64"
+        - "/usr/local/sbin"
+        - "/usr/sbin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/share/code/resources/app/node_modules.asar.unpacked/@github/copilot-sdk-linux-x64/ripgrep/bin/linux-x64"
       CMAKE_INSTALL_PREFIX: "/usr/local"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "/usr/local"
