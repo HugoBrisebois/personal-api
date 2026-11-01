@@ -1,8 +1,6 @@
 #include "../include/database.hpp"
 #include <sqlite3.h>
 #include <utility>
-#include <filesystem>
-#include <iostream>
 
 namespace personalAPI {
    Database::Database(const std::string& dbPath)
@@ -35,11 +33,6 @@ namespace personalAPI {
 
     bool Database::open() {
       if (db) return true;
-      
-      std::filesystem::path path(db_path);
-      if (path.has_parent_path()) {
-        std::filesystem::create_directories(path.parent_path());
-      }
 
       int rc = sqlite3_open(db_path.c_str(), &db);
       if (rc != SQLITE_OK) {
