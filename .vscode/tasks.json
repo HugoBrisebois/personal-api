@@ -17,7 +17,28 @@
             "group": {
                 "kind": "build",
                 "isDefault": true
-            }
+            },
+            "detail": "Build the project using the configured CMake build tree so generated Slint headers exist."
+        },
+        {
+            "type": "shell",
+            "label": "C/C++: g++ build active file",
+            "command": "cmake",
+            "args": [
+                "--build",
+                "${workspaceFolder}/build",
+                "--target",
+                "smart_hub"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": "$gcc",
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "detail": "Do not invoke a raw g++ compile for this project because the Slint-generated appWindow.h is emitted into the CMake build directory."
         }
     ],
     "version": "2.0.0"

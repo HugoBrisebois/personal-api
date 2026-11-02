@@ -14,7 +14,7 @@
             "cwd": "${workspaceFolder}",
             "preLaunchTask": "Build smart_hub",
             "environment": [],
-            "externalConsole": false,
+            "externalConsole": true,
             "MIMode": "gdb",
             "setupCommands": [
                 {

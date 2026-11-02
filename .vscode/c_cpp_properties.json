@@ -4,14 +4,16 @@
             "name": "Linux",
             "includePath": [
                 "${workspaceFolder}/**",
-                "${workspaceFolder}/include"
+                "${workspaceFolder}/include",
+                "${workspaceFolder}/build",
+                "${workspaceFolder}/build/_deps/slint-build/generated_include",
+                "${workspaceFolder}/build/_deps/slint-src/api/cpp/include"
             ],
             "compileCommands": "${workspaceFolder}/build/compile_commands.json",
             "defines": [],
             "cStandard": "c17",
-            "cppStandard": "c++17",
-            "intelliSenseMode": "linux-clang-x64",
-            "configurationProvider": "ms-vscode.cmake-tools"
+            "cppStandard": "c++20",
+            "intelliSenseMode": "linux-gcc-x64"
         }
     ],
     "version": 4

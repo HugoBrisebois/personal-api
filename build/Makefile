@@ -272,58 +272,6 @@ cargo-clean/fast:
 	$(MAKE) $(MAKESILENT) -f _deps/slint-build/CMakeFiles/cargo-clean.dir/build.make _deps/slint-build/CMakeFiles/cargo-clean.dir/build
 .PHONY : cargo-clean/fast
 
-#=============================================================================
-# Target rules for targets named _cargo-build_slint-compiler
-
-# Build rule for target.
-_cargo-build_slint-compiler: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _cargo-build_slint-compiler
-.PHONY : _cargo-build_slint-compiler
-
-# fast build rule for target.
-_cargo-build_slint-compiler/fast:
-	$(MAKE) $(MAKESILENT) -f _deps/slint-build/CMakeFiles/_cargo-build_slint-compiler.dir/build.make _deps/slint-build/CMakeFiles/_cargo-build_slint-compiler.dir/build
-.PHONY : _cargo-build_slint-compiler/fast
-
-#=============================================================================
-# Target rules for targets named cargo-build_slint-compiler
-
-# Build rule for target.
-cargo-build_slint-compiler: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 cargo-build_slint-compiler
-.PHONY : cargo-build_slint-compiler
-
-# fast build rule for target.
-cargo-build_slint-compiler/fast:
-	$(MAKE) $(MAKESILENT) -f _deps/slint-build/CMakeFiles/cargo-build_slint-compiler.dir/build.make _deps/slint-build/CMakeFiles/cargo-build_slint-compiler.dir/build
-.PHONY : cargo-build_slint-compiler/fast
-
-#=============================================================================
-# Target rules for targets named cargo-prebuild_slint-compiler
-
-# Build rule for target.
-cargo-prebuild_slint-compiler: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 cargo-prebuild_slint-compiler
-.PHONY : cargo-prebuild_slint-compiler
-
-# fast build rule for target.
-cargo-prebuild_slint-compiler/fast:
-	$(MAKE) $(MAKESILENT) -f _deps/slint-build/CMakeFiles/cargo-prebuild_slint-compiler.dir/build.make _deps/slint-build/CMakeFiles/cargo-prebuild_slint-compiler.dir/build
-.PHONY : cargo-prebuild_slint-compiler/fast
-
-#=============================================================================
-# Target rules for targets named cargo-clean_slint-compiler
-
-# Build rule for target.
-cargo-clean_slint-compiler: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 cargo-clean_slint-compiler
-.PHONY : cargo-clean_slint-compiler
-
-# fast build rule for target.
-cargo-clean_slint-compiler/fast:
-	$(MAKE) $(MAKESILENT) -f _deps/slint-build/CMakeFiles/cargo-clean_slint-compiler.dir/build.make _deps/slint-build/CMakeFiles/cargo-clean_slint-compiler.dir/build
-.PHONY : cargo-clean_slint-compiler/fast
-
 slint_generated_appWindow_1.o: slint_generated_appWindow_1.cpp.o
 .PHONY : slint_generated_appWindow_1.o
 
@@ -434,15 +382,11 @@ help:
 	@echo "... package"
 	@echo "... package_source"
 	@echo "... rebuild_cache"
-	@echo "... _cargo-build_slint-compiler"
 	@echo "... _cargo-build_slint_cpp"
-	@echo "... cargo-build_slint-compiler"
 	@echo "... cargo-build_slint_cpp"
 	@echo "... cargo-clean"
-	@echo "... cargo-clean_slint-compiler"
 	@echo "... cargo-clean_slint_cpp"
 	@echo "... cargo-prebuild"
-	@echo "... cargo-prebuild_slint-compiler"
 	@echo "... cargo-prebuild_slint_cpp"
 	@echo "... smart_hub"
 	@echo "... slint_generated_appWindow_1.o"

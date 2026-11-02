@@ -1,13 +1,20 @@
 #include <iostream>
 #include <filesystem>
 #include <string>
-#include <pybind/embed.h>
+#ifdef PERSONAL_API_USE_PYBIND11
+#include <pybind11/embed.h>
+#define PERSONAL_API_HAS_PYBIND11 1
+#else
+#define PERSONAL_API_HAS_PYBIND11 0
+#endif
 
 #include "../include/database.hpp"
 #include "../include/api_server.hpp"
 #include <appWindow.h>
 
+#if PERSONAL_API_HAS_PYBIND11
 namespace py = pybind11;
+#endif
 
 int getGarmin();
 
@@ -51,23 +58,35 @@ int main() {
       std::cout << " - " << table << "\n";
     }
 
-    if (getGarmin() != 0) {
-      std::cerr << "Garmin data was unavailable; continuing without it.\n";
-    }
-
+  #if PERSONAL_API_HAS_PYBIND11
+    py::scoped_interpreter interpreter{};
+  #endif
     auto ui = AppWindow::create();
 
     // pass data from C++ into the Slint ui property
     ui->set_db_status(slint::SharedString("Connected"));
 
+    std::cout << "Starting initial Garmin data fetch.\n";
+    getGarmin();
+
+    
+    // define function of buttons
+    ui->on_button_clicked([]() {
+      std::cout << "Button was clicked in slint" << endl;
+    });
+    
     // run the event loop
     ui->run();
-
+    
     return 0;
 }
 
 int getGarmin() {
-  py::scoped_interpreter guard{}; // starts and stops Python automatically
+#if !PERSONAL_API_HAS_PYBIND11
+  std::cerr << "Garmin integration is unavailable: pybind11 headers were not found.\n";
+  return 1;
+#else
+  std::cout << "Fetching data" << std::endl;
 
   try {
     // Load Garmin.py from the source directory, regardless of the working directory.
@@ -87,7 +106,10 @@ int getGarmin() {
       data_package = garmin_mod.attr("fetch_all_data")(my_email, my_password)
                          .cast<py::dict>();
       status = data_package["status"].cast<std::string>();
-      if (status == "success") {
+      if (status == "success" || status == "partial") {
+        if (status == "partial") {
+          std::cerr << "[C++] Garmin returned partial data.\n";
+        }
         break;
       }
 
@@ -152,4 +174,5 @@ int getGarmin() {
     return 1;
   }
   return 0;
+#endif
 }
