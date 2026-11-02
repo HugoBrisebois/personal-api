@@ -6,6 +6,7 @@
                 "${workspaceFolder}/**",
                 "${workspaceFolder}/include"
             ],
+            "compileCommands": "${workspaceFolder}/build/compile_commands.json",
             "defines": [],
             "cStandard": "c17",
             "cppStandard": "c++17",

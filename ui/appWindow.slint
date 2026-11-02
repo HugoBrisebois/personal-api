@@ -1,0 +1,32 @@
+import { Button } from "std-widgets.slint";
+
+export component AppWindow inherits Window {
+    width: 600px;
+    height: 400px;
+    title: "personal Smart Hub";
+
+    in property <string> db-status: "Disconnected";
+
+    VerticalLayout {
+        padding: 20px;
+        spacing: 15px;
+
+        Text {
+            text: "Personal API Database demo";
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        Text {
+            text: "Database status: " + root.db-status;
+            font-size: 16px;
+        }
+
+        Button {
+            text: "Fetch GarminData";
+            clicked => {
+                // hook this up to a c++ callback
+            }
+        }
+    }
+}

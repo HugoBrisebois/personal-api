@@ -1,81 +1,88 @@
 import datetime
-import json
 import os
 from pathlib import Path
+from typing import Any, Dict, Optional
+
 from garminconnect import Garmin
 
-email = ""
-password = ""
-token_store = "~/.garminconnect"  # Directory to cache tokens
+token_store = "~/.garminconnect"
 
-def initialize_garmin():
-    """Initializes the Garmin client, utilizing stored tokens if available."""
+
+def initialize_garmin(
+    email: Optional[str] = None, password: Optional[str] = None
+) -> Garmin:
+    """Log in with cached Garmin tokens, falling back to supplied or environment credentials."""
     tokenstore_path = str(Path(token_store).expanduser())
-    
-    # Try loading previously stored session tokens first
+
     try:
-        print(f"Attempting to login using stored tokens from: {token_store}")
         garmin = Garmin()
         garmin.login(tokenstore_path)
-        print("Successfully logged in using stored tokens!")
         return garmin
-    except Exception as e:
-        print(f"Token login failed ({e}). Logging in with credentials...")
+    except Exception as token_error:
+        email = email or os.getenv("GARMIN_EMAIL")
+        password = password or os.getenv("GARMIN_PASSWORD")
+        if not email or not password:
+            raise RuntimeError(
+                "Garmin token login failed and credentials are not configured"
+            ) from token_error
+
         try:
-            email = input("Input your email address for Garmin: ")
-            password = input("Input your Garmin password: ")
-            # Login with credentials and pass tokenstore_path so it saves automatically
             garmin = Garmin(email=email, password=password)
             garmin.login(tokenstore_path)
-            print(f"Successfully logged in and saved tokens to {token_store}")
             return garmin
-        except Exception as ex:
-            print(f"Authentication failed: {ex}")
-            exit(1)
+        except Exception as error:
+            raise RuntimeError(f"Garmin authentication failed: {error}") from error
 
-def main():
-    # Init API client
-    api = initialize_garmin()
 
-    # Get today's date in YYYY-MM-DD
-    today = datetime.date.today().isoformat()
-    print(f"\nFetching health stats for today: {today}\n" + "="*40)
+def fetch_all_data(
+    email: Optional[str] = None, password: Optional[str] = None
+) -> Dict[str, Any]:
+    results: Dict[str, Any] = {
+        "status": "failed",
+        "daily_summary": {},
+        "sleep_data": {},
+        "heart_rate": {},
+        "body_battery": {},
+        "stress_level": -1,
+        "errors": {},
+    }
 
     try:
-        # General daily stats (steps, calories, distance, floors, etc.)
-        print("--- Daily Summary ---")
-        stats = api.get_stats(today)
-        print(json.dumps(stats, indent=2))
+        api = initialize_garmin(email, password)
+    except Exception as error:
+        results["errors"]["authentication"] = str(error)
+        return results
 
-        # Heart rate data
-        print("\n--- Heart Rate Data ---")
-        hr_data = api.get_heart_rates(today)
-        print(f"Resting Heart rate: {stats.get('restingHeartRate')} bpm")
-        print(f"Min Heart rate: {stats.get('minHeartRate')} bpm")
-        print(f"Max Heart Rate: {stats.get('maxHeartRate')} bpm")
+    today = datetime.date.today().isoformat()
+    fetchers = {
+        "daily_summary": lambda: api.get_stats(today),
+        "sleep_data": lambda: api.get_sleep_data(today),
+        "body_battery": lambda: api.get_body_battery(today),
+        "stress_level": lambda: api.get_stress_data(today),
+    }
 
-        # Body Battery data
-        print("\n--- Body Battery Data ---")
-        try: 
-            body_battery = api.get_body_battery(today)
-            if body_battery:
-                print("Body Battery latest/charged values retrieved successfully:")
-                print(json.dumps(body_battery[-1], indent=2))
-            else: 
-                print("No Body Battery data found for today.")
-        except Exception as e:
-            print(f"Could not fetch body battery data: {e}")
-
-        # Stress data
-        print("\n--- Stress Data ---")
+    for key, fetch in fetchers.items():
         try:
-            stress_data = api.get_stress_data(today)
-            print(f"Average stress level: {stress_data.get('avgStressLevel', 'N/A')}")
-        except Exception as e:
-            print(f"Could not fetch stress data: {e}")
+            data = fetch()
+            if key == "daily_summary":
+                summary = data or {}
+                results[key] = summary
+                results["heart_rate"] = {
+                    "resting": summary.get("restingHeartRate", 0),
+                    "min": summary.get("minHeartRate", 0),
+                    "max": summary.get("maxHeartRate", 0),
+                }
+            elif key == "stress_level":
+                if data:
+                    results[key] = data.get("avgStressLevel", -1)
+            elif data:
+                results[key] = data
+        except Exception as error:
+            results["errors"][key] = str(error)
 
-    except Exception as err:
-        print(f"Error retrieving health data: {err}")
+    if not results["errors"]:
+        results["status"] = "success"
+    elif len(results["errors"]) < len(fetchers):
+        results["status"] = "partial"
 
-if __name__ == "__main__":
-    main()
+    return results

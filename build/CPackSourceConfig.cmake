@@ -13,7 +13,7 @@
 set(CPACK_ARCHIVE_GID "-1")
 set(CPACK_ARCHIVE_UID "-1")
 set(CPACK_BUILD_SOURCE_DIRS "/home/hugo/Documents/projects/personal-api;/home/hugo/Documents/projects/personal-api/build")
-set(CPACK_CMAKE_GENERATOR "Unix Makefiles")
+set(CPACK_CMAKE_GENERATOR "Ninja")
 set(CPACK_COMPONENT_UNSPECIFIED_HIDDEN "TRUE")
 set(CPACK_COMPONENT_UNSPECIFIED_REQUIRED "TRUE")
 set(CPACK_DEFAULT_PACKAGE_DESCRIPTION_FILE "/usr/share/cmake/Templates/CPack.GenericDescription.txt")

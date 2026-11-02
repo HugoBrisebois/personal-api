@@ -182,19 +182,6 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named personal_db
-
-# Build rule for target.
-personal_db: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 personal_db
-.PHONY : personal_db
-
-# fast build rule for target.
-personal_db/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/personal_db.dir/build.make CMakeFiles/personal_db.dir/build
-.PHONY : personal_db/fast
-
-#=============================================================================
 # Target rules for targets named smart_hub
 
 # Build rule for target.
@@ -337,29 +324,29 @@ cargo-clean_slint-compiler/fast:
 	$(MAKE) $(MAKESILENT) -f _deps/slint-build/CMakeFiles/cargo-clean_slint-compiler.dir/build.make _deps/slint-build/CMakeFiles/cargo-clean_slint-compiler.dir/build
 .PHONY : cargo-clean_slint-compiler/fast
 
-slint_generated_appwindow_1.o: slint_generated_appwindow_1.cpp.o
-.PHONY : slint_generated_appwindow_1.o
+slint_generated_appWindow_1.o: slint_generated_appWindow_1.cpp.o
+.PHONY : slint_generated_appWindow_1.o
 
 # target to build an object file
-slint_generated_appwindow_1.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/smart_hub.dir/build.make CMakeFiles/smart_hub.dir/slint_generated_appwindow_1.cpp.o
-.PHONY : slint_generated_appwindow_1.cpp.o
+slint_generated_appWindow_1.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/smart_hub.dir/build.make CMakeFiles/smart_hub.dir/slint_generated_appWindow_1.cpp.o
+.PHONY : slint_generated_appWindow_1.cpp.o
 
-slint_generated_appwindow_1.i: slint_generated_appwindow_1.cpp.i
-.PHONY : slint_generated_appwindow_1.i
+slint_generated_appWindow_1.i: slint_generated_appWindow_1.cpp.i
+.PHONY : slint_generated_appWindow_1.i
 
 # target to preprocess a source file
-slint_generated_appwindow_1.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/smart_hub.dir/build.make CMakeFiles/smart_hub.dir/slint_generated_appwindow_1.cpp.i
-.PHONY : slint_generated_appwindow_1.cpp.i
+slint_generated_appWindow_1.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/smart_hub.dir/build.make CMakeFiles/smart_hub.dir/slint_generated_appWindow_1.cpp.i
+.PHONY : slint_generated_appWindow_1.cpp.i
 
-slint_generated_appwindow_1.s: slint_generated_appwindow_1.cpp.s
-.PHONY : slint_generated_appwindow_1.s
+slint_generated_appWindow_1.s: slint_generated_appWindow_1.cpp.s
+.PHONY : slint_generated_appWindow_1.s
 
 # target to generate assembly for a file
-slint_generated_appwindow_1.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/smart_hub.dir/build.make CMakeFiles/smart_hub.dir/slint_generated_appwindow_1.cpp.s
-.PHONY : slint_generated_appwindow_1.cpp.s
+slint_generated_appWindow_1.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/smart_hub.dir/build.make CMakeFiles/smart_hub.dir/slint_generated_appWindow_1.cpp.s
+.PHONY : slint_generated_appWindow_1.cpp.s
 
 src/api_server.o: src/api_server.cpp.o
 .PHONY : src/api_server.o
@@ -457,11 +444,10 @@ help:
 	@echo "... cargo-prebuild"
 	@echo "... cargo-prebuild_slint-compiler"
 	@echo "... cargo-prebuild_slint_cpp"
-	@echo "... personal_db"
 	@echo "... smart_hub"
-	@echo "... slint_generated_appwindow_1.o"
-	@echo "... slint_generated_appwindow_1.i"
-	@echo "... slint_generated_appwindow_1.s"
+	@echo "... slint_generated_appWindow_1.o"
+	@echo "... slint_generated_appWindow_1.i"
+	@echo "... slint_generated_appWindow_1.s"
 	@echo "... src/api_server.o"
 	@echo "... src/api_server.i"
 	@echo "... src/api_server.s"
