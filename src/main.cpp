@@ -61,25 +61,42 @@ int main() {
   #if PERSONAL_API_HAS_PYBIND11
     py::scoped_interpreter interpreter{};
   #endif
-    auto ui = AppWindow::create();
-
-    // pass data from C++ into the Slint ui property
-    ui->set_db_status(slint::SharedString("Connected"));
-
-    std::cout << "Starting initial Garmin data fetch.\n";
-    getGarmin();
-
-    
-    // define function of buttons
-    ui->on_button_clicked([]() {
-      std::cout << "Button was clicked in slint" << endl;
-    });
-    
-    // run the event loop
-    ui->run();
-    
-    return 0;
+  
+  std::cout << "Starting initial Garmin data fetch.\n";
+  getGarmin();
+  
+  
+  
+  
+  return 0;
 }
+
+int run_window(int argc, char **argv) {
+  auto ui = AppWindow::create();
+
+  // pass data from C++ into the Slint ui property
+  ui->set_db_status(slint::SharedString("Connected"));
+  
+  ui->on_fetch_Garmin([ui_weak = std::move(ui)] {
+    // upgrade the pointer safely inside the callback
+    if (auto ui = ui_weak.lock()) {
+      std::cout << "fetching Garmin data" << std::endl;
+
+      // TODO: fetch api data logic
+
+
+      // push the values back to the slint ui properties
+      // ui->set_db_status("connected");
+      // ui->set_rHR(fetched_rHR);
+      // ui->set_mHR(fetched_mHR);
+      // ui->set_avgStress(fetched_stress);
+    }
+  });
+
+  ui->run();
+  return 0;
+}
+
 
 int getGarmin() {
 #if !PERSONAL_API_HAS_PYBIND11

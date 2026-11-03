@@ -5,8 +5,13 @@ export component AppWindow inherits Window {
     height: 400px;
     title: "personal Smart Hub";
 
+    // properties available in c++
     in property <string> db-status: "Disconnected";
-    callback get_garmin();
+    in property <int> mHR: 0;
+    in property <int> rHR: 0;
+    in property <int> avgStress: 0;
+
+    callback fetch-Garmin();
 
     VerticalLayout {
         padding: 20px;
@@ -30,15 +35,19 @@ export component AppWindow inherits Window {
         }
 
         Text {
-            text: "Maximum Heart Rate :" + root.mHR + " bpm";
+            text: "Maximum Heart Rate: " + root.mHR + " bpm";
             font-size: 16px;
             font-weight: bold;
+        }
+
+        Text {
+            text: "Average Heart Rate: " +root.avgStress;
         }
 
         Button {
             text: "Fetch GarminData";
             clicked => {
-                root.get_garmin();
+                root.fetch-Garmin();
             }
         }
     }
