@@ -10,6 +10,8 @@ export component AppWindow inherits Window {
     in property <int> mHR: 0;
     in property <int> rHR: 0;
     in property <int> avgStress: 0;
+    in property <int> bodyBattery: 0;
+    in property <string> garmin-status: "Not fetched";
 
     callback fetch-Garmin();
 
@@ -28,20 +30,29 @@ export component AppWindow inherits Window {
             font-size: 16px;
         }
 
+        Text {
+            text: "Garmin status: " + root.garmin-status;
+            font-size: 16px;
+        }
+
         Text{
             text: "Resting Heart Rate: " + root.rHR + " bpm";
             font-size: 16px;
-            font-weight: bold;
         }
 
         Text {
             text: "Maximum Heart Rate: " + root.mHR + " bpm";
             font-size: 16px;
-            font-weight: bold;
         }
 
         Text {
-            text: "Average Heart Rate: " +root.avgStress;
+            text: "Average Stress: " + root.avgStress;
+            font-size: 16px;
+        }
+
+        Text {
+            text: "Body Battery: " + root.bodyBattery;
+            font-size: 16px;
         }
 
         Button {

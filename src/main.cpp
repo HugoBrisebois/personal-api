@@ -16,7 +16,8 @@
 namespace py = pybind11;
 #endif
 
-int getGarmin();
+int getGarmin(AppWindow& ui);
+int run_window();
 
 int main() {
 
@@ -61,35 +62,24 @@ int main() {
   #if PERSONAL_API_HAS_PYBIND11
     py::scoped_interpreter interpreter{};
   #endif
-  
-  std::cout << "Starting initial Garmin data fetch.\n";
-  getGarmin();
-  
-  
-  
-  
-  return 0;
+
+  return run_window();
 }
 
-int run_window(int argc, char **argv) {
+int run_window() {
   auto ui = AppWindow::create();
 
-  // pass data from C++ into the Slint ui property
   ui->set_db_status(slint::SharedString("Connected"));
-  
-  ui->on_fetch_Garmin([ui_weak = std::move(ui)] {
-    // upgrade the pointer safely inside the callback
+
+  std::cout << "Starting initial Garmin data fetch.\n";
+  getGarmin(*ui);
+
+  const slint::ComponentWeakHandle<AppWindow> ui_weak = ui;
+  ui->on_fetch_Garmin([ui_weak] {
     if (auto ui = ui_weak.lock()) {
       std::cout << "fetching Garmin data" << std::endl;
-
-      // TODO: fetch api data logic
-
-
-      // push the values back to the slint ui properties
-      // ui->set_db_status("connected");
-      // ui->set_rHR(fetched_rHR);
-      // ui->set_mHR(fetched_mHR);
-      // ui->set_avgStress(fetched_stress);
+      (*ui)->set_garmin_status(slint::SharedString("Fetching Garmin data..."));
+      getGarmin(**ui);
     }
   });
 
@@ -98,9 +88,10 @@ int run_window(int argc, char **argv) {
 }
 
 
-int getGarmin() {
+int getGarmin(AppWindow& ui) {
 #if !PERSONAL_API_HAS_PYBIND11
   std::cerr << "Garmin integration is unavailable: pybind11 headers were not found.\n";
+  ui.set_garmin_status(slint::SharedString("Garmin integration unavailable"));
   return 1;
 #else
   std::cout << "Fetching data" << std::endl;
@@ -131,12 +122,16 @@ int getGarmin() {
       }
 
       std::cerr << "[C++] Garmin retrieval status: " << status << '\n';
+      ui.set_garmin_status(slint::SharedString(
+          "Garmin login failed; enter credentials in the terminal"));
       std::cout << "Enter your email: ";
       if (!std::getline(std::cin, my_email)) {
+        ui.set_garmin_status(slint::SharedString("Garmin fetch cancelled"));
         return 1;
       }
       std::cout << "Enter your password: ";
       if (!std::getline(std::cin, my_password)) {
+        ui.set_garmin_status(slint::SharedString("Garmin fetch cancelled"));
         return 1;
       }
     }
@@ -147,18 +142,23 @@ int getGarmin() {
         !data_package["stress_level"].is_none()) {
       const int avg_stress = data_package["stress_level"].cast<int>();
       std::cout << "Average Stress Level: " << avg_stress << '\n';
+      ui.set_avgStress(avg_stress);
     }
 
     if (data_package.contains("heart_rate") &&
         py::isinstance<py::dict>(data_package["heart_rate"])) {
       py::dict hr_data = data_package["heart_rate"].cast<py::dict>();
       if (hr_data.contains("resting")) {
+        const int resting = hr_data["resting"].cast<int>();
         std::cout << "Resting Heart Rate: "
-                  << hr_data["resting"].cast<int>() << " bpm\n";
+                  << resting << " bpm\n";
+        ui.set_rHR(resting);
       }
       if (hr_data.contains("max")) {
+        const int maximum = hr_data["max"].cast<int>();
         std::cout << "Maximum Heart Rate: "
-                  << hr_data["max"].cast<int>() << " bpm\n";
+                  << maximum << " bpm\n";
+        ui.set_mHR(maximum);
       }
     }
 
@@ -182,12 +182,18 @@ int getGarmin() {
         }
       }
       if (!battery_value.is_none()) {
-        std::cout << "Current Body Battery: "
-                  << battery_value.cast<int>() << '\n';
+        const int body_battery_value = battery_value.cast<int>();
+        std::cout << "Current Body Battery: " << body_battery_value << '\n';
+        ui.set_bodyBattery(body_battery_value);
       }
     }
+
+    ui.set_garmin_status(slint::SharedString(
+        status == "partial" ? "Garmin data loaded with some errors"
+                            : "Garmin data loaded"));
   } catch (const py::error_already_set& e) {
     std::cerr << "[C++] Python Exception caught: " << e.what() << std::endl;
+    ui.set_garmin_status(slint::SharedString("Garmin fetch failed; see terminal"));
     return 1;
   }
   return 0;
